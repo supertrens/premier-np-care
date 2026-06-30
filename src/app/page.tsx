@@ -135,24 +135,22 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ── EDITORIAL PULL QUOTE ─────────────────────────────── */}
-      <Section className="py-28">
+      {/* ── EDITORIAL PULL QUOTE — dark ──────────────────────── */}
+      <Section className="bg-ink py-28 text-paper">
         <Container>
           <MotionReveal>
-            <div className="border-t border-ink/10 pt-14">
-              <p className="label-caps mb-8 text-fern">Our approach</p>
-              <p className="font-display text-[clamp(1.9rem,4vw,3.4rem)] font-light leading-[1.14] text-ink md:max-w-4xl">
-                Medicine practiced with intention — a single provider who knows
-                your history, names the options clearly, and tells you when to
-                go somewhere else.
-              </p>
-            </div>
+            <p className="label-caps mb-8 text-fern-light/70">Our approach</p>
+            <p className="font-display text-[clamp(1.9rem,4vw,3.4rem)] font-light leading-[1.14] text-paper md:max-w-4xl">
+              Medicine practiced with intention — a single provider who knows
+              your history, names the options clearly, and tells you when to
+              go somewhere else.
+            </p>
           </MotionReveal>
         </Container>
       </Section>
 
-      {/* ── CREDIBILITY ──────────────────────────────────────── */}
-      <Section className="bg-stone/40 py-0">
+      {/* ── CREDIBILITY — fern tint ──────────────────────────── */}
+      <Section className="bg-mist py-0">
         <Container className="grid divide-y divide-ink/8 md:grid-cols-3 md:divide-x md:divide-y-0">
           {credibilityPoints.map((point, index) => (
             <MotionReveal key={point}>
@@ -174,8 +172,8 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── SERVICES ─────────────────────────────────────────── */}
-      <Section className="py-32">
+      {/* ── SERVICES — warm paper ────────────────────────────── */}
+      <Section className="bg-paper py-32">
         <Container className="grid gap-20 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
           <MotionReveal>
             <div className="lg:sticky lg:top-28">
@@ -226,8 +224,8 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── HOW IT WORKS ─────────────────────────────────────── */}
-      <Section className="border-y border-fern/12 bg-mist py-32">
+      {/* ── HOW IT WORKS — warm stone ────────────────────────── */}
+      <Section className="bg-stone py-32">
         <Container>
           <MotionReveal>
             <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-16">
@@ -270,19 +268,19 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── CTA ──────────────────────────────────────────────── */}
-      <Section className="py-32">
+      {/* ── CTA — dark ink ───────────────────────────────────── */}
+      <Section className="bg-ink py-32 text-paper">
         <Container>
           <MotionReveal>
-            <div className="grid gap-12 border-t border-ink/10 pt-16 md:grid-cols-[1fr_auto] md:items-end">
+            <div className="grid gap-12 border-t border-paper/15 pt-16 md:grid-cols-[1fr_auto] md:items-end">
               <div>
-                <p className="label-caps text-fern mb-6">Start here</p>
-                <p className="font-display text-[clamp(2.2rem,4vw,3.8rem)] font-light leading-[1.06] text-ink">
+                <p className="label-caps text-fern-mid mb-6">Start here</p>
+                <p className="font-display text-[clamp(2.2rem,4vw,3.8rem)] font-light leading-[1.06] text-paper">
                   Ready to start with
                   <br />
                   <span className="font-display-italic">the practice?</span>
                 </p>
-                <p className="mt-5 text-[0.92rem] leading-7 text-ink/48 max-w-sm">
+                <p className="mt-5 text-[0.92rem] leading-7 text-paper/52 max-w-sm">
                   Book through the practice scheduling link. For urgent or
                   emergency needs, call 911 or visit your nearest ER.
                 </p>
@@ -292,7 +290,7 @@ export default function Home() {
                   <CalendarCheck aria-hidden="true" size={15} />
                   Book a Visit
                 </ButtonLink>
-                <p className="label-caps text-ink/28">No patient account required</p>
+                <p className="label-caps text-paper/30">No patient account required</p>
               </div>
             </div>
           </MotionReveal>
