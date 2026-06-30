@@ -4,10 +4,10 @@ import { navItems } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-ink/10 bg-ink text-paper">
-      <Container className="grid gap-8 py-10 md:grid-cols-[1.3fr_1fr_1fr]">
+    <footer className="bg-ink text-paper">
+      <Container className="grid gap-10 py-14 md:grid-cols-[1.25fr_0.75fr_1fr]">
         <div>
-          <p className="font-display text-2xl font-semibold">
+          <p className="font-display text-3xl font-semibold">
             Premier NP Care
           </p>
           <p className="mt-3 max-w-md leading-7 text-paper/78">
@@ -38,9 +38,12 @@ export function Footer() {
             <br />
             [PLACEHOLDER] Hours
           </address>
+          <p className="mt-5 border-l border-marigold pl-4 text-sm leading-6 text-paper/70">
+            This website is informational only and does not collect patient
+            records.
+          </p>
         </div>
       </Container>
     </footer>
   );
 }
-

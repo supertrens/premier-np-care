@@ -10,7 +10,7 @@ import {
 
 export const navItems = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/about", label: "Provider" },
   { href: "/services", label: "Services" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/contact", label: "Contact" },
@@ -19,24 +19,28 @@ export const navItems = [
 export const services = [
   {
     title: "[PLACEHOLDER] Everyday Primary Care",
+    eyebrow: "Common concerns",
     description:
-      "[PLACEHOLDER] Support for common concerns, medication questions, follow-up visits, and practical care planning.",
+      "[PLACEHOLDER] Thoughtful support for common concerns, medication questions, follow-up visits, and practical care planning.",
     icon: Stethoscope,
   },
   {
     title: "[PLACEHOLDER] Women and Family Health",
+    eyebrow: "Life-stage care",
     description:
       "[PLACEHOLDER] Thoughtful visits for prevention, wellness conversations, and family-centered health needs.",
     icon: HeartPulse,
   },
   {
     title: "[PLACEHOLDER] Chronic Condition Support",
+    eyebrow: "Ongoing guidance",
     description:
       "[PLACEHOLDER] Ongoing guidance for stable conditions, lifestyle goals, and coordinating next steps when more care is needed.",
     icon: ShieldCheck,
   },
   {
     title: "[PLACEHOLDER] Telehealth Check-ins",
+    eyebrow: "Accessible visits",
     description:
       "[PLACEHOLDER] Convenient virtual visits for patients who want clear answers without losing the personal feel of care.",
     icon: MessagesSquare,
@@ -65,9 +69,9 @@ export const howItWorksSteps = [
 ];
 
 export const credibilityPoints = [
-  "[PLACEHOLDER] Board-certified Nurse Practitioner credentials and training details.",
-  "[PLACEHOLDER] Years of clinical experience caring for patients across life stages.",
-  "[PLACEHOLDER] A care style built around listening first and explaining next steps clearly.",
+  "[PLACEHOLDER] Board-certified Nurse Practitioner credentials and training details, stated plainly for patients.",
+  "[PLACEHOLDER] Clinical experience translated into assessment, education, and clear next steps.",
+  "[PLACEHOLDER] Telehealth-affiliated medical care with appropriate referral guidance when in-person care is needed.",
 ];
 
 export const patientFit = [
@@ -75,4 +79,3 @@ export const patientFit = [
   "[PLACEHOLDER] Busy adults and families who need convenient access without feeling rushed.",
   "[PLACEHOLDER] People who are new to telehealth and want the process explained plainly.",
 ];
-

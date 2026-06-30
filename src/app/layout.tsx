@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Newsreader, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import "./globals.css";
@@ -10,8 +10,8 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   display: "swap",
 });
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sourceSans.variable} ${fraunces.variable} h-full scroll-smooth antialiased`}
+      className={`${sourceSans.variable} ${newsreader.variable} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <a

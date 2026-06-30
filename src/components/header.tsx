@@ -7,16 +7,20 @@ import { bookingUrl } from "@/lib/config";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/95 backdrop-blur">
-      <Container className="flex min-h-20 items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/88 backdrop-blur-xl">
+      <Container className="flex min-h-16 items-center justify-between gap-4">
         <Link
-          className="font-display text-2xl font-semibold text-ink focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay"
+          className="group flex items-center gap-3 font-display text-xl font-medium text-ink focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay"
           href="/"
         >
+          <span className="h-px w-8 bg-clay" aria-hidden="true" />
           Premier NP Care
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden items-center gap-6 md:flex"
+        >
           {navItems.slice(1).map((item) => (
             <Link
               className="text-base font-semibold text-ink/78 hover:text-clay focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay"
@@ -29,7 +33,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <ButtonLink href={bookingUrl}>
+          <ButtonLink className="min-h-10 px-4 py-2" href={bookingUrl}>
             <CalendarCheck aria-hidden="true" size={19} />
             Book
           </ButtonLink>
@@ -62,4 +66,3 @@ export function Header() {
     </header>
   );
 }
-

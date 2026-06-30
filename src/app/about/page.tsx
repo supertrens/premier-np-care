@@ -1,97 +1,169 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
-import { Card } from "@/components/card";
+import {
+  ClipboardCheck,
+  FileText,
+  GraduationCap,
+  ShieldCheck,
+} from "lucide-react";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
+import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
-import { SectionHeading } from "@/components/section-heading";
 import { patientFit } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Provider",
   description:
-    "Learn about the story and care philosophy behind Premier NP Care.",
+    "Learn about the provider, clinical philosophy, and patient fit behind Premier NP Care.",
 };
+
+const credentialRows = [
+  {
+    label: "[PLACEHOLDER] Credentials",
+    value: "Board certification, licensure, and clinical training details.",
+    icon: ShieldCheck,
+  },
+  {
+    label: "[PLACEHOLDER] Training",
+    value: "Graduate program, specialty focus, and relevant clinical rotations.",
+    icon: GraduationCap,
+  },
+  {
+    label: "[PLACEHOLDER] Experience",
+    value: "Years in practice, care settings, and patient populations served.",
+    icon: ClipboardCheck,
+  },
+];
+
+const philosophyRows = [
+  {
+    title: "Assessment before assumption",
+    body: "[PLACEHOLDER] Her approach to listening, asking specific clinical questions, and understanding what is appropriate for telehealth.",
+  },
+  {
+    title: "Plain-language care plans",
+    body: "[PLACEHOLDER] How she explains findings, options, limitations, and follow-up in language patients can use.",
+  },
+  {
+    title: "Appropriate escalation",
+    body: "[PLACEHOLDER] How the practice guides patients toward urgent, emergency, specialist, or in-person care when needed.",
+  },
+];
 
 export default function AboutPage() {
   return (
     <>
-      <Section className="pt-12">
-        <Container className="grid items-center gap-10 md:grid-cols-[0.92fr_1.08fr]">
+      <PageIntro
+        aside={
+          <div className="border-y border-ink/12 py-5">
+            <p className="text-sm font-bold uppercase text-clay">
+              Provider profile
+            </p>
+            <p className="mt-3 text-lg leading-8 text-ink/74">
+              A clinical biography page for the person patients will actually
+              meet, not a generic brand story.
+            </p>
+          </div>
+        }
+        eyebrow="Provider"
+        title="[PLACEHOLDER: NP Name, Credentials]"
+      >
+        <p>
+          Premier NP Care is a Nurse Practitioner-led medical practice. This
+          page should establish training, scope, clinical judgment, and the care
+          philosophy behind each visit.
+        </p>
+      </PageIntro>
+
+      <Section className="py-20">
+        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <MotionReveal>
-            <div className="overflow-hidden rounded-[8px] border border-ink/12 bg-mist p-4 shadow-[0_24px_60px_rgba(36,49,45,0.12)]">
-              <Image
-                alt="[PLACEHOLDER] Provider headshot placeholder"
-                className="aspect-[4/5] w-full rounded-[8px] object-cover"
-                height={1200}
-                priority
-                src="/provider-placeholder.png"
-                width={960}
-              />
+            <div className="border-y border-ink/12 py-6">
+              <div className="overflow-hidden rounded-[8px] border border-ink/12 bg-mist p-3">
+                <Image
+                  alt="[PLACEHOLDER] Provider headshot placeholder"
+                  className="aspect-[4/5] w-full rounded-[6px] object-cover saturate-[0.78]"
+                  height={1200}
+                  priority
+                  src="/provider-placeholder.png"
+                  width={960}
+                />
+              </div>
+              <p className="mt-4 text-sm leading-6 text-ink/62">
+                [PLACEHOLDER] Replace with the real provider headshot. Keep the
+                crop quiet, direct, and clinically professional.
+              </p>
             </div>
           </MotionReveal>
+
           <MotionReveal delay={0.1}>
-            <p className="mb-4 text-sm font-bold uppercase text-clay">
-              About the provider
-            </p>
-            <h1 className="font-display text-5xl font-semibold leading-[1.08] text-ink">
-              [PLACEHOLDER: NP Name, Credentials]
-            </h1>
-            <p className="mt-5 text-xl leading-8 text-ink/78">
-              [PLACEHOLDER] Her story: training, clinical background, and the
-              moments that shaped her belief that healthcare should feel
-              attentive, practical, and human.
-            </p>
+            <div className="border-y border-ink/12">
+              {credentialRows.map((row) => {
+                const Icon = row.icon;
+                return (
+                  <div
+                    className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[220px_1fr]"
+                    key={row.label}
+                  >
+                    <div className="flex items-center gap-3 text-sm font-bold uppercase text-clay">
+                      <Icon aria-hidden="true" size={21} />
+                      {row.label}
+                    </div>
+                    <p className="text-xl leading-8 text-ink/76">
+                      {row.value}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </MotionReveal>
         </Container>
       </Section>
 
-      <Section className="bg-mist">
-        <Container className="grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
+      <Section className="bg-mist py-20">
+        <Container className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <MotionReveal>
-            <SectionHeading
-              eyebrow="Philosophy"
-              title="Listening first, planning clearly."
-            />
+            <p className="text-sm font-bold uppercase text-clay">
+              Clinical philosophy
+            </p>
+            <h2 className="mt-5 font-display text-6xl font-medium leading-[0.98] text-ink">
+              Medical care should feel clear, not vague.
+            </h2>
           </MotionReveal>
-          <MotionReveal delay={0.1}>
-            <div className="space-y-5 text-lg leading-8 text-ink/78">
-              <p>
-                [PLACEHOLDER] Why she started this practice: to create a calmer
-                access point for patients who want thoughtful care without the
-                institutional feel of a large system.
-              </p>
-              <p>
-                [PLACEHOLDER] Her approach: ask better questions, explain the
-                reasoning behind recommendations, and make sure patients know
-                when telehealth is appropriate and when in-person care is safer.
-              </p>
-            </div>
-          </MotionReveal>
+
+          <div className="border-y border-ink/12 bg-paper/55">
+            {philosophyRows.map((row) => (
+              <MotionReveal key={row.title}>
+                <div className="grid gap-4 border-b border-ink/12 p-7 last:border-b-0 md:grid-cols-[0.72fr_1.28fr]">
+                  <h3 className="font-display text-3xl font-medium leading-tight text-ink">
+                    {row.title}
+                  </h3>
+                  <p className="leading-7 text-ink/72">{row.body}</p>
+                </div>
+              </MotionReveal>
+            ))}
+          </div>
         </Container>
       </Section>
 
-      <Section>
-        <Container>
+      <Section className="py-20">
+        <Container className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <MotionReveal>
-            <SectionHeading
-              description="This copy is intentionally marked as placeholder until the real kickoff interview gives it a personal voice."
-              eyebrow="Built for"
-              title="Patients who want access without feeling anonymous."
-            />
+            <div className="flex items-center gap-3 text-clay">
+              <FileText aria-hidden="true" size={24} />
+              <p className="text-sm font-bold uppercase">Built for</p>
+            </div>
+            <h2 className="mt-5 font-display text-5xl font-medium leading-[1.02] text-ink">
+              Patients who want access without losing clinical judgment.
+            </h2>
           </MotionReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="border-y border-ink/12">
             {patientFit.map((item) => (
               <MotionReveal key={item}>
-                <Card className="h-full">
-                  <CheckCircle2
-                    aria-hidden="true"
-                    className="text-clay"
-                    size={26}
-                  />
-                  <p className="mt-5 leading-7 text-ink/78">{item}</p>
-                </Card>
+                <div className="border-b border-ink/12 py-6 last:border-b-0">
+                  <p className="text-lg leading-8 text-ink/76">{item}</p>
+                </div>
               </MotionReveal>
             ))}
           </div>
@@ -100,4 +172,3 @@ export default function AboutPage() {
     </>
   );
 }
-

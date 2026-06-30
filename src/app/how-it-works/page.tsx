@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { CalendarCheck } from "lucide-react";
 import { ButtonLink } from "@/components/button";
-import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
+import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
-import { SectionHeading } from "@/components/section-heading";
 import { bookingUrl } from "@/lib/config";
 import { howItWorksSteps } from "@/lib/content";
 
@@ -15,40 +14,65 @@ export const metadata: Metadata = {
     "Understand the simple Book, Consult, Get Care process for Premier NP Care.",
 };
 
+const patientReassurance = [
+  {
+    title: "Before the visit",
+    body: "[PLACEHOLDER] The existing telehealth system provides any required visit instructions. This website does not collect intake forms or store medical records.",
+  },
+  {
+    title: "During the visit",
+    body: "[PLACEHOLDER] Your provider listens, clarifies the concern, discusses appropriate options, and explains when in-person or urgent care is the safer path.",
+  },
+  {
+    title: "After the visit",
+    body: "[PLACEHOLDER] Follow-up details are handled through the practice’s established systems.",
+  },
+];
+
 export default function HowItWorksPage() {
   return (
     <>
-      <Section className="pt-12">
-        <Container>
-          <MotionReveal>
-            <h1 className="font-display text-5xl font-semibold leading-[1.08] text-ink">
-              How It Works
-            </h1>
-            <p className="mt-5 max-w-3xl text-xl leading-8 text-ink/78">
-              Telehealth should not feel like a maze. Premier NP Care keeps the
-              public website simple and sends scheduling and visit details
-              through the practice platform.
-            </p>
-          </MotionReveal>
-        </Container>
-      </Section>
+      <PageIntro
+        aside={
+          <div className="border-l border-clay pl-5 leading-7 text-ink/76">
+            A simple public path: book through the scheduling link, meet through
+            the practice platform, and receive next steps through established
+            systems.
+          </div>
+        }
+        eyebrow="How it works"
+        title="A calm path into care."
+      >
+        <p>
+          Telehealth should not feel like a maze. Premier NP Care keeps the
+          website simple and sends scheduling and visit details through the
+          practice platform.
+        </p>
+      </PageIntro>
 
-      <Section className="bg-mist">
+      <Section className="py-20">
         <Container>
-          <div className="grid gap-5 md:grid-cols-3">
-            {howItWorksSteps.map((step) => {
+          <div className="border-y border-ink/12">
+            {howItWorksSteps.map((step, index) => {
               const Icon = step.icon;
               return (
                 <MotionReveal key={step.title}>
-                  <Card className="h-full bg-paper">
-                    <Icon aria-hidden="true" className="text-clay" size={32} />
-                    <h2 className="mt-5 font-display text-3xl font-semibold text-ink">
-                      {step.title}
-                    </h2>
-                    <p className="mt-4 leading-7 text-ink/76">
-                      {step.description}
-                    </p>
-                  </Card>
+                  <div className="grid gap-6 border-b border-ink/12 py-10 last:border-b-0 md:grid-cols-[180px_1fr] md:items-start">
+                    <div className="flex items-center gap-4 text-clay">
+                      <span className="font-display text-6xl">
+                        0{index + 1}
+                      </span>
+                      <Icon aria-hidden="true" size={28} />
+                    </div>
+                    <div className="max-w-3xl">
+                      <h2 className="font-display text-5xl font-semibold leading-tight text-ink">
+                        {step.title}
+                      </h2>
+                      <p className="mt-4 text-xl leading-8 text-ink/74">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
                 </MotionReveal>
               );
             })}
@@ -56,39 +80,35 @@ export default function HowItWorksPage() {
         </Container>
       </Section>
 
-      <Section>
-        <Container className="grid gap-8 md:grid-cols-[0.9fr_1.1fr]">
+      <Section className="bg-mist py-20">
+        <Container className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
           <MotionReveal>
-            <SectionHeading
-              eyebrow="New to telehealth"
-              title="You will know what happens next."
-            />
+            <p className="text-sm font-bold uppercase text-clay">
+              New to telehealth
+            </p>
+            <h2 className="mt-5 font-display text-5xl font-semibold leading-[1.05] text-ink">
+              The process should feel legible.
+            </h2>
           </MotionReveal>
-          <MotionReveal delay={0.1}>
-            <div className="space-y-5 text-lg leading-8 text-ink/78">
-              <p>
-                [PLACEHOLDER] Before the appointment, the existing telehealth
-                system will provide any required visit instructions. This
-                website does not collect intake forms or store medical records.
-              </p>
-              <p>
-                [PLACEHOLDER] During the visit, your provider will listen,
-                clarify the reason for the visit, discuss appropriate options,
-                and explain when in-person or urgent care is the safer path.
-              </p>
-              <p>
-                [PLACEHOLDER] Afterward, follow-up details are handled through
-                the practice’s established systems.
-              </p>
-            </div>
-          </MotionReveal>
+          <div className="rounded-[8px] border border-ink/12 bg-paper">
+            {patientReassurance.map((item) => (
+              <MotionReveal key={item.title}>
+                <div className="border-b border-ink/12 p-6 last:border-b-0">
+                  <h3 className="font-display text-3xl font-semibold text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 leading-7 text-ink/76">{item.body}</p>
+                </div>
+              </MotionReveal>
+            ))}
+          </div>
         </Container>
       </Section>
 
       <Section className="bg-ink text-paper">
-        <Container className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <h2 className="font-display text-3xl font-semibold">
+            <h2 className="font-display text-4xl font-semibold">
               Start with one simple step.
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/78">
@@ -105,4 +125,3 @@ export default function HowItWorksPage() {
     </>
   );
 }
-

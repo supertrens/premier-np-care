@@ -8,14 +8,14 @@
 @theme inline {
   --color-background: #f7f1e8;
   --color-foreground: #24312d;
-  --color-ink: #24312d;
+  --color-ink: #17211d;
   --color-paper: #f7f1e8;
-  --color-sage: #8fa99a;
-  --color-clay: #c98264;
-  --color-marigold: #e7b85a;
-  --color-mist: #e8efea;
+  --color-sage: #6f8276;
+  --color-clay: #b9765d;
+  --color-marigold: #d8ad58;
+  --color-mist: #e8efe9;
   --font-sans: "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", "Fraunces Fallback", Georgia, serif;
+  --font-display: "Newsreader", "Newsreader Fallback", Georgia, serif;
 }
 
 * {
@@ -39,11 +39,24 @@ a {
 }
 
 .font-display {
-  font-family: var(--font-fraunces), "Fraunces", Georgia, serif;
+  font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
 }
 
 .nav-details summary::-webkit-details-marker {
   display: none;
+}
+
+.care-rule {
+  background-image: linear-gradient(to right, rgba(23, 33, 29, 0.12) 1px, transparent 1px);
+  background-size: 44px 1px;
+}
+
+.soft-underline {
+  text-decoration-line: underline;
+  text-decoration-color: #d8ad58;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.05em;
+  text-decoration-skip-ink: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,7 +6,7 @@ import type {
 } from "react";
 import { cn } from "@/components/utils";
 
-type ButtonVariant = "primary" | "secondary" | "quiet";
+type ButtonVariant = "primary" | "secondary" | "quiet" | "ink";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
@@ -15,6 +15,7 @@ const variants: Record<ButtonVariant, string> = {
     "border border-ink/20 bg-paper text-ink hover:border-clay hover:bg-mist",
   quiet:
     "border border-transparent bg-transparent text-ink underline hover:text-clay",
+  ink: "border border-ink bg-ink text-paper shadow-[0_14px_34px_rgba(36,49,45,0.18)] hover:bg-clay hover:border-clay",
 };
 
 const baseClasses =
@@ -85,4 +86,3 @@ export function ButtonLink({
     </Link>
   );
 }
-

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/button";
-import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
+import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
-import { SectionHeading } from "@/components/section-heading";
 import { services } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -38,44 +37,51 @@ const serviceDetails = [
 export default function ServicesPage() {
   return (
     <>
-      <Section className="pt-12">
-        <Container>
-          <MotionReveal>
-            <h1 className="font-display text-5xl font-semibold leading-[1.08] text-ink">
-              Services
-            </h1>
-            <p className="mt-5 max-w-3xl text-xl leading-8 text-ink/78">
-              [PLACEHOLDER] Clear, practical visit options for patients seeking
-              Nurse Practitioner-led care through a telehealth-affiliated
-              practice.
+      <PageIntro
+        aside={
+          <div className="rounded-[8px] border border-ink/12 bg-mist p-5">
+            <p className="text-sm font-bold uppercase text-clay">
+              [PLACEHOLDER] Scope note
             </p>
-          </MotionReveal>
-        </Container>
-      </Section>
+            <p className="mt-3 leading-7 text-ink/76">
+              Final clinical scope, exclusions, and state/service-area language
+              should be confirmed before launch.
+            </p>
+          </div>
+        }
+        eyebrow="Services"
+        title="Focused care, described plainly."
+      >
+        <p>
+          [PLACEHOLDER] Practical visit options for patients seeking Nurse
+          Practitioner-led care through a telehealth-affiliated practice.
+        </p>
+      </PageIntro>
 
-      <Section className="bg-mist">
+      <Section className="py-20">
         <Container>
-          <MotionReveal>
-            <SectionHeading
-              description="Each area below is intentionally marked for replacement with final service copy."
-              eyebrow="Care areas"
-              title="A concise menu of realistic patient needs."
-            />
-          </MotionReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {services.map((service) => {
+          <div className="border-y border-ink/12">
+            {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <MotionReveal key={service.title}>
-                  <Card className="h-full bg-paper">
-                    <Icon aria-hidden="true" className="text-clay" size={30} />
-                    <h2 className="mt-5 font-display text-2xl font-semibold text-ink">
-                      {service.title}
-                    </h2>
-                    <p className="mt-3 leading-7 text-ink/76">
+                  <div className="grid gap-6 border-b border-ink/12 py-10 last:border-b-0 md:grid-cols-[120px_1fr_0.9fr]">
+                    <div className="font-display text-5xl text-clay">
+                      0{index + 1}
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-3 text-sm font-bold uppercase text-clay">
+                        <Icon aria-hidden="true" size={22} />
+                        {service.eyebrow}
+                      </div>
+                      <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-ink">
+                        {service.title}
+                      </h2>
+                    </div>
+                    <p className="text-lg leading-8 text-ink/74">
                       {service.description}
                     </p>
-                  </Card>
+                  </div>
                 </MotionReveal>
               );
             })}
@@ -83,15 +89,15 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section>
-        <Container className="grid gap-5 md:grid-cols-2">
+      <Section className="bg-mist py-20">
+        <Container className="grid gap-6 lg:grid-cols-2">
           {serviceDetails.map((group) => (
             <MotionReveal key={group.heading}>
-              <Card className="h-full">
-                <h2 className="font-display text-3xl font-semibold text-ink">
+              <div className="h-full rounded-[8px] border border-ink/12 bg-paper p-7">
+                <h2 className="font-display text-4xl font-semibold text-ink">
                   {group.heading}
                 </h2>
-                <ul className="mt-6 grid gap-4">
+                <ul className="mt-8 grid gap-4">
                   {group.items.map((item) => (
                     <li className="flex gap-3 leading-7 text-ink/78" key={item}>
                       <ArrowRight
@@ -103,16 +109,16 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-              </Card>
+              </div>
             </MotionReveal>
           ))}
         </Container>
       </Section>
 
       <Section className="bg-ink text-paper">
-        <Container className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <h2 className="font-display text-3xl font-semibold">
+            <h2 className="font-display text-4xl font-semibold">
               Not sure where your concern fits?
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/78">
@@ -126,4 +132,3 @@ export default function ServicesPage() {
     </>
   );
 }
-
