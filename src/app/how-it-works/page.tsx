@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CalendarCheck, ShieldCheck } from "lucide-react";
+import { CalendarCheck, CheckCircle2, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
@@ -34,8 +34,8 @@ export default function HowItWorksPage() {
     <>
       <PageIntro
         aside={
-          <div className="border-y border-ink/12 py-5">
-            <p className="label-caps text-fern">No portal here</p>
+          <div className="rounded-[22px] border border-line bg-paper/78 p-5 shadow-[0_16px_50px_rgba(7,28,42,0.06)]">
+            <p className="label-caps text-cobalt">No portal here</p>
             <p className="mt-3 leading-7 text-ink/74">
               This public website explains the path into care. Scheduling and
               patient information stay in the existing practice platform.
@@ -43,71 +43,80 @@ export default function HowItWorksPage() {
           </div>
         }
         eyebrow="How it works"
-        title="A practical path from booking to care plan."
+        title="A polished path from booking to care plan."
       >
         <p>
           Telehealth should feel clear before the visit starts. Premier NP Care
-          separates the public website from the systems that handle scheduling,
+          separates this public website from the systems that handle scheduling,
           visits, and patient information.
         </p>
       </PageIntro>
 
-      <Section className="py-20">
+      <Section className="bg-paper py-24">
         <Container>
-          <div className="border-y border-ink/12">
-            {patientJourney.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <MotionReveal key={step.title}>
-                  <div className="grid gap-6 border-b border-ink/12 py-9 last:border-b-0 md:grid-cols-[160px_1fr] md:items-start">
-                    <div className="flex items-center gap-4 text-fern">
-                      <span className="font-display text-5xl font-medium">
-                        {index + 1}
-                      </span>
-                      <Icon aria-hidden="true" size={26} />
-                    </div>
-                    <div className="max-w-3xl">
-                      <h2 className="font-display text-4xl font-medium leading-tight text-ink">
-                        {step.title}
-                      </h2>
-                      <p className="mt-4 text-xl leading-8 text-ink/74">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </MotionReveal>
-              );
-            })}
+          <div className="relative">
+            <div
+              className="absolute left-6 top-10 hidden h-[calc(100%-80px)] w-px bg-[linear-gradient(#0A4D8F,#12AEC4,#C9EEF3)] md:block"
+              aria-hidden="true"
+            />
+            <div className="grid gap-5">
+              {patientJourney.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <MotionReveal key={step.title}>
+                    <article className="relative grid gap-5 rounded-[24px] border border-line bg-porcelain p-6 shadow-[0_18px_55px_rgba(7,28,42,0.06)] md:grid-cols-[120px_1fr] md:items-start">
+                      <div className="flex items-center gap-4 text-cobalt">
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-deep-navy font-display text-2xl font-medium text-paper">
+                          {index + 1}
+                        </span>
+                        <Icon aria-hidden="true" size={24} />
+                      </div>
+                      <div className="max-w-3xl">
+                        <h2 className="font-display text-4xl font-medium leading-tight text-ink">
+                          {step.title}
+                        </h2>
+                        <p className="mt-4 text-lg leading-8 text-ink/74">
+                          {step.description}
+                        </p>
+                      </div>
+                    </article>
+                  </MotionReveal>
+                );
+              })}
+            </div>
           </div>
         </Container>
       </Section>
 
-      <Section className="bg-mist py-20">
+      <Section className="bg-mist py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
-            <p className="label-caps text-fern">New to telehealth</p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink">
-              The process should feel legible, not hidden behind a portal.
+            <p className="label-caps text-cobalt">New to telehealth</p>
+            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              The process should feel legible before anything is submitted.
             </h2>
           </MotionReveal>
-          <div className="border-y border-ink/12">
+          <div className="grid gap-4">
             {reassuranceRows.map((item) => (
               <MotionReveal key={item.label}>
-                <div className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[230px_1fr]">
-                  <p className="label-caps text-fern">{item.label}</p>
+                <article className="grid gap-4 rounded-[22px] border border-line bg-paper p-6 shadow-[0_16px_50px_rgba(7,28,42,0.05)] md:grid-cols-[230px_1fr]">
+                  <div className="flex items-center gap-3 text-cobalt">
+                    <CheckCircle2 aria-hidden="true" size={21} />
+                    <p className="label-caps">{item.label}</p>
+                  </div>
                   <p className="leading-7 text-ink/74">{item.body}</p>
-                </div>
+                </article>
               </MotionReveal>
             ))}
           </div>
         </Container>
       </Section>
 
-      <Section className="bg-linen py-20">
+      <Section className="bg-porcelain py-20">
         <Container>
           <MotionReveal>
-            <div className="grid gap-8 border-y border-ink/12 py-10 md:grid-cols-[0.64fr_1.36fr] md:items-center">
-              <div className="flex items-center gap-3 text-clay">
+            <div className="grid gap-8 rounded-[28px] border border-line bg-paper p-7 shadow-[0_22px_70px_rgba(7,28,42,0.08)] md:grid-cols-[0.64fr_1.36fr] md:items-center">
+              <div className="flex items-center gap-3 text-cobalt">
                 <ShieldCheck aria-hidden="true" size={24} />
                 <p className="label-caps">Important</p>
               </div>
@@ -120,7 +129,7 @@ export default function HowItWorksPage() {
         </Container>
       </Section>
 
-      <Section className="bg-ink text-paper">
+      <Section className="bg-deep-navy text-paper">
         <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <h2 className="font-display text-4xl font-medium">
@@ -131,7 +140,7 @@ export default function HowItWorksPage() {
               scheduling link once the final URL is configured.
             </p>
           </div>
-          <ButtonLink href={bookingUrl}>
+          <ButtonLink href={bookingUrl} variant="mist">
             <CalendarCheck aria-hidden="true" size={20} />
             Book an Appointment
           </ButtonLink>

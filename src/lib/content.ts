@@ -22,23 +22,23 @@ export const navItems = [
 export const services = [
   {
     title: "[PLACEHOLDER] Everyday Primary Care",
-    eyebrow: "Common concerns",
+    eyebrow: "Focused concerns",
     description:
-      "[PLACEHOLDER] Thoughtful support for common concerns, medication questions, follow-up visits, and practical care planning.",
+      "[PLACEHOLDER] Focused support for common concerns, medication questions, follow-up needs, and practical care planning.",
     icon: Stethoscope,
   },
   {
     title: "[PLACEHOLDER] Women and Family Health",
     eyebrow: "Life-stage care",
     description:
-      "[PLACEHOLDER] Thoughtful visits for prevention, wellness conversations, and family-centered health needs.",
+      "[PLACEHOLDER] Preventive conversations, wellness guidance, and family-centered support within the practice scope.",
     icon: HeartPulse,
   },
   {
     title: "[PLACEHOLDER] Chronic Condition Support",
-    eyebrow: "Ongoing guidance",
+    eyebrow: "Steady follow-up",
     description:
-      "[PLACEHOLDER] Ongoing guidance for stable conditions, lifestyle goals, and coordinating next steps when more care is needed.",
+      "[PLACEHOLDER] Check-ins for stable conditions, lifestyle goals, and coordination when more care is needed.",
     icon: ShieldCheck,
   },
   {
@@ -57,11 +57,11 @@ export const practiceFacts = [
   },
   {
     label: "[PLACEHOLDER] New patient status",
-    value: "Accepting status, booking availability, and launch timing.",
+    value: "[PLACEHOLDER] Accepting status, booking availability, and launch timing.",
   },
   {
     label: "[PLACEHOLDER] Service area",
-    value: "State, county, or eligibility language for telehealth care.",
+    value: "[PLACEHOLDER] State, county, or eligibility language for telehealth care.",
   },
   {
     label: "Visit platform",
@@ -72,22 +72,22 @@ export const practiceFacts = [
 export const practiceAtAGlance = [
   {
     title: "Provider-led",
-    body: "Patients know who is responsible for the visit, the explanation, and the next step.",
+    body: "Patients know who is responsible for the visit, the explanation, and the care plan.",
     icon: UserRoundCheck,
   },
   {
     title: "Defined scope",
-    body: "Services are explained plainly, including when telehealth is not the right setting.",
+    body: "Services are framed clearly, including when virtual care is not the safest setting.",
     icon: ClipboardCheck,
   },
   {
-    title: "Informational site",
-    body: "No patient portal, account, scheduling database, or EHR integration is built here.",
+    title: "Safe boundaries",
+    body: "Urgent symptoms, in-person needs, and patient data boundaries are stated plainly.",
     icon: ShieldCheck,
   },
   {
     title: "Clear access",
-    body: "Booking connects to the practice scheduling link when the final URL is configured.",
+    body: "Booking connects to the practice scheduling link once the final URL is configured.",
     icon: CalendarCheck,
   },
 ];
@@ -117,7 +117,7 @@ export const patientJourney = [
   {
     title: "Book",
     description:
-      "Use the practice scheduling link. This website does not create an account or store appointment data.",
+      "Use the practice scheduling link to choose a visit time. This website does not create an account or store appointment data.",
     icon: CalendarCheck,
   },
   {
@@ -129,11 +129,11 @@ export const patientJourney = [
   {
     title: "Consult",
     description:
-      "Meet with [PLACEHOLDER: NP Name, Credentials] for a focused visit through the established telehealth system.",
+      "Meet with [PLACEHOLDER: NP Name, Credentials] for a focused visit through the established telehealth platform.",
     icon: UserRoundCheck,
   },
   {
-    title: "Receive a plan",
+    title: "Care plan",
     description:
       "[PLACEHOLDER] Leave with plain-language next steps, appropriate follow-up guidance, and safety instructions.",
     icon: ClipboardCheck,
@@ -147,9 +147,9 @@ export const patientJourney = [
 ];
 
 export const patientFit = [
-  "[PLACEHOLDER] Patients who want a provider who remembers the context behind the chart.",
+  "[PLACEHOLDER] Patients who want a direct provider relationship rather than a faceless portal experience.",
   "[PLACEHOLDER] Busy adults and families who need convenient access without feeling rushed.",
-  "[PLACEHOLDER] People who are new to telehealth and want the process explained plainly.",
+  "[PLACEHOLDER] People who are new to telehealth and want the process explained plainly before booking.",
 ];
 
 export const providerStandards = [

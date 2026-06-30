@@ -6,28 +6,37 @@ import type {
 } from "react";
 import { cn } from "@/components/utils";
 
-type ButtonVariant = "primary" | "fern" | "secondary" | "ghost" | "quiet" | "ink";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "quiet"
+  | "ink"
+  | "cobalt"
+  | "mist";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border border-clay bg-clay text-paper hover:border-ink hover:bg-ink",
-  fern:
-    "border border-fern bg-fern text-paper hover:border-ink hover:bg-ink",
+    "border border-cobalt bg-cobalt text-paper shadow-[0_16px_34px_rgba(10,77,143,0.22)] hover:border-deep-navy hover:bg-deep-navy",
   secondary:
-    "border border-ink/18 bg-paper text-ink hover:border-fern hover:bg-mist",
+    "border border-line bg-paper text-ink hover:border-cyan hover:bg-mist",
   ghost:
-    "min-h-0 rounded-none border-b border-ink/30 px-0 py-0 text-ink hover:border-fern hover:text-fern",
+    "min-h-0 rounded-none border-b border-ink/28 px-0 py-0 text-ink hover:border-cobalt hover:text-cobalt",
   quiet:
     "min-h-0 rounded-none border-b border-transparent px-0 py-0 text-ink/58 hover:border-ink/25 hover:text-ink",
   ink:
-    "border border-ink bg-ink text-paper hover:border-fern hover:bg-fern",
+    "border border-deep-navy bg-deep-navy text-paper hover:border-cobalt hover:bg-cobalt",
+  cobalt:
+    "border border-cobalt bg-cobalt text-paper shadow-[0_16px_34px_rgba(10,77,143,0.22)] hover:border-deep-navy hover:bg-deep-navy",
+  mist:
+    "border border-pale-mist bg-mist text-ink hover:border-cyan hover:bg-paper",
 };
 
 const baseClasses =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-[8px] px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fern disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-[10px] px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan disabled:pointer-events-none disabled:opacity-60";
 
 export function buttonClasses({
-  variant = "fern",
+  variant = "cobalt",
   className,
 }: {
   variant?: ButtonVariant;
@@ -42,7 +51,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({
   className,
-  variant = "fern",
+  variant = "cobalt",
   type = "button",
   ...props
 }: ButtonProps) {
@@ -65,7 +74,7 @@ export function ButtonLink({
   children,
   className,
   href,
-  variant = "fern",
+  variant = "cobalt",
   ...props
 }: ButtonLinkProps) {
   const isExternal = href.startsWith("http");

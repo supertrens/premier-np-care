@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone, TriangleAlert } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldCheck, TriangleAlert } from "lucide-react";
 import { BookingEmbedSlot } from "@/components/booking-embed-slot";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Container } from "@/components/container";
@@ -36,8 +36,8 @@ export default function ContactPage() {
     <>
       <PageIntro
         aside={
-          <div className="border-y border-ink/12 py-5">
-            <div className="flex items-center gap-3 text-clay">
+          <div className="rounded-[22px] border border-cyan/25 bg-paper/82 p-5 shadow-[0_16px_50px_rgba(7,28,42,0.06)]">
+            <div className="flex items-center gap-3 text-warn">
               <TriangleAlert aria-hidden="true" size={22} />
               <p className="label-caps">Important</p>
             </div>
@@ -48,20 +48,21 @@ export default function ContactPage() {
           </div>
         }
         eyebrow="Contact"
-        title="Reach the practice without turning this site into a portal."
+        title="Booking and general questions, clearly separated."
       >
         <p>
-          Send a general question or use the booking section. Scheduling and
-          patient data remain in the practice&apos;s established systems.
+          Use the booking section to start care or send a general question.
+          Scheduling and patient data remain in the practice&apos;s established
+          systems.
         </p>
       </PageIntro>
 
-      <Section className="py-20">
-        <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <Section className="bg-paper py-24">
+        <Container className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
           <MotionReveal>
             <div>
-              <p className="label-caps text-fern">Booking</p>
-              <h2 className="mt-5 max-w-lg font-display text-5xl font-medium leading-[1.04] text-ink">
+              <p className="label-caps text-cobalt">Booking</p>
+              <h2 className="mt-5 max-w-lg font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
                 Start with the scheduling link.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
@@ -77,12 +78,12 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section className="bg-mist py-20">
-        <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <Section className="bg-mist py-24">
+        <Container className="grid gap-12 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
           <MotionReveal>
             <div>
-              <p className="label-caps text-fern">General inquiries</p>
-              <h2 className="mt-5 max-w-lg font-display text-5xl font-medium leading-[1.04] text-ink">
+              <p className="label-caps text-cobalt">General inquiries</p>
+              <h2 className="mt-5 max-w-lg font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
                 A contact form for non-urgent questions.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
@@ -93,36 +94,39 @@ export default function ContactPage() {
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <div className="border-y border-ink/12 bg-paper px-5 py-7 md:px-7">
+            <div className="rounded-[24px] border border-line bg-paper p-6 shadow-[0_22px_70px_rgba(7,28,42,0.08)]">
               <ContactForm />
             </div>
           </MotionReveal>
         </Container>
       </Section>
 
-      <Section className="py-20">
+      <Section className="bg-paper py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
-            <p className="label-caps text-fern">Practice info</p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink">
-              Contact details stay clearly separated from patient data.
+            <div className="flex items-center gap-3 text-cobalt">
+              <ShieldCheck aria-hidden="true" size={24} />
+              <p className="label-caps">Practice info</p>
+            </div>
+            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              Contact details stay separate from patient records.
             </h2>
           </MotionReveal>
 
-          <div className="border-y border-ink/12">
+          <div className="grid gap-4">
             {contactRows.map((row) => {
               const Icon = row.icon;
               return (
                 <MotionReveal key={row.label}>
-                  <div className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[220px_1fr]">
-                    <div className="flex items-center gap-3 text-fern">
+                  <article className="grid gap-4 rounded-[22px] border border-line bg-porcelain p-6 md:grid-cols-[220px_1fr]">
+                    <div className="flex items-center gap-3 text-cobalt">
                       <Icon aria-hidden="true" size={21} />
                       <p className="label-caps">{row.label}</p>
                     </div>
                     <p className="text-xl leading-8 text-ink/76">
                       {row.value}
                     </p>
-                  </div>
+                  </article>
                 </MotionReveal>
               );
             })}

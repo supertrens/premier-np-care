@@ -4,28 +4,28 @@ import { navItems } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="border-t border-ink/10 bg-paper">
+    <footer className="border-t border-line bg-deep-navy text-paper">
       <Container className="py-16">
         <div className="grid gap-12 md:grid-cols-[1.5fr_0.8fr_0.9fr_0.9fr]">
           <div>
-            <p className="font-display text-3xl font-medium text-ink">
+            <p className="font-display text-3xl font-medium text-paper">
               Premier NP Care
             </p>
-            <p className="mt-4 max-w-sm leading-7 text-ink/62">
+            <p className="mt-4 max-w-sm leading-7 text-paper/68">
               Nurse Practitioner-led care with telehealth access.{" "}
               [PLACEHOLDER: service area].
             </p>
-            <p className="mt-6 border-l-2 border-clay pl-4 text-sm leading-6 text-ink/58">
+            <p className="mt-6 rounded-[16px] border border-cyan/25 bg-white/8 px-4 py-3 text-sm leading-6 text-paper/72">
               Informational only. Not a patient portal.
             </p>
           </div>
 
           <div>
-            <p className="label-caps text-fern">Navigate</p>
+            <p className="label-caps text-aqua">Navigate</p>
             <nav aria-label="Footer navigation" className="mt-5 grid gap-3">
               {navItems.map((item) => (
                 <Link
-                  className="text-base text-ink/62 transition-colors hover:text-fern focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fern"
+                  className="text-base text-paper/64 transition-colors hover:text-paper focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
                   href={item.href}
                   key={item.href}
                 >
@@ -36,27 +36,27 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="label-caps text-fern">Contact</p>
+            <p className="label-caps text-aqua">Contact</p>
             <address className="mt-5 grid gap-3 not-italic">
               {["[PLACEHOLDER] Phone", "[PLACEHOLDER] Email", "[PLACEHOLDER] Hours"].map((item) => (
-                <span key={item} className="text-base text-ink/62">{item}</span>
+                <span key={item} className="text-base text-paper/64">{item}</span>
               ))}
             </address>
           </div>
 
           <div>
-            <p className="label-caps text-fern">Hours</p>
-            <p className="mt-5 leading-7 text-ink/62">
+            <p className="label-caps text-aqua">Hours</p>
+            <p className="mt-5 leading-7 text-paper/64">
               [PLACEHOLDER: Appointment availability and telehealth hours.]
             </p>
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-ink/8 pt-7 sm:flex-row sm:items-center">
-          <p className="text-sm text-ink/44">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-white/12 pt-7 sm:flex-row sm:items-center">
+          <p className="text-sm text-paper/48">
             © {new Date().getFullYear()} Premier NP Care
           </p>
-          <p className="text-sm text-ink/44">
+          <p className="text-sm text-paper/48">
             For emergencies, call 911
           </p>
         </div>

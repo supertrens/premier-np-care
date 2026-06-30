@@ -61,7 +61,7 @@ export function ContactForm() {
         </label>
         <input
           autoComplete="name"
-          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
+          className="min-h-12 rounded-[12px] border border-line bg-porcelain px-4 py-3 text-base text-ink outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           id="name"
           name="name"
           required
@@ -74,7 +74,7 @@ export function ContactForm() {
         </label>
         <input
           autoComplete="email"
-          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
+          className="min-h-12 rounded-[12px] border border-line bg-porcelain px-4 py-3 text-base text-ink outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           id="email"
           name="email"
           required
@@ -87,7 +87,7 @@ export function ContactForm() {
         </label>
         <input
           autoComplete="tel"
-          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
+          className="min-h-12 rounded-[12px] border border-line bg-porcelain px-4 py-3 text-base text-ink outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           id="phone"
           name="phone"
           type="tel"
@@ -98,17 +98,17 @@ export function ContactForm() {
           Message
         </label>
         <textarea
-          className="min-h-36 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
+          className="min-h-36 rounded-[12px] border border-line bg-porcelain px-4 py-3 text-base text-ink outline-none focus:border-cyan focus:ring-2 focus:ring-cyan/20"
           id="message"
           name="message"
           required
         />
       </div>
-      <p className="border-l-2 border-clay bg-linen px-4 py-3 text-sm leading-6 text-ink">
+      <p className="rounded-[16px] border border-cyan/20 bg-mist px-4 py-3 text-sm leading-6 text-ink">
         Please do not include urgent concerns, medical emergencies, or sensitive
         health details in this form.
       </p>
-      <Button disabled={isSubmitting} type="submit">
+      <Button disabled={isSubmitting} type="submit" variant="cobalt">
         <Send aria-hidden="true" size={18} />
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
@@ -116,8 +116,8 @@ export function ContactForm() {
         <p
           className={
             status.type === "success"
-              ? "rounded-[8px] bg-mist p-3 font-semibold text-ink"
-              : "rounded-[8px] bg-clay/16 p-3 font-semibold text-ink"
+              ? "rounded-[12px] bg-mist p-3 font-semibold text-ink"
+              : "rounded-[12px] bg-warn/12 p-3 font-semibold text-ink"
           }
           role="status"
         >
