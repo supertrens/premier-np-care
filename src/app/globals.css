@@ -1,32 +1,38 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f0e8;
-  --foreground: #1c1c17;
+  --background: #f4ede2;
+  --foreground: #1a1f1c;
 }
 
 @theme inline {
-  --color-background: #f5ede0;
+  --color-background: #f4ede2;
   --color-foreground: #1a1f1c;
   --color-ink: #1a1f1c;
-  --color-paper: #f5ede0;
-  --color-sage: #6f8276;
+  --color-paper: #f4ede2;
+
+  /* Clinical green — primary health accent */
+  --color-fern: #3d6b57;
+  --color-fern-light: #e4eeea;
+  --color-fern-mid: #c8ddd5;
+
+  /* Warm secondary */
   --color-clay: #b87050;
   --color-marigold: #c9963e;
-  --color-mist: #e8efe9;
-  --color-mist-deep: #d8e6dc;
-  --color-stone: #ece4d6;
+
+  /* Neutrals */
+  --color-sage: #6f8276;
+  --color-mist: #e8f0ec;
+  --color-mist-deep: #d4e6db;
+  --color-stone: #ece5d8;
+
   --font-sans: "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Newsreader", "Newsreader Fallback", Georgia, serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  -webkit-font-smoothing: antialiased;
-}
+html { -webkit-font-smoothing: antialiased; }
 
 body {
   background: var(--background);
@@ -36,18 +42,15 @@ body {
 }
 
 ::selection {
-  background: #c4933a30;
-  color: #1c1c17;
+  background: rgba(61, 107, 87, 0.18);
+  color: #1a1f1c;
 }
 
-a {
-  text-underline-offset: 0.2em;
-}
+a { text-underline-offset: 0.2em; }
 
 .font-display {
   font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
 }
-
 .font-display-italic {
   font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
   font-style: italic;
@@ -60,29 +63,16 @@ a {
   text-transform: uppercase;
 }
 
-.nav-details summary::-webkit-details-marker {
-  display: none;
-}
+.nav-details summary::-webkit-details-marker { display: none; }
 
-/* Very subtle hairline */
-.hairline {
-  border-color: rgba(28, 28, 23, 0.10);
-}
-
-/* Boutique section rhythm */
-.section-space {
-  padding-top: 9rem;
-  padding-bottom: 9rem;
-}
-
-/* Ghost button */
+/* Ghost underline CTA */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-ink);
   border-bottom: 1px solid rgba(28, 28, 23, 0.28);
@@ -90,40 +80,84 @@ a {
   transition: color 0.2s, border-color 0.2s;
 }
 .btn-ghost:hover {
-  color: var(--color-clay);
-  border-color: var(--color-clay);
+  color: var(--color-fern);
+  border-color: var(--color-fern);
 }
 
-/* Slow fade-up */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Hero overlay system */
+.hero-tint {
+  background: rgba(200, 170, 130, 0.20);
+  mix-blend-mode: multiply;
 }
-
-/* Image overlay — let photo breathe */
-.hero-veil {
+.hero-fade-x {
   background: linear-gradient(
-    100deg,
-    rgba(246, 240, 232, 0.97) 0%,
-    rgba(246, 240, 232, 0.88) 35%,
-    rgba(246, 240, 232, 0.42) 60%,
-    rgba(246, 240, 232, 0.00) 100%
+    108deg,
+    rgba(244, 237, 226, 0.98) 0%,
+    rgba(244, 237, 226, 0.92) 30%,
+    rgba(244, 237, 226, 0.55) 56%,
+    rgba(244, 237, 226, 0.08) 80%,
+    transparent 100%
   );
 }
-
-/* Thin vertical rule */
-.v-rule {
-  width: 1px;
-  background: rgba(28, 28, 23, 0.14);
+.hero-fade-bottom {
+  background: linear-gradient(to top, rgba(244, 237, 226, 0.94) 0%, transparent 100%);
 }
 
-/* Soft dot for badges */
+/* Soft pulse for live indicators */
 @keyframes soft-pulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.35; }
+  50%       { opacity: 0.30; }
 }
-.soft-dot {
-  animation: soft-pulse 3s ease-in-out infinite;
+.soft-dot { animation: soft-pulse 3s ease-in-out infinite; }
+
+/* Condition tag pill */
+.condition-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(61, 107, 87, 0.22);
+  background: rgba(61, 107, 87, 0.06);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-fern);
+}
+
+/* ── Scrolling marquee ──────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,25 +6,28 @@ import type {
 } from "react";
 import { cn } from "@/components/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost" | "quiet" | "ink";
+type ButtonVariant = "primary" | "fern" | "secondary" | "ghost" | "quiet" | "ink";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
     "border border-clay bg-clay text-paper hover:bg-ink hover:border-ink",
+  fern:
+    "border border-fern bg-fern text-paper hover:bg-ink hover:border-ink",
   secondary:
-    "border border-ink/18 bg-paper text-ink hover:border-clay/50 hover:bg-mist",
+    "border border-ink/18 bg-paper text-ink hover:border-fern/50 hover:bg-mist hover:text-fern",
   ghost:
-    "border-b border-ink/30 rounded-none px-0 py-0 min-h-0 text-ink hover:text-clay hover:border-clay",
+    "border-b border-ink/30 rounded-none px-0 py-0 min-h-0 text-ink hover:text-fern hover:border-fern",
   quiet:
     "border-b border-transparent rounded-none px-0 py-0 min-h-0 text-ink/55 hover:text-ink hover:border-ink/25",
-  ink: "border border-ink bg-ink text-paper hover:bg-clay hover:border-clay",
+  ink:
+    "border border-ink bg-ink text-paper hover:bg-fern hover:border-fern",
 };
 
 const baseClasses =
-  "inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-[0.72rem] font-semibold tracking-[0.14em] uppercase transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-[0.72rem] font-semibold tracking-[0.14em] uppercase transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fern disabled:pointer-events-none disabled:opacity-60";
 
 export function buttonClasses({
-  variant = "primary",
+  variant = "fern",
   className,
 }: {
   variant?: ButtonVariant;
@@ -39,7 +42,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({
   className,
-  variant = "primary",
+  variant = "fern",
   type = "button",
   ...props
 }: ButtonProps) {
@@ -62,7 +65,7 @@ export function ButtonLink({
   children,
   className,
   href,
-  variant = "primary",
+  variant = "fern",
   ...props
 }: ButtonLinkProps) {
   const isExternal = href.startsWith("http");
@@ -70,13 +73,7 @@ export function ButtonLink({
 
   if (isExternal) {
     return (
-      <a
-        className={linkClassName}
-        href={href}
-        rel="noreferrer"
-        target="_blank"
-        {...props}
-      >
+      <a className={linkClassName} href={href} rel="noreferrer" target="_blank" {...props}>
         {children}
       </a>
     );
