@@ -61,7 +61,7 @@ export function ContactForm() {
         </label>
         <input
           autoComplete="name"
-          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-clay focus:ring-2 focus:ring-clay/30"
+          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
           id="name"
           name="name"
           required
@@ -74,7 +74,7 @@ export function ContactForm() {
         </label>
         <input
           autoComplete="email"
-          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-clay focus:ring-2 focus:ring-clay/30"
+          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
           id="email"
           name="email"
           required
@@ -87,7 +87,7 @@ export function ContactForm() {
         </label>
         <input
           autoComplete="tel"
-          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-clay focus:ring-2 focus:ring-clay/30"
+          className="min-h-12 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
           id="phone"
           name="phone"
           type="tel"
@@ -98,13 +98,13 @@ export function ContactForm() {
           Message
         </label>
         <textarea
-          className="min-h-36 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-clay focus:ring-2 focus:ring-clay/30"
+          className="min-h-36 rounded-[8px] border border-ink/18 bg-paper px-4 py-3 text-base text-ink outline-none focus:border-fern focus:ring-2 focus:ring-fern/20"
           id="message"
           name="message"
           required
         />
       </div>
-      <p className="rounded-[8px] border border-marigold/50 bg-marigold/18 p-3 text-sm leading-6 text-ink">
+      <p className="border-l-2 border-clay bg-linen px-4 py-3 text-sm leading-6 text-ink">
         Please do not include urgent concerns, medical emergencies, or sensitive
         health details in this form.
       </p>
@@ -127,4 +127,3 @@ export function ContactForm() {
     </form>
   );
 }
-

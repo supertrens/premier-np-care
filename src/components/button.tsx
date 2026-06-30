@@ -10,21 +10,21 @@ type ButtonVariant = "primary" | "fern" | "secondary" | "ghost" | "quiet" | "ink
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border border-clay bg-clay text-paper hover:bg-ink hover:border-ink",
+    "border border-clay bg-clay text-paper hover:border-ink hover:bg-ink",
   fern:
-    "border border-fern bg-fern text-paper hover:bg-ink hover:border-ink",
+    "border border-fern bg-fern text-paper hover:border-ink hover:bg-ink",
   secondary:
-    "border border-ink/18 bg-paper text-ink hover:border-fern/50 hover:bg-mist hover:text-fern",
+    "border border-ink/18 bg-paper text-ink hover:border-fern hover:bg-mist",
   ghost:
-    "border-b border-ink/30 rounded-none px-0 py-0 min-h-0 text-ink hover:text-fern hover:border-fern",
+    "min-h-0 rounded-none border-b border-ink/30 px-0 py-0 text-ink hover:border-fern hover:text-fern",
   quiet:
-    "border-b border-transparent rounded-none px-0 py-0 min-h-0 text-ink/55 hover:text-ink hover:border-ink/25",
+    "min-h-0 rounded-none border-b border-transparent px-0 py-0 text-ink/58 hover:border-ink/25 hover:text-ink",
   ink:
-    "border border-ink bg-ink text-paper hover:bg-fern hover:border-fern",
+    "border border-ink bg-ink text-paper hover:border-fern hover:bg-fern",
 };
 
 const baseClasses =
-  "inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-[0.72rem] font-semibold tracking-[0.14em] uppercase transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fern disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-[8px] px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fern disabled:pointer-events-none disabled:opacity-60";
 
 export function buttonClasses({
   variant = "fern",

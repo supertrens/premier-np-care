@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   ArrowRight,
   CalendarCheck,
-  HeartPulse,
-  Shield,
-  Stethoscope,
-  Video,
+  ClipboardCheck,
+  ShieldCheck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
@@ -15,228 +12,147 @@ import {
   HeroItem,
   MotionReveal,
 } from "@/components/motion-reveal";
+import { ProviderHeadshotSlot } from "@/components/provider-headshot-slot";
 import { Section } from "@/components/section";
 import { bookingUrl } from "@/lib/config";
 import {
-  credibilityPoints,
-  howItWorksSteps,
+  patientJourney,
+  practiceAtAGlance,
+  practiceFacts,
+  safetyBoundaries,
   services,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Personal Telehealth Care",
+  title: "Nurse Practitioner-Led Medical Practice",
   description:
-    "Premier NP Care offers Nurse Practitioner-led telehealth-affiliated care with a personal, practical approach.",
+    "Premier NP Care is a Nurse Practitioner-led medical practice offering clear, telehealth-affiliated care.",
 };
-
-const scopeItems = [
-  { label: "Primary Care", icon: Stethoscope },
-  { label: "Chronic Conditions", icon: HeartPulse },
-  { label: "Women's Health", icon: Shield },
-  { label: "Telehealth Visits", icon: Video },
-  { label: "Preventive Care", icon: HeartPulse },
-  { label: "Medication Management", icon: Shield },
-];
-
-const trustItems = [
-  { label: "Board-Certified NP", detail: "Licensed & credentialed" },
-  { label: "100% Telehealth",    detail: "No commute required" },
-  { label: "Single Provider",    detail: "You see the same face" },
-  { label: "New Patients",       detail: "Currently accepting" },
-];
 
 export default function Home() {
   return (
     <>
-      {/* ── HERO — editorial split ───────────────────────────── */}
-      <section className="overflow-hidden bg-paper">
-        <div className="mx-auto flex max-w-[1440px] flex-col lg:min-h-[calc(100vh-62px)] lg:flex-row">
+      <section className="relative overflow-hidden border-b border-ink/10 bg-paper">
+        <div className="practice-rule absolute inset-0 opacity-45" aria-hidden="true" />
+        <Container className="relative grid min-h-[680px] gap-10 py-14 md:min-h-[720px] md:py-20 lg:grid-cols-[1fr_0.78fr] lg:items-center">
+          <HeroEntrance className="max-w-4xl">
+            <HeroItem>
+              <p className="label-caps text-fern">
+                Nurse Practitioner-led medical practice
+              </p>
+            </HeroItem>
+            <HeroItem>
+              <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.02] text-ink md:text-7xl lg:text-8xl">
+                Premier NP Care
+              </h1>
+            </HeroItem>
+            <HeroItem>
+              <p className="mt-7 max-w-3xl font-display text-4xl font-medium leading-[1.08] text-ink md:text-6xl">
+                Personal access to care, with clinical boundaries clearly
+                stated.
+              </p>
+            </HeroItem>
+            <HeroItem>
+              <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72">
+                [PLACEHOLDER: NP Name, Credentials] provides focused,
+                telehealth-affiliated medical care through the practice
+                platform. This site explains the practice, the provider, and
+                how to start.
+              </p>
+            </HeroItem>
+            <HeroItem>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <ButtonLink href={bookingUrl} variant="fern">
+                  <CalendarCheck aria-hidden="true" size={20} />
+                  Book an Appointment
+                </ButtonLink>
+                <ButtonLink href="/about" variant="secondary">
+                  Meet the Provider
+                  <ArrowRight aria-hidden="true" size={19} />
+                </ButtonLink>
+              </div>
+            </HeroItem>
+          </HeroEntrance>
 
-          {/* Left — content */}
-          <div className="flex flex-1 flex-col justify-center px-6 py-20 md:px-12 lg:px-16 xl:px-24">
-            <HeroEntrance>
-
-              <HeroItem>
-                <div className="flex items-center gap-2">
-                  <span className="soft-dot h-1.5 w-1.5 rounded-full bg-fern" aria-hidden="true" />
-                  <p className="label-caps text-fern">Telehealth · Nurse Practitioner</p>
-                </div>
-              </HeroItem>
-
-              <HeroItem>
-                <h1 className="mt-7 font-display text-[clamp(3.8rem,6.5vw,8rem)] font-light leading-[0.90] tracking-[-0.03em] text-ink">
-                  Premier
-                  <br />
-                  <span className="font-display-italic text-fern">NP</span>{" "}Care
-                </h1>
-              </HeroItem>
-
-              <HeroItem>
-                <p className="mt-7 max-w-sm text-[1rem] leading-[1.9] text-ink/50">
-                  Board-certified Nurse Practitioner care —
-                  personal, thoughtful, and delivered entirely
-                  through telehealth.
-                </p>
-              </HeroItem>
-
-              <HeroItem>
-                <div className="mt-9 flex flex-wrap items-center gap-4">
-                  <ButtonLink href={bookingUrl} variant="fern">
-                    <CalendarCheck aria-hidden="true" size={15} />
-                    Book a Visit
-                  </ButtonLink>
-                  <ButtonLink href="/about" variant="quiet">
-                    Meet the Provider
-                  </ButtonLink>
-                </div>
-              </HeroItem>
-
-              {/* Horizontal trust bar */}
-              <HeroItem>
-                <div className="mt-14 grid grid-cols-2 overflow-hidden rounded-2xl border border-ink/8 md:grid-cols-4">
-                  {trustItems.map((item) => (
-                    <div key={item.label} className="border-r border-ink/8 px-5 py-4 last:border-r-0">
-                      <p className="label-caps text-fern">{item.label}</p>
-                      <p className="mt-1 text-[0.76rem] text-ink/38">{item.detail}</p>
-                    </div>
-                  ))}
-                </div>
-              </HeroItem>
-
-            </HeroEntrance>
-          </div>
-
-          {/* Right — contained photo frame */}
-          <div className="relative hidden shrink-0 lg:block lg:w-[42%]">
-            <div className="absolute inset-5 overflow-hidden rounded-[2rem]">
-              <Image
-                alt="Clinical setting — provider ready for a telehealth consultation"
-                className="h-full w-full object-cover object-[60%_15%]"
-                fill
-                priority
-                sizes="42vw"
-                src="https://images.unsplash.com/photo-1758691461990-03b49d969495?w=1200&q=90&auto=format&fit=crop"
-              />
-              {/* Subtle blue gradient overlay */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(160deg, rgba(26,82,168,0.08) 0%, rgba(13,27,69,0.28) 100%)",
-                }}
-              />
-            </div>
-          </div>
-
-        </div>
+          <HeroItem>
+            <aside className="border-y border-ink/12 bg-paper/90 py-6">
+              <div className="flex items-center gap-3 px-1 text-clay">
+                <ClipboardCheck aria-hidden="true" size={23} />
+                <p className="label-caps">Practice brief</p>
+              </div>
+              <div className="mt-6 border-y border-ink/12">
+                {practiceFacts.map((fact) => (
+                  <div
+                    className="grid gap-2 border-b border-ink/12 py-5 last:border-b-0 md:grid-cols-[155px_1fr]"
+                    key={fact.label}
+                  >
+                    <p className="label-caps text-ink/54">{fact.label}</p>
+                    <p className="leading-7 text-ink/76">{fact.value}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-5 border-l-2 border-clay pl-4 text-sm leading-6 text-ink/66">
+                This website is public and informational. Scheduling, visits,
+                and records stay inside the practice system.
+              </p>
+            </aside>
+          </HeroItem>
+        </Container>
       </section>
 
-      {/* ── SCROLLING CARE TICKER ────────────────────────────── */}
-      <div className="border-y border-fern/12 bg-mist/60 py-3.5 marquee-wrap">
-        <div className="marquee-track" aria-hidden="true">
-          {[...scopeItems, ...scopeItems].map(({ label, icon: Icon }, i) => (
-            <span key={i} className="condition-pill mx-2">
-              <Icon size={11} />
-              {label}
-            </span>
-          ))}
-        </div>
-      </div>
+      <Section className="bg-ink py-0 text-paper">
+        <Container className="grid divide-y divide-paper/12 md:grid-cols-4 md:divide-x md:divide-y-0">
+          {practiceAtAGlance.map((item) => {
+            const Icon = item.icon;
+            return (
+              <MotionReveal key={item.title}>
+                <div className="py-9 md:px-6">
+                  <div className="flex items-center gap-3 text-marigold">
+                    <Icon aria-hidden="true" size={21} />
+                    <p className="label-caps">{item.title}</p>
+                  </div>
+                  <p className="mt-4 leading-7 text-paper/74">{item.body}</p>
+                </div>
+              </MotionReveal>
+            );
+          })}
+        </Container>
+      </Section>
 
-      {/* ── PULL QUOTE — dark with photo atmosphere ──────────── */}
-      <Section className="relative overflow-hidden bg-ink py-28 text-paper">
-        {/* Photo as very subtle texture */}
-        <Image
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.08] mix-blend-luminosity"
-          fill
-          sizes="100vw"
-          src="https://images.unsplash.com/photo-1758691461990-03b49d969495?w=1920&q=50&auto=format&fit=crop"
-        />
-        {/* Dark veil so text stays legible */}
-        <div aria-hidden="true" className="absolute inset-0 bg-ink/80" />
-
-        <Container className="relative">
+      <Section className="py-24">
+        <Container className="grid gap-14 lg:grid-cols-[0.74fr_1.26fr]">
           <MotionReveal>
-            <p className="label-caps mb-8 text-fern-mid/70">Our approach</p>
-            <p className="font-display text-[clamp(2rem,4.2vw,3.6rem)] font-light leading-[1.13] text-paper md:max-w-4xl">
-              Medicine practiced with intention — a single provider
-              who knows your history, names the options clearly,
-              and tells you when to go somewhere else.
+            <p className="label-caps text-fern">Clinical scope</p>
+            <h2 className="mt-5 max-w-lg font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              Care that explains what fits and what does not.
+            </h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-ink/70">
+              A credible practice website should help patients understand the
+              visit before they book: the care areas, the limits of telehealth,
+              and the right next step.
             </p>
-          </MotionReveal>
-        </Container>
-      </Section>
-
-      {/* ── CREDIBILITY — light, editorial numbers ───────────── */}
-      <Section className="bg-paper py-0">
-        <Container className="grid divide-y divide-ink/8 md:grid-cols-3 md:divide-x md:divide-y-0">
-          {credibilityPoints.map((point, index) => (
-            <MotionReveal key={point}>
-              <div className="relative py-14 md:px-12">
-                <p
-                  aria-hidden="true"
-                  className="select-none font-display-italic text-[6rem] font-light leading-none text-fern/8"
-                >
-                  0{index + 1}
-                </p>
-                <p className="mt-4 text-[0.93rem] leading-7 text-ink/56">
-                  {point}
-                </p>
-              </div>
-            </MotionReveal>
-          ))}
-        </Container>
-      </Section>
-
-      {/* ── SERVICES — mist background ───────────────────────── */}
-      <Section className="bg-mist py-32">
-        <Container className="grid gap-20 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
-          <MotionReveal>
-            <div className="lg:sticky lg:top-28">
-              <p className="label-caps text-fern">Clinical Services</p>
-              <h2 className="mt-6 font-display text-[clamp(2.2rem,3.8vw,3.4rem)] font-light leading-[1.06] text-ink">
-                Focused care with a defined{" "}
-                <span className="font-display-italic">clinical scope.</span>
-              </h2>
-              <p className="mt-5 max-w-xs text-[0.92rem] leading-7 text-ink/50">
-                Thoughtful assessment, practical plans, and appropriate
-                guidance when in-person care is the better path.
-              </p>
-              <a className="btn-ghost mt-10 inline-flex" href="/services">
-                All services <ArrowRight size={13} aria-hidden="true" />
-              </a>
-            </div>
+            <ButtonLink className="mt-9" href="/services" variant="secondary">
+              View Services
+              <ArrowRight aria-hidden="true" size={19} />
+            </ButtonLink>
           </MotionReveal>
 
-          <div>
-            {services.map((service, index) => {
+          <div className="border-y border-ink/12">
+            {services.map((service) => {
               const Icon = service.icon;
               return (
-                <MotionReveal key={service.title} delay={index * 0.07}>
-                  <div className="group -mx-5 border-t border-ink/10 px-5 py-10 transition-all duration-300 last:border-b last:border-ink/10 hover:rounded-2xl hover:bg-paper hover:px-7 hover:shadow-sm">
-                    <div className="flex items-start justify-between gap-6">
-                      <div>
-                        <div className="mb-4 flex items-center gap-2.5">
-                          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-fern/12">
-                            <Icon aria-hidden="true" className="text-fern" size={14} />
-                          </div>
-                          <p className="label-caps text-ink/36">{service.eyebrow}</p>
-                        </div>
-                        <h3 className="font-display text-[1.55rem] font-light leading-tight text-ink">
-                          {service.title}
-                        </h3>
-                        <p className="mt-3 text-[0.90rem] leading-7 text-ink/50">
-                          {service.description}
-                        </p>
-                      </div>
-                      <p
-                        aria-hidden="true"
-                        className="shrink-0 select-none pt-1 font-display-italic text-5xl font-light leading-none text-ink/6"
-                      >
-                        {String(index + 1).padStart(2, "0")}
+                <MotionReveal key={service.title}>
+                  <div className="grid gap-5 border-b border-ink/12 py-8 last:border-b-0 md:grid-cols-[190px_1fr]">
+                    <div className="flex items-center gap-3 text-fern">
+                      <Icon aria-hidden="true" size={21} />
+                      <p className="label-caps">{service.eyebrow}</p>
+                    </div>
+                    <div>
+                      <h3 className="font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
+                        {service.title}
+                      </h3>
+                      <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/70">
+                        {service.description}
                       </p>
                     </div>
                   </div>
@@ -247,42 +163,54 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── HOW IT WORKS — paper ─────────────────────────────── */}
-      <Section className="bg-paper py-32">
-        <Container>
+      <Section className="bg-mist py-24">
+        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
-            <div className="mb-16 flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-16">
-              <div>
-                <p className="label-caps text-fern">Patient Journey</p>
-                <h2 className="mt-5 font-display text-[clamp(2.2rem,3.8vw,3.4rem)] font-light leading-[1.06] text-ink">
-                  Less friction.
-                  <br />
-                  <span className="font-display-italic">More clarity.</span>
-                </h2>
-              </div>
-              <p className="max-w-xs text-[0.90rem] leading-7 text-ink/44 md:text-right">
-                Scheduling, visits, and patient records remain in the
-                practice's existing telehealth systems — not this website.
-              </p>
-            </div>
+            <p className="label-caps text-fern">Provider accountability</p>
+            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              Patients should know the clinician behind the visit.
+            </h2>
+            <p className="mt-6 max-w-lg leading-8 text-ink/70">
+              The real provider photo is intentionally not faked here. This
+              slot becomes the first credibility asset once the practice has the
+              final headshot.
+            </p>
+          </MotionReveal>
+          <MotionReveal delay={0.1}>
+            <ProviderHeadshotSlot />
+          </MotionReveal>
+        </Container>
+      </Section>
+
+      <Section className="py-24">
+        <Container className="grid gap-14 lg:grid-cols-[0.74fr_1.26fr]">
+          <MotionReveal>
+            <p className="label-caps text-fern">Patient journey</p>
+            <h2 className="mt-5 max-w-lg font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              Book, prepare, consult, receive a plan.
+            </h2>
           </MotionReveal>
 
-          <div className="grid gap-0 md:grid-cols-3">
-            {howItWorksSteps.map((step, index) => {
+          <div className="border-y border-ink/12">
+            {patientJourney.slice(0, 4).map((step, index) => {
               const Icon = step.icon;
               return (
-                <MotionReveal key={step.title} delay={index * 0.1}>
-                  <div className="border-t border-fern/15 py-10 md:py-12 md:pr-10 md:pl-10 first:md:pl-0 md:border-l first:md:border-l-0">
-                    <div className="mb-6 flex items-center gap-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-fern/10">
-                        <Icon aria-hidden="true" className="text-fern" size={16} />
-                      </div>
-                      <span className="font-display-italic text-3xl font-light leading-none text-fern/28">
+                <MotionReveal key={step.title}>
+                  <div className="grid gap-5 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[120px_1fr]">
+                    <div className="flex items-center gap-4 text-fern">
+                      <span className="font-display text-4xl font-medium">
                         {index + 1}
                       </span>
+                      <Icon aria-hidden="true" size={23} />
                     </div>
-                    <h3 className="font-display text-2xl font-light text-ink">{step.title}</h3>
-                    <p className="mt-3 text-[0.88rem] leading-7 text-ink/50">{step.description}</p>
+                    <div>
+                      <h3 className="font-display text-3xl font-medium text-ink">
+                        {step.title}
+                      </h3>
+                      <p className="mt-2 leading-7 text-ink/70">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </MotionReveal>
               );
@@ -291,32 +219,44 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* ── CTA — dark ───────────────────────────────────────── */}
-      <Section className="bg-ink py-32 text-paper">
-        <Container>
-          <MotionReveal>
-            <div className="grid gap-12 border-t border-paper/10 pt-16 md:grid-cols-[1fr_auto] md:items-end">
-              <div>
-                <p className="label-caps mb-6 text-fern-mid">Start here</p>
-                <p className="font-display text-[clamp(2.2rem,4vw,3.8rem)] font-light leading-[1.06] text-paper">
-                  Ready to start with
-                  <br />
-                  <span className="font-display-italic">the practice?</span>
-                </p>
-                <p className="mt-5 max-w-sm text-[0.92rem] leading-7 text-paper/46">
-                  Book through the practice scheduling link. For urgent or
-                  emergency needs, call 911 or visit your nearest ER.
-                </p>
-              </div>
-              <div className="flex flex-col items-start gap-3 md:items-end md:pb-2">
-                <ButtonLink href={bookingUrl} variant="fern">
-                  <CalendarCheck aria-hidden="true" size={15} />
-                  Book a Visit
-                </ButtonLink>
-                <p className="label-caps text-paper/26">No patient account required</p>
-              </div>
+      <Section className="bg-linen py-20">
+        <Container className="grid gap-8 lg:grid-cols-3">
+          {safetyBoundaries.map((item) => {
+            const Icon = item.icon;
+            return (
+              <MotionReveal key={item.title}>
+                <div className="border-y border-ink/12 py-6">
+                  <Icon aria-hidden="true" className="text-clay" size={25} />
+                  <h3 className="mt-5 font-display text-3xl font-medium leading-tight text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 leading-7 text-ink/70">{item.body}</p>
+                </div>
+              </MotionReveal>
+            );
+          })}
+        </Container>
+      </Section>
+
+      <Section className="bg-ink text-paper">
+        <Container className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <div className="mb-5 flex items-center gap-3 text-marigold">
+              <ShieldCheck aria-hidden="true" size={24} />
+              <p className="label-caps">Start here</p>
             </div>
-          </MotionReveal>
+            <p className="font-display text-5xl font-medium leading-tight">
+              Ready to start with the practice?
+            </p>
+            <p className="mt-4 max-w-2xl leading-7 text-paper/76">
+              Book through the practice scheduling link. For urgent needs, use
+              emergency services.
+            </p>
+          </div>
+          <ButtonLink href={bookingUrl}>
+            <CalendarCheck aria-hidden="true" size={20} />
+            Book an Appointment
+          </ButtonLink>
         </Container>
       </Section>
     </>

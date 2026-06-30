@@ -1,30 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f8fd;
-  --foreground: #0d1b45;
+  --background: #fbfaf6;
+  --foreground: #18231f;
 }
 
 @theme inline {
-  --color-background: #f0f8fd;
-  --color-foreground: #0d1b45;
-  --color-ink: #0d1b45;
-  --color-paper: #f0f8fd;
-
-  /* Ocean blue primary */
-  --color-fern: #1a52a8;
-  --color-fern-light: #dbeeff;
-  --color-fern-mid: #64aed4;
-
-  /* Teal accent */
-  --color-clay: #0ea5c9;
-  --color-marigold: #2980d4;
-
-  /* Neutrals — blue-tinted */
-  --color-sage: #5a7fa8;
-  --color-mist: #e8f3fb;
-  --color-mist-deep: #cce3f5;
-  --color-linen: #dceef8;
+  --color-background: #fbfaf6;
+  --color-foreground: #18231f;
+  --color-ink: #18231f;
+  --color-paper: #fbfaf6;
+  --color-fern: #2f594f;
+  --color-fern-light: #e6eee9;
+  --color-fern-mid: #6c8a7b;
+  --color-clay: #9b684f;
+  --color-marigold: #b38a3b;
+  --color-sage: #76877c;
+  --color-mist: #eef3ee;
+  --color-mist-deep: #d9e4dc;
+  --color-linen: #f3efe6;
 
   --font-sans: "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Newsreader", "Newsreader Fallback", Georgia, serif;
@@ -42,8 +36,8 @@ body {
 }
 
 ::selection {
-  background: rgba(26, 82, 168, 0.16);
-  color: #0d1b45;
+  background: rgba(179, 138, 59, 0.22);
+  color: #18231f;
 }
 
 a { text-underline-offset: 0.2em; }
@@ -51,113 +45,20 @@ a { text-underline-offset: 0.2em; }
 .font-display {
   font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
 }
-.font-display-italic {
-  font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
-  font-style: italic;
-}
-
 .label-caps {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .nav-details summary::-webkit-details-marker { display: none; }
 
-/* Ghost underline CTA */
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-ink);
-  border-bottom: 1px solid rgba(13, 27, 69, 0.25);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.btn-ghost:hover {
-  color: var(--color-fern);
-  border-color: var(--color-fern);
-}
-
-/* Hero overlay system */
-.hero-tint {
-  background: rgba(13, 40, 120, 0.18);
-  mix-blend-mode: multiply;
-}
-.hero-fade-x {
-  background: linear-gradient(
-    108deg,
-    rgba(240, 248, 253, 0.90) 0%,
-    rgba(240, 248, 253, 0.78) 28%,
-    rgba(240, 248, 253, 0.38) 54%,
-    rgba(240, 248, 253, 0.05) 78%,
-    transparent 100%
-  );
-}
-.hero-fade-bottom {
-  background: linear-gradient(to top, rgba(240, 248, 253, 0.94) 0%, transparent 100%);
-}
-
-/* Soft pulse for live indicators */
-@keyframes soft-pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.30; }
-}
-.soft-dot { animation: soft-pulse 3s ease-in-out infinite; }
-
-/* Condition tag pill */
-.condition-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(26, 82, 168, 0.20);
-  background: rgba(26, 82, 168, 0.07);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-  color: var(--color-fern);
-}
-
-/* ── Scrolling marquee ──────────────────────────────────── */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 28s linear infinite;
-}
-
-.marquee-track:hover {
-  animation-play-state: paused;
-}
-
-.marquee-wrap {
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 8%,
-    black 92%,
-    transparent 100%
-  );
+.practice-rule {
+  background-image:
+    linear-gradient(to right, rgba(24, 35, 31, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 35, 31, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
 @media (prefers-reduced-motion: reduce) {
