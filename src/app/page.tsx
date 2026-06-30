@@ -34,7 +34,7 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden border-b border-line bg-porcelain">
         <div className="ocean-field absolute inset-0" aria-hidden="true" />
-        <Container className="relative grid min-h-[690px] gap-12 py-14 md:py-20 lg:grid-cols-[1fr_0.82fr] lg:items-center">
+        <Container className="relative grid min-h-[700px] gap-12 py-14 md:py-20 lg:grid-cols-[0.94fr_0.9fr] lg:items-center">
           <HeroEntrance className="max-w-4xl">
             <HeroItem>
               <p className="label-caps text-cobalt">
@@ -42,9 +42,17 @@ export default function Home() {
               </p>
             </HeroItem>
             <HeroItem>
-              <h1 className="mt-6 max-w-4xl font-display text-4xl font-medium leading-[1.04] text-ink sm:text-5xl md:text-7xl lg:text-8xl">
-                Premier NP Care
+              <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[0.98] text-ink sm:text-6xl md:text-7xl lg:text-[6.5rem]">
+                <span className="block">Premier NP</span>
+                <span className="mt-1 block text-cobalt">Care</span>
               </h1>
+            </HeroItem>
+            <HeroItem>
+              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-y border-cyan/18 py-3 text-sm font-semibold text-ink/68">
+                <span>Care with Virginie Charles</span>
+                <span className="text-cobalt">Provider-led telehealth care</span>
+                <span>Booking through the practice platform</span>
+              </div>
             </HeroItem>
             <HeroItem>
               <p className="mt-7 max-w-3xl text-xl font-semibold leading-8 text-cobalt sm:text-2xl sm:leading-9 md:text-4xl md:leading-tight">
@@ -54,10 +62,10 @@ export default function Home() {
             </HeroItem>
             <HeroItem>
               <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72">
-                [PLACEHOLDER: NP Name, Credentials] provides focused,
-                telehealth-affiliated medical care through the practice
-                platform. This public site makes the provider, scope, booking
-                path, and safety boundaries easy to understand.
+                Virginie Charles provides focused, telehealth-affiliated
+                medical care through the practice platform. This public site
+                makes the provider, scope, booking path, and safety boundaries
+                easy to understand.
               </p>
             </HeroItem>
             <HeroItem>
@@ -75,7 +83,7 @@ export default function Home() {
           </HeroEntrance>
 
           <HeroItem>
-            <div className="mx-auto w-full max-w-[560px] lg:ml-auto">
+            <div className="mx-auto w-full max-w-[640px] lg:ml-auto">
               <CareCurrentVisual />
             </div>
           </HeroItem>

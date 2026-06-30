@@ -53,7 +53,7 @@ export const services = [
 export const practiceFacts = [
   {
     label: "[PLACEHOLDER] Provider",
-    value: "[PLACEHOLDER: NP Name, Credentials]",
+    value: "Virginie Charles, [PLACEHOLDER Credentials]",
   },
   {
     label: "[PLACEHOLDER] New patient status",
@@ -102,7 +102,7 @@ export const howItWorksSteps = [
   {
     title: "Consult",
     description:
-      "Meet with [PLACEHOLDER: NP Name, Credentials] through the existing telehealth platform for a focused, unrushed visit.",
+      "Meet with Virginie Charles, [PLACEHOLDER Credentials], through the existing telehealth platform for a focused, unrushed visit.",
     icon: UserRoundCheck,
   },
   {
@@ -129,7 +129,7 @@ export const patientJourney = [
   {
     title: "Consult",
     description:
-      "Meet with [PLACEHOLDER: NP Name, Credentials] for a focused visit through the established telehealth platform.",
+      "Meet with Virginie Charles, [PLACEHOLDER Credentials], for a focused visit through the established telehealth platform.",
     icon: UserRoundCheck,
   },
   {
