@@ -1,0 +1,89 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import type { ReactNode } from "react";
+
+interface MotionRevealProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+export function MotionReveal({
+  children,
+  className,
+  delay = 0,
+}: MotionRevealProps) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      initial={{ y: 18 }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.2 }}
+      whileInView={{ y: 0 }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function HeroEntrance({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      animate="show"
+      className={className}
+      initial="hidden"
+      variants={{
+        hidden: {},
+        show: {
+          transition: {
+            staggerChildren: 0.12,
+          },
+        },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export function HeroItem({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      className={className}
+      variants={{
+        hidden: { y: 16 },
+        show: {
+          y: 0,
+          transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+        },
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
