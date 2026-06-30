@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  CalendarCheck,
+  CheckCircle2,
   ClipboardCheck,
   FileText,
   GraduationCap,
+  MapPin,
   ShieldCheck,
+  Stethoscope,
+  UserRoundCheck,
 } from "lucide-react";
+import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
+import { bookingUrl } from "@/lib/config";
 import { patientFit } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -17,6 +24,29 @@ export const metadata: Metadata = {
   description:
     "Learn about the provider, clinical philosophy, and patient fit behind Premier NP Care.",
 };
+
+const practiceSignals = [
+  {
+    label: "[PLACEHOLDER] New patient status",
+    detail: "Opening panel, visit availability, and booking readiness.",
+    icon: CalendarCheck,
+  },
+  {
+    label: "[PLACEHOLDER] NP credentials",
+    detail: "Board certification, licensure, and specialty preparation.",
+    icon: ShieldCheck,
+  },
+  {
+    label: "[PLACEHOLDER] Telehealth access",
+    detail: "Visits are completed through the practice's existing platform.",
+    icon: Stethoscope,
+  },
+  {
+    label: "[PLACEHOLDER] Service area",
+    detail: "State, locality, and patient eligibility language.",
+    icon: MapPin,
+  },
+];
 
 const credentialRows = [
   {
@@ -38,7 +68,7 @@ const credentialRows = [
 
 const philosophyRows = [
   {
-    title: "Assessment before assumption",
+    title: "Focused assessment first",
     body: "[PLACEHOLDER] Her approach to listening, asking specific clinical questions, and understanding what is appropriate for telehealth.",
   },
   {
@@ -51,33 +81,72 @@ const philosophyRows = [
   },
 ];
 
+const modelRows = [
+  "[PLACEHOLDER] One provider accountable for the visit, plan, and follow-up guidance.",
+  "[PLACEHOLDER] Scheduling and visit records stay in the existing EHR/telehealth platform.",
+  "[PLACEHOLDER] Clear scope of care, including when an in-person exam or emergency care is the right next step.",
+];
+
 export default function AboutPage() {
   return (
     <>
       <PageIntro
         aside={
-          <div className="border-y border-ink/12 py-5">
-            <p className="text-sm font-bold uppercase text-clay">
-              Provider profile
-            </p>
-            <p className="mt-3 text-lg leading-8 text-ink/74">
-              A clinical biography page for the person patients will actually
-              meet, not a generic brand story.
-            </p>
-          </div>
+          <dl className="grid gap-4 border-y border-ink/12 py-5">
+            <div>
+              <dt className="text-sm font-bold uppercase text-clay">
+                Practice model
+              </dt>
+              <dd className="mt-2 text-lg leading-8 text-ink/74">
+                Single-provider medical practice with telehealth-affiliated
+                access.
+              </dd>
+            </div>
+            <div className="border-t border-ink/10 pt-4">
+              <dt className="text-sm font-bold uppercase text-clay">
+                Provider
+              </dt>
+              <dd className="mt-2 text-lg leading-8 text-ink/74">
+                [PLACEHOLDER: NP Name, Credentials]
+              </dd>
+            </div>
+          </dl>
         }
         eyebrow="Provider"
-        title="[PLACEHOLDER: NP Name, Credentials]"
+        title="Meet the clinician behind Premier NP Care."
       >
         <p>
-          Premier NP Care is a Nurse Practitioner-led medical practice. This
-          page should establish training, scope, clinical judgment, and the care
-          philosophy behind each visit.
+          Patients should know who is evaluating them, what the practice can
+          help with, and when a higher level of care is needed. This page
+          introduces the provider, the clinical standards, and the care model.
         </p>
       </PageIntro>
 
+      <section className="border-b border-ink/10 bg-ink text-paper">
+        <Container className="grid divide-y divide-paper/12 md:grid-cols-4 md:divide-x md:divide-y-0">
+          {practiceSignals.map((signal) => {
+            const Icon = signal.icon;
+            return (
+              <MotionReveal key={signal.label}>
+                <div className="py-8 md:px-6">
+                  <div className="flex items-center gap-3 text-marigold">
+                    <Icon aria-hidden="true" size={21} />
+                    <p className="text-sm font-bold uppercase">
+                      {signal.label}
+                    </p>
+                  </div>
+                  <p className="mt-3 leading-7 text-paper/72">
+                    {signal.detail}
+                  </p>
+                </div>
+              </MotionReveal>
+            );
+          })}
+        </Container>
+      </section>
+
       <Section className="py-20">
-        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+        <Container className="grid gap-12 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
           <MotionReveal>
             <div className="border-y border-ink/12 py-6">
               <div className="overflow-hidden rounded-[8px] border border-ink/12 bg-mist p-3">
@@ -90,32 +159,78 @@ export default function AboutPage() {
                   width={960}
                 />
               </div>
-              <p className="mt-4 text-sm leading-6 text-ink/62">
-                [PLACEHOLDER] Replace with the real provider headshot. Keep the
-                crop quiet, direct, and clinically professional.
-              </p>
+              <div className="mt-5">
+                <p className="font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+                  [PLACEHOLDER: NP Name, Credentials]
+                </p>
+                <p className="mt-2 text-sm font-bold uppercase text-clay">
+                  [PLACEHOLDER] Nurse Practitioner
+                </p>
+                <p className="mt-4 text-sm leading-6 text-ink/62">
+                  Replace with the real provider headshot. Keep the crop direct,
+                  warm, and clinically professional.
+                </p>
+              </div>
             </div>
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <div className="border-y border-ink/12">
-              {credentialRows.map((row) => {
-                const Icon = row.icon;
-                return (
-                  <div
-                    className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[220px_1fr]"
-                    key={row.label}
-                  >
-                    <div className="flex items-center gap-3 text-sm font-bold uppercase text-clay">
-                      <Icon aria-hidden="true" size={21} />
-                      {row.label}
-                    </div>
-                    <p className="text-xl leading-8 text-ink/76">
-                      {row.value}
+            <div className="grid gap-10">
+              <div className="grid gap-8 border-y border-ink/12 py-8 lg:grid-cols-[1.05fr_0.95fr]">
+                <div>
+                  <div className="flex items-center gap-3 text-clay">
+                    <UserRoundCheck aria-hidden="true" size={24} />
+                    <p className="text-sm font-bold uppercase">
+                      Clinical profile
                     </p>
                   </div>
-                );
-              })}
+                  <h2 className="mt-5 max-w-3xl font-display text-4xl font-medium leading-[1.04] text-ink md:text-5xl">
+                    A steady point of contact for focused medical visits.
+                  </h2>
+                  <p className="mt-5 max-w-3xl text-xl leading-8 text-ink/74">
+                    [PLACEHOLDER] Use this section for a concise clinical
+                    biography: training, patient population, care philosophy,
+                    and why she started Premier NP Care.
+                  </p>
+                </div>
+                <div className="border-t border-ink/12 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                  <p className="text-sm font-bold uppercase text-clay">
+                    How the practice works
+                  </p>
+                  <ul className="mt-5 grid gap-4">
+                    {modelRows.map((row) => (
+                      <li className="flex gap-3 leading-7 text-ink/76" key={row}>
+                        <CheckCircle2
+                          aria-hidden="true"
+                          className="mt-1 shrink-0 text-sage"
+                          size={19}
+                        />
+                        <span>{row}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="border-y border-ink/12">
+                {credentialRows.map((row) => {
+                  const Icon = row.icon;
+                  return (
+                    <div
+                      className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[220px_1fr]"
+                      key={row.label}
+                    >
+                      <div className="flex items-center gap-3 text-sm font-bold uppercase text-clay">
+                        <Icon aria-hidden="true" size={21} />
+                        {row.label}
+                      </div>
+                      <p className="text-xl leading-8 text-ink/76">
+                        {row.value}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </MotionReveal>
         </Container>
@@ -125,17 +240,17 @@ export default function AboutPage() {
         <Container className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <MotionReveal>
             <p className="text-sm font-bold uppercase text-clay">
-              Clinical philosophy
+              Care standards
             </p>
-            <h2 className="mt-5 font-display text-6xl font-medium leading-[0.98] text-ink">
-              Medical care should feel clear, not vague.
+            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.02] text-ink md:text-6xl">
+              Clear medical guidance, with the right boundaries.
             </h2>
           </MotionReveal>
 
-          <div className="border-y border-ink/12 bg-paper/55">
+          <div className="border-y border-ink/12">
             {philosophyRows.map((row) => (
               <MotionReveal key={row.title}>
-                <div className="grid gap-4 border-b border-ink/12 p-7 last:border-b-0 md:grid-cols-[0.72fr_1.28fr]">
+                <div className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[0.72fr_1.28fr]">
                   <h3 className="font-display text-3xl font-medium leading-tight text-ink">
                     {row.title}
                   </h3>
@@ -167,6 +282,23 @@ export default function AboutPage() {
               </MotionReveal>
             ))}
           </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-ink text-paper">
+        <Container className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p className="font-display text-5xl font-medium leading-tight">
+              Ready to meet the provider?
+            </p>
+            <p className="mt-4 max-w-2xl leading-7 text-paper/76">
+              Booking is handled through the practice scheduling link.
+            </p>
+          </div>
+          <ButtonLink href={bookingUrl}>
+            <CalendarCheck aria-hidden="true" size={20} />
+            Book an Appointment
+          </ButtonLink>
         </Container>
       </Section>
     </>
