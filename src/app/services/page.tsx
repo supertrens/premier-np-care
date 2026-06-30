@@ -10,7 +10,7 @@ import { services } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore placeholder service areas for Premier NP Care, including telehealth check-ins and everyday primary care needs.",
+    "Explore service areas for Premier NP Care, including telehealth check-ins and everyday primary care needs.",
 };
 
 const serviceDetails = [
@@ -38,17 +38,6 @@ export default function ServicesPage() {
   return (
     <>
       <PageIntro
-        aside={
-          <div className="rounded-[8px] border border-ink/12 bg-mist p-5">
-            <p className="text-sm font-bold uppercase text-clay">
-              [PLACEHOLDER] Scope note
-            </p>
-            <p className="mt-3 leading-7 text-ink/76">
-              Final clinical scope, exclusions, and state/service-area language
-              should be confirmed before launch.
-            </p>
-          </div>
-        }
         eyebrow="Services"
         title="Focused care, described plainly."
       >
@@ -66,15 +55,15 @@ export default function ServicesPage() {
               return (
                 <MotionReveal key={service.title}>
                   <div className="grid gap-6 border-b border-ink/12 py-10 last:border-b-0 md:grid-cols-[120px_1fr_0.9fr]">
-                    <div className="font-display text-5xl text-clay">
+                    <div className="font-display text-5xl font-light text-fern/25">
                       0{index + 1}
                     </div>
                     <div>
-                      <div className="flex items-center gap-3 text-sm font-bold uppercase text-clay">
+                      <div className="flex items-center gap-3 text-fern label-caps">
                         <Icon aria-hidden="true" size={22} />
                         {service.eyebrow}
                       </div>
-                      <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-ink">
+                      <h2 className="mt-4 font-display text-4xl font-light leading-tight text-ink">
                         {service.title}
                       </h2>
                     </div>
@@ -94,7 +83,7 @@ export default function ServicesPage() {
           {serviceDetails.map((group) => (
             <MotionReveal key={group.heading}>
               <div className="h-full rounded-[8px] border border-ink/12 bg-paper p-7">
-                <h2 className="font-display text-4xl font-semibold text-ink">
+                <h2 className="font-display text-4xl font-light text-ink">
                   {group.heading}
                 </h2>
                 <ul className="mt-8 grid gap-4">
@@ -102,7 +91,7 @@ export default function ServicesPage() {
                     <li className="flex gap-3 leading-7 text-ink/78" key={item}>
                       <ArrowRight
                         aria-hidden="true"
-                        className="mt-1 shrink-0 text-clay"
+                        className="mt-1 shrink-0 text-fern"
                         size={18}
                       />
                       {item}
@@ -118,7 +107,7 @@ export default function ServicesPage() {
       <Section className="bg-ink text-paper">
         <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <h2 className="font-display text-4xl font-semibold">
+            <h2 className="font-display text-4xl font-light text-paper">
               Not sure where your concern fits?
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/78">

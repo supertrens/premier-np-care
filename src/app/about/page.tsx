@@ -94,18 +94,14 @@ export default function AboutPage() {
         aside={
           <dl className="grid gap-4 border-y border-ink/12 py-5">
             <div>
-              <dt className="text-sm font-bold uppercase text-clay">
-                Practice model
-              </dt>
+              <dt className="label-caps text-fern">Practice model</dt>
               <dd className="mt-2 text-lg leading-8 text-ink/74">
                 Single-provider medical practice with telehealth-affiliated
                 access.
               </dd>
             </div>
             <div className="border-t border-ink/10 pt-4">
-              <dt className="text-sm font-bold uppercase text-clay">
-                Provider
-              </dt>
+              <dt className="label-caps text-fern">Provider</dt>
               <dd className="mt-2 text-lg leading-8 text-ink/74">
                 [PLACEHOLDER: NP Name, Credentials]
               </dd>
@@ -129,11 +125,9 @@ export default function AboutPage() {
             return (
               <MotionReveal key={signal.label}>
                 <div className="py-8 md:px-6">
-                  <div className="flex items-center gap-3 text-marigold">
+                  <div className="flex items-center gap-3 text-fern-mid">
                     <Icon aria-hidden="true" size={21} />
-                    <p className="text-sm font-bold uppercase">
-                      {signal.label}
-                    </p>
+                    <p className="label-caps">{signal.label}</p>
                   </div>
                   <p className="mt-3 leading-7 text-paper/72">
                     {signal.detail}
@@ -160,10 +154,10 @@ export default function AboutPage() {
                 />
               </div>
               <div className="mt-5">
-                <p className="font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+                <p className="font-display text-4xl font-light leading-tight text-ink md:text-5xl">
                   [PLACEHOLDER: NP Name, Credentials]
                 </p>
-                <p className="mt-2 text-sm font-bold uppercase text-clay">
+                <p className="label-caps mt-2 text-fern">
                   [PLACEHOLDER] Nurse Practitioner
                 </p>
                 <p className="mt-4 text-sm leading-6 text-ink/62">
@@ -178,13 +172,11 @@ export default function AboutPage() {
             <div className="grid gap-10">
               <div className="grid gap-8 border-y border-ink/12 py-8 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
-                  <div className="flex items-center gap-3 text-clay">
+                  <div className="flex items-center gap-3 text-fern">
                     <UserRoundCheck aria-hidden="true" size={24} />
-                    <p className="text-sm font-bold uppercase">
-                      Clinical profile
-                    </p>
+                    <p className="label-caps">Clinical profile</p>
                   </div>
-                  <h2 className="mt-5 max-w-3xl font-display text-4xl font-medium leading-[1.04] text-ink md:text-5xl">
+                  <h2 className="mt-5 max-w-3xl font-display text-4xl font-light leading-[1.04] text-ink md:text-5xl">
                     A steady point of contact for focused medical visits.
                   </h2>
                   <p className="mt-5 max-w-3xl text-xl leading-8 text-ink/74">
@@ -194,15 +186,13 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="border-t border-ink/12 pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-                  <p className="text-sm font-bold uppercase text-clay">
-                    How the practice works
-                  </p>
+                  <p className="label-caps text-fern">How the practice works</p>
                   <ul className="mt-5 grid gap-4">
                     {modelRows.map((row) => (
                       <li className="flex gap-3 leading-7 text-ink/76" key={row}>
                         <CheckCircle2
                           aria-hidden="true"
-                          className="mt-1 shrink-0 text-sage"
+                          className="mt-1 shrink-0 text-fern"
                           size={19}
                         />
                         <span>{row}</span>
@@ -220,7 +210,7 @@ export default function AboutPage() {
                       className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[220px_1fr]"
                       key={row.label}
                     >
-                      <div className="flex items-center gap-3 text-sm font-bold uppercase text-clay">
+                      <div className="flex items-center gap-3 text-fern label-caps">
                         <Icon aria-hidden="true" size={21} />
                         {row.label}
                       </div>
@@ -239,10 +229,8 @@ export default function AboutPage() {
       <Section className="bg-mist py-20">
         <Container className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <MotionReveal>
-            <p className="text-sm font-bold uppercase text-clay">
-              Care standards
-            </p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.02] text-ink md:text-6xl">
+            <p className="label-caps text-fern">Care standards</p>
+            <h2 className="mt-5 max-w-xl font-display text-5xl font-light leading-[1.02] text-ink md:text-6xl">
               Clear medical guidance, with the right boundaries.
             </h2>
           </MotionReveal>
@@ -251,7 +239,7 @@ export default function AboutPage() {
             {philosophyRows.map((row) => (
               <MotionReveal key={row.title}>
                 <div className="grid gap-4 border-b border-ink/12 py-7 last:border-b-0 md:grid-cols-[0.72fr_1.28fr]">
-                  <h3 className="font-display text-3xl font-medium leading-tight text-ink">
+                  <h3 className="font-display text-3xl font-light leading-tight text-ink">
                     {row.title}
                   </h3>
                   <p className="leading-7 text-ink/72">{row.body}</p>
@@ -265,11 +253,11 @@ export default function AboutPage() {
       <Section className="py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <MotionReveal>
-            <div className="flex items-center gap-3 text-clay">
+            <div className="flex items-center gap-3 text-fern">
               <FileText aria-hidden="true" size={24} />
-              <p className="text-sm font-bold uppercase">Built for</p>
+              <p className="label-caps">Built for</p>
             </div>
-            <h2 className="mt-5 font-display text-5xl font-medium leading-[1.02] text-ink">
+            <h2 className="mt-5 font-display text-5xl font-light leading-[1.02] text-ink">
               Patients who want access without losing clinical judgment.
             </h2>
           </MotionReveal>
@@ -288,7 +276,7 @@ export default function AboutPage() {
       <Section className="bg-ink text-paper">
         <Container className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p className="font-display text-5xl font-medium leading-tight">
+            <p className="font-display text-5xl font-light leading-tight text-paper">
               Ready to meet the provider?
             </p>
             <p className="mt-4 max-w-2xl leading-7 text-paper/76">

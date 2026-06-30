@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4ede2;
-  --foreground: #1a1f1c;
+  --background: #f0f8fd;
+  --foreground: #0d1b45;
 }
 
 @theme inline {
-  --color-background: #f4ede2;
-  --color-foreground: #1a1f1c;
-  --color-ink: #1a1f1c;
-  --color-paper: #f4ede2;
+  --color-background: #f0f8fd;
+  --color-foreground: #0d1b45;
+  --color-ink: #0d1b45;
+  --color-paper: #f0f8fd;
 
-  /* Clinical green — primary health accent */
-  --color-fern: #3d6b57;
-  --color-fern-light: #e4eeea;
-  --color-fern-mid: #8ab5a3;
+  /* Ocean blue primary */
+  --color-fern: #1a52a8;
+  --color-fern-light: #dbeeff;
+  --color-fern-mid: #64aed4;
 
-  /* Warm secondary */
-  --color-clay: #b87050;
-  --color-marigold: #c9963e;
+  /* Teal accent */
+  --color-clay: #0ea5c9;
+  --color-marigold: #2980d4;
 
-  /* Neutrals */
-  --color-sage: #6f8276;
-  --color-mist: #e8f0ec;
-  --color-mist-deep: #d4e6db;
-  --color-stone: #ece5d8;
+  /* Neutrals — blue-tinted */
+  --color-sage: #5a7fa8;
+  --color-mist: #e8f3fb;
+  --color-mist-deep: #cce3f5;
+  --color-linen: #dceef8;
 
   --font-sans: "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Newsreader", "Newsreader Fallback", Georgia, serif;
@@ -42,8 +42,8 @@ body {
 }
 
 ::selection {
-  background: rgba(61, 107, 87, 0.18);
-  color: #1a1f1c;
+  background: rgba(26, 82, 168, 0.16);
+  color: #0d1b45;
 }
 
 a { text-underline-offset: 0.2em; }
@@ -75,7 +75,7 @@ a { text-underline-offset: 0.2em; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-ink);
-  border-bottom: 1px solid rgba(28, 28, 23, 0.28);
+  border-bottom: 1px solid rgba(13, 27, 69, 0.25);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
@@ -86,21 +86,21 @@ a { text-underline-offset: 0.2em; }
 
 /* Hero overlay system */
 .hero-tint {
-  background: rgba(200, 170, 130, 0.20);
+  background: rgba(13, 40, 120, 0.18);
   mix-blend-mode: multiply;
 }
 .hero-fade-x {
   background: linear-gradient(
     108deg,
-    rgba(244, 237, 226, 0.98) 0%,
-    rgba(244, 237, 226, 0.92) 30%,
-    rgba(244, 237, 226, 0.55) 56%,
-    rgba(244, 237, 226, 0.08) 80%,
+    rgba(240, 248, 253, 0.90) 0%,
+    rgba(240, 248, 253, 0.78) 28%,
+    rgba(240, 248, 253, 0.38) 54%,
+    rgba(240, 248, 253, 0.05) 78%,
     transparent 100%
   );
 }
 .hero-fade-bottom {
-  background: linear-gradient(to top, rgba(244, 237, 226, 0.94) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(240, 248, 253, 0.94) 0%, transparent 100%);
 }
 
 /* Soft pulse for live indicators */
@@ -117,8 +117,8 @@ a { text-underline-offset: 0.2em; }
   gap: 0.45rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(61, 107, 87, 0.22);
-  background: rgba(61, 107, 87, 0.06);
+  border: 1px solid rgba(26, 82, 168, 0.20);
+  background: rgba(26, 82, 168, 0.07);
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.10em;

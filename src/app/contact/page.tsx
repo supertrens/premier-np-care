@@ -19,9 +19,7 @@ export default function ContactPage() {
       <PageIntro
         aside={
           <div className="rounded-[8px] border border-ink/12 bg-mist p-5">
-            <p className="text-sm font-bold uppercase text-clay">
-              Important
-            </p>
+            <p className="label-caps text-fern">Important</p>
             <p className="mt-3 leading-7 text-ink/76">
               Do not use this form for urgent needs, emergencies, or private
               health details.
@@ -41,8 +39,8 @@ export default function ContactPage() {
         <Container className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <MotionReveal>
             <div className="rounded-[8px] border border-ink/12 bg-paper p-6 md:p-8">
-              <p className="text-sm font-bold uppercase text-clay">Message</p>
-              <h2 className="mt-4 font-display text-4xl font-semibold text-ink">
+              <p className="label-caps text-fern">Message</p>
+              <h2 className="mt-4 font-display text-4xl font-light text-ink">
                 General inquiries
               </h2>
               <p className="mt-4 max-w-2xl leading-7 text-ink/72">
@@ -61,14 +59,14 @@ export default function ContactPage() {
             </MotionReveal>
             <MotionReveal delay={0.16}>
               <div className="rounded-[8px] border border-ink/12 bg-paper p-6 md:p-8">
-                <h2 className="font-display text-4xl font-semibold text-ink">
+                <h2 className="font-display text-4xl font-light text-ink">
                   Practice info
                 </h2>
                 <div className="mt-7 grid gap-5 leading-7 text-ink/78">
                   <p className="flex gap-3">
                     <Phone
                       aria-hidden="true"
-                      className="mt-1 shrink-0 text-clay"
+                      className="mt-1 shrink-0 text-fern"
                       size={19}
                     />
                     [PLACEHOLDER] Phone number
@@ -76,7 +74,7 @@ export default function ContactPage() {
                   <p className="flex gap-3">
                     <Mail
                       aria-hidden="true"
-                      className="mt-1 shrink-0 text-clay"
+                      className="mt-1 shrink-0 text-fern"
                       size={19}
                     />
                     [PLACEHOLDER] Practice email
@@ -84,7 +82,7 @@ export default function ContactPage() {
                   <p className="flex gap-3">
                     <MapPin
                       aria-hidden="true"
-                      className="mt-1 shrink-0 text-clay"
+                      className="mt-1 shrink-0 text-fern"
                       size={19}
                     />
                     [PLACEHOLDER] Service area or address note

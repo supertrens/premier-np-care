@@ -25,7 +25,7 @@ const patientReassurance = [
   },
   {
     title: "After the visit",
-    body: "[PLACEHOLDER] Follow-up details are handled through the practice’s established systems.",
+    body: "[PLACEHOLDER] Follow-up details are handled through the practice's established systems.",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function HowItWorksPage() {
     <>
       <PageIntro
         aside={
-          <div className="border-l border-clay pl-5 leading-7 text-ink/76">
+          <div className="border-l border-fern/30 pl-5 leading-7 text-ink/76">
             A simple public path: book through the scheduling link, meet through
             the practice platform, and receive next steps through established
             systems.
@@ -58,14 +58,14 @@ export default function HowItWorksPage() {
               return (
                 <MotionReveal key={step.title}>
                   <div className="grid gap-6 border-b border-ink/12 py-10 last:border-b-0 md:grid-cols-[180px_1fr] md:items-start">
-                    <div className="flex items-center gap-4 text-clay">
-                      <span className="font-display text-6xl">
+                    <div className="flex items-center gap-4 text-fern">
+                      <span className="font-display text-6xl font-light text-fern/35">
                         0{index + 1}
                       </span>
                       <Icon aria-hidden="true" size={28} />
                     </div>
                     <div className="max-w-3xl">
-                      <h2 className="font-display text-5xl font-semibold leading-tight text-ink">
+                      <h2 className="font-display text-5xl font-light leading-tight text-ink">
                         {step.title}
                       </h2>
                       <p className="mt-4 text-xl leading-8 text-ink/74">
@@ -83,10 +83,8 @@ export default function HowItWorksPage() {
       <Section className="bg-mist py-20">
         <Container className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
           <MotionReveal>
-            <p className="text-sm font-bold uppercase text-clay">
-              New to telehealth
-            </p>
-            <h2 className="mt-5 font-display text-5xl font-semibold leading-[1.05] text-ink">
+            <p className="label-caps text-fern">New to telehealth</p>
+            <h2 className="mt-5 font-display text-5xl font-light leading-[1.05] text-ink">
               The process should feel legible.
             </h2>
           </MotionReveal>
@@ -94,7 +92,7 @@ export default function HowItWorksPage() {
             {patientReassurance.map((item) => (
               <MotionReveal key={item.title}>
                 <div className="border-b border-ink/12 p-6 last:border-b-0">
-                  <h3 className="font-display text-3xl font-semibold text-ink">
+                  <h3 className="font-display text-3xl font-light text-ink">
                     {item.title}
                   </h3>
                   <p className="mt-3 leading-7 text-ink/76">{item.body}</p>
@@ -108,11 +106,11 @@ export default function HowItWorksPage() {
       <Section className="bg-ink text-paper">
         <Container className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <h2 className="font-display text-4xl font-semibold">
+            <h2 className="font-display text-4xl font-light text-paper">
               Start with one simple step.
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/78">
-              The booking button will point to the practice’s real scheduling
+              The booking button will point to the practice's real scheduling
               link once the final URL is configured.
             </p>
           </div>

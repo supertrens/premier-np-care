@@ -13,8 +13,8 @@ export default function Image() {
       <div
         style={{
           alignItems: "center",
-          background: "#F7F1E8",
-          color: "#24312D",
+          background: "#f4ede2",
+          color: "#1a1f1c",
           display: "flex",
           height: "100%",
           justifyContent: "center",
@@ -24,7 +24,7 @@ export default function Image() {
       >
         <div
           style={{
-            border: "2px solid rgba(36,49,45,0.18)",
+            border: "2px solid rgba(26,31,28,0.14)",
             borderRadius: 8,
             display: "flex",
             flexDirection: "column",
@@ -33,13 +33,13 @@ export default function Image() {
             width: "100%",
           }}
         >
-          <div style={{ color: "#C98264", fontSize: 28, fontWeight: 700 }}>
+          <div style={{ color: "#3d6b57", fontSize: 24, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase" }}>
             Nurse Practitioner-led telehealth care
           </div>
-          <div style={{ fontSize: 82, fontWeight: 700, lineHeight: 1.05 }}>
+          <div style={{ fontSize: 82, fontWeight: 300, lineHeight: 1.05, color: "#1a1f1c" }}>
             Premier NP Care
           </div>
-          <div style={{ color: "rgba(36,49,45,0.76)", fontSize: 34 }}>
+          <div style={{ color: "rgba(26,31,28,0.62)", fontSize: 32 }}>
             Personal, accessible care from a provider who listens first.
           </div>
         </div>
@@ -48,4 +48,3 @@ export default function Image() {
     size,
   );
 }
-

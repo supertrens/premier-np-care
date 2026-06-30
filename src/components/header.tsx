@@ -2,7 +2,7 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
-import { navItems } from "@/lib/content";
+import { DesktopNavLinks, MobileNavLinks } from "@/components/nav-links";
 import { bookingUrl } from "@/lib/config";
 
 function HealthCross({ className }: { className?: string }) {
@@ -39,18 +39,8 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
-          {navItems.slice(1).map((item) => (
-            <Link
-              className="label-caps text-ink/50 transition-colors hover:text-fern focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fern"
-              href={item.href}
-              key={item.href}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Desktop nav — active state via client component */}
+        <DesktopNavLinks />
 
         {/* Book CTA */}
         <div className="hidden md:block">
@@ -66,22 +56,12 @@ export function Header() {
             <span className="sr-only">Open navigation</span>
           </summary>
           <div className="absolute left-4 right-4 top-[66px] rounded-2xl border border-ink/8 bg-paper/97 p-3 shadow-[0_20px_50px_rgba(28,28,23,0.10)] backdrop-blur-2xl">
-            <nav aria-label="Mobile navigation" className="flex flex-col gap-0.5">
-              {navItems.map((item) => (
-                <Link
-                  className="rounded-xl px-4 py-3 label-caps text-ink/60 hover:bg-mist hover:text-ink"
-                  href={item.href}
-                  key={item.href}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="mt-2 px-1">
-                <ButtonLink className="w-full" href={bookingUrl} variant="fern">
-                  Book a Visit
-                </ButtonLink>
-              </div>
-            </nav>
+            <MobileNavLinks />
+            <div className="mt-2 px-1">
+              <ButtonLink className="w-full" href={bookingUrl} variant="fern">
+                Book a Visit
+              </ButtonLink>
+            </div>
           </div>
         </details>
       </Container>
