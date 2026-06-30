@@ -10,16 +10,16 @@ type ButtonVariant = "primary" | "secondary" | "quiet" | "ink";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border border-clay bg-clay text-paper shadow-[0_10px_24px_rgba(36,49,45,0.14)] hover:bg-ink hover:border-ink",
+    "border border-clay bg-clay text-paper shadow-[0_8px_24px_rgba(176,104,72,0.28)] hover:bg-ink hover:border-ink hover:shadow-[0_8px_24px_rgba(23,33,29,0.22)]",
   secondary:
-    "border border-ink/20 bg-paper text-ink hover:border-clay hover:bg-mist",
+    "border border-ink/18 bg-paper text-ink hover:border-clay/60 hover:bg-mist hover:text-clay",
   quiet:
     "border border-transparent bg-transparent text-ink underline hover:text-clay",
-  ink: "border border-ink bg-ink text-paper shadow-[0_14px_34px_rgba(36,49,45,0.18)] hover:bg-clay hover:border-clay",
+  ink: "border border-ink bg-ink text-paper shadow-[0_10px_30px_rgba(23,33,29,0.24)] hover:bg-clay hover:border-clay hover:shadow-[0_10px_30px_rgba(176,104,72,0.30)]",
 };
 
 const baseClasses =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-[8px] px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay disabled:pointer-events-none disabled:opacity-60";
 
 export function buttonClasses({
   variant = "primary",
