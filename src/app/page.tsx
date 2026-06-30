@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   CalendarCheck,
+  ImagePlus,
   ShieldCheck,
   UserRoundCheck,
 } from "lucide-react";
@@ -13,7 +14,6 @@ import {
   HeroItem,
   MotionReveal,
 } from "@/components/motion-reveal";
-import { ProviderImageSlot } from "@/components/provider-image-slot";
 import { Section } from "@/components/section";
 import { bookingUrl } from "@/lib/config";
 import {
@@ -119,24 +119,28 @@ export default function Home() {
             </ButtonLink>
           </MotionReveal>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="divide-y divide-line border-y border-line">
             {services.map((service) => {
               const Icon = service.icon;
               return (
                 <MotionReveal key={service.title}>
-                  <article className="h-full rounded-[22px] border border-line bg-porcelain p-6 shadow-[0_18px_55px_rgba(7,28,42,0.06)]">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[14px] bg-mist text-cobalt">
-                      <Icon aria-hidden="true" size={23} />
+                  <article className="grid gap-5 py-7 md:grid-cols-[190px_1fr]">
+                    <div className="flex items-center gap-3 text-cobalt">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mist">
+                        <Icon aria-hidden="true" size={21} />
+                      </span>
+                      <p className="label-caps text-harbor">
+                        {service.eyebrow}
+                      </p>
                     </div>
-                    <p className="label-caps mt-6 text-harbor">
-                      {service.eyebrow}
-                    </p>
-                    <h3 className="mt-3 font-display text-3xl font-medium leading-tight text-ink">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 leading-7 text-ink/70">
-                      {service.description}
-                    </p>
+                    <div>
+                      <h3 className="font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
+                        {service.title}
+                      </h3>
+                      <p className="mt-3 max-w-2xl leading-7 text-ink/70">
+                        {service.description}
+                      </p>
+                    </div>
                   </article>
                 </MotionReveal>
               );
@@ -146,12 +150,12 @@ export default function Home() {
       </Section>
 
       <Section className="relative overflow-hidden bg-mist py-24">
-        <div className="care-current-lines absolute inset-x-0 top-0 h-32 opacity-60" />
-        <Container className="relative grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+        <div className="care-current-lines absolute inset-x-0 top-0 h-32 opacity-30" />
+        <Container className="relative grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
           <MotionReveal>
             <p className="label-caps text-cobalt">Provider accountability</p>
             <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
-              A real practice needs a visible clinician, not stock imagery.
+              A real practice needs a visible clinician.
             </h2>
             <p className="mt-6 max-w-lg leading-8 text-ink/70">
               The demo intentionally uses a polished provider image slot until
@@ -160,18 +164,43 @@ export default function Home() {
             </p>
           </MotionReveal>
           <MotionReveal delay={0.1}>
-            <div className="grid gap-6 md:grid-cols-[0.72fr_1fr] md:items-center">
-              <ProviderImageSlot />
-              <div className="rounded-[24px] border border-line bg-paper p-6 shadow-[0_18px_60px_rgba(7,28,42,0.07)]">
+            <div className="grid gap-8 border-y border-line py-8 md:grid-cols-[0.72fr_1fr] md:items-center">
+              <figure>
+                <div className="grid aspect-[4/5] max-h-[430px] place-items-center rounded-[28px] border border-dashed border-cyan/45 bg-paper/72">
+                  <div className="max-w-[240px] px-6 text-center">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[18px] bg-deep-navy text-paper shadow-[0_18px_42px_rgba(7,4,95,0.18)]">
+                      <UserRoundCheck aria-hidden="true" size={30} />
+                    </div>
+                    <p className="mt-5 font-display text-3xl font-medium leading-tight text-ink">
+                      Provider headshot
+                    </p>
+                    <p className="mt-3 text-sm leading-6 text-ink/64">
+                      [PLACEHOLDER] Replace with the real provider photo before
+                      launch.
+                    </p>
+                  </div>
+                </div>
+                <figcaption className="mt-4 flex gap-3 text-sm leading-6 text-ink/64">
+                  <ImagePlus
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-cobalt"
+                    size={18}
+                  />
+                  Use a direct, professional crop with natural light and no
+                  stock portraits.
+                </figcaption>
+              </figure>
+
+              <div>
                 <div className="flex items-center gap-3 text-cobalt">
                   <UserRoundCheck aria-hidden="true" size={23} />
                   <p className="label-caps">Provider-led care</p>
                 </div>
-                <p className="mt-5 font-display text-4xl font-medium leading-tight text-ink">
+                <p className="mt-5 max-w-xl font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
                   Patients should know who is responsible for the visit and the
                   care plan.
                 </p>
-                <p className="mt-4 leading-7 text-ink/70">
+                <p className="mt-5 max-w-xl leading-8 text-ink/70">
                   [PLACEHOLDER] Add the provider story, training, and care
                   philosophy here once final copy is approved.
                 </p>
