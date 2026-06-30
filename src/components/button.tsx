@@ -6,20 +6,22 @@ import type {
 } from "react";
 import { cn } from "@/components/utils";
 
-type ButtonVariant = "primary" | "secondary" | "quiet" | "ink";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "quiet" | "ink";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border border-clay bg-clay text-paper shadow-[0_8px_24px_rgba(176,104,72,0.28)] hover:bg-ink hover:border-ink hover:shadow-[0_8px_24px_rgba(23,33,29,0.22)]",
+    "border border-clay bg-clay text-paper hover:bg-ink hover:border-ink",
   secondary:
-    "border border-ink/18 bg-paper text-ink hover:border-clay/60 hover:bg-mist hover:text-clay",
+    "border border-ink/18 bg-paper text-ink hover:border-clay/50 hover:bg-mist",
+  ghost:
+    "border-b border-ink/30 rounded-none px-0 py-0 min-h-0 text-ink hover:text-clay hover:border-clay",
   quiet:
-    "border border-transparent bg-transparent text-ink underline hover:text-clay",
-  ink: "border border-ink bg-ink text-paper shadow-[0_10px_30px_rgba(23,33,29,0.24)] hover:bg-clay hover:border-clay hover:shadow-[0_10px_30px_rgba(176,104,72,0.30)]",
+    "border-b border-transparent rounded-none px-0 py-0 min-h-0 text-ink/55 hover:text-ink hover:border-ink/25",
+  ink: "border border-ink bg-ink text-paper hover:bg-clay hover:border-clay",
 };
 
 const baseClasses =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-bold tracking-wide transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex min-h-10 items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-[0.72rem] font-semibold tracking-[0.14em] uppercase transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay disabled:pointer-events-none disabled:opacity-60";
 
 export function buttonClasses({
   variant = "primary",

@@ -1,4 +1,4 @@
-import { CalendarCheck, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
@@ -7,31 +7,25 @@ import { bookingUrl } from "@/lib/config";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/[0.08] bg-paper/90 backdrop-blur-xl">
-      <Container className="flex min-h-[68px] items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 border-b border-ink/[0.07] bg-paper/92 backdrop-blur-2xl">
+      <Container className="flex min-h-[62px] items-center justify-between gap-4">
 
-        {/* Wordmark */}
+        {/* Wordmark — clean serif, no badge */}
         <Link
-          className="group flex items-center gap-3 focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay"
+          className="font-display text-[1.15rem] font-light tracking-[-0.01em] text-ink transition-colors hover:text-clay focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay"
           href="/"
         >
-          {/* NP mark */}
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ink text-paper transition-colors group-hover:bg-clay">
-            <span className="font-display text-xs font-medium leading-none tracking-tight">NP</span>
-          </div>
-          <span className="font-display text-xl font-medium text-ink transition-colors group-hover:text-clay">
-            Premier NP Care
-          </span>
+          Premier NP Care
         </Link>
 
         {/* Desktop nav */}
         <nav
           aria-label="Primary navigation"
-          className="hidden items-center gap-1 md:flex"
+          className="hidden items-center gap-7 md:flex"
         >
           {navItems.slice(1).map((item) => (
             <Link
-              className="rounded-lg px-3 py-2 text-sm font-semibold text-ink/65 transition-colors hover:bg-mist hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay"
+              className="label-caps text-ink/50 transition-colors hover:text-ink focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay"
               href={item.href}
               key={item.href}
             >
@@ -40,35 +34,35 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Book CTA */}
+        {/* Book — ghost underline style */}
         <div className="hidden md:block">
-          <ButtonLink className="min-h-10 px-5 py-2 text-sm" href={bookingUrl}>
-            <CalendarCheck aria-hidden="true" size={17} />
+          <ButtonLink href={bookingUrl} variant="ghost">
             Book
           </ButtonLink>
         </div>
 
         {/* Mobile menu */}
         <details className="nav-details group md:hidden">
-          <summary className="flex min-h-10 cursor-pointer list-none items-center justify-center rounded-lg border border-ink/15 bg-paper px-3 text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay">
-            <Menu aria-hidden="true" size={21} />
+          <summary className="flex min-h-10 cursor-pointer list-none items-center justify-center rounded-lg border border-ink/12 bg-paper px-3 text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-clay">
+            <Menu aria-hidden="true" size={20} />
             <span className="sr-only">Open navigation</span>
           </summary>
-          <div className="absolute left-4 right-4 top-[72px] rounded-2xl border border-ink/10 bg-paper/95 p-3 shadow-[0_24px_60px_rgba(23,33,29,0.15)] backdrop-blur-xl">
-            <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
+          <div className="absolute left-4 right-4 top-[66px] rounded-2xl border border-ink/8 bg-paper/97 p-3 shadow-[0_20px_50px_rgba(28,28,23,0.10)] backdrop-blur-2xl">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-0.5">
               {navItems.map((item) => (
                 <Link
-                  className="rounded-xl px-4 py-3 text-base font-semibold text-ink hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay"
+                  className="rounded-xl px-4 py-3 label-caps text-ink/60 hover:bg-mist hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-clay"
                   href={item.href}
                   key={item.href}
                 >
                   {item.label}
                 </Link>
               ))}
-              <ButtonLink className="mt-2 w-full" href={bookingUrl}>
-                <CalendarCheck aria-hidden="true" size={18} />
-                Book an Appointment
-              </ButtonLink>
+              <div className="mt-2 px-1">
+                <ButtonLink className="w-full" href={bookingUrl} variant="ink">
+                  Book an Appointment
+                </ButtonLink>
+              </div>
             </nav>
           </div>
         </details>
