@@ -57,7 +57,7 @@ export default function AboutPage() {
             </p>
             <div className="mt-9 grid gap-3 sm:grid-cols-3">
               {[
-                ["Provider", "Virginie Charles, [PLACEHOLDER Credentials]"],
+                ["Provider", "Virginie Chavannes, [PLACEHOLDER Credentials]"],
                 ["Status", "[PLACEHOLDER] Accepting new patients"],
                 ["Access", "[PLACEHOLDER] Telehealth availability"],
               ].map(([label, value]) => (

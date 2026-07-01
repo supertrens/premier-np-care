@@ -7,7 +7,6 @@ import {
   UserRoundCheck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
-import { CareCurrentVisual } from "@/components/care-current-visual";
 import { Container } from "@/components/container";
 import {
   HeroEntrance,
@@ -22,6 +21,7 @@ import {
   safetyBoundaries,
   services,
 } from "@/lib/content";
+import { StartCarePanel } from "@/components/start-care-panel";
 
 export const metadata: Metadata = {
   title: "Nurse Practitioner-Led Medical Practice",
@@ -34,38 +34,29 @@ export default function Home() {
     <>
       <section className="relative overflow-hidden border-b border-line bg-porcelain">
         <div className="ocean-field absolute inset-0" aria-hidden="true" />
-        <Container className="relative grid min-h-[700px] gap-12 py-14 md:py-20 lg:grid-cols-[0.94fr_0.9fr] lg:items-center">
-          <HeroEntrance className="max-w-4xl">
+        <Container className="relative grid min-h-[700px] gap-12 py-14 md:py-20 lg:grid-cols-[0.88fr_0.96fr] lg:items-center">
+          <HeroEntrance className="max-w-3xl">
             <HeroItem>
               <p className="label-caps text-cobalt">
                 Nurse Practitioner-led medical practice
               </p>
             </HeroItem>
             <HeroItem>
-              <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[0.98] text-ink sm:text-6xl md:text-7xl lg:text-[6.5rem]">
-                <span className="block">Premier NP</span>
-                <span className="mt-1 block text-cobalt">Care</span>
+              <h1 className="mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.02] text-ink sm:text-6xl md:text-7xl lg:text-[5.25rem]">
+                Premier NP Care
               </h1>
             </HeroItem>
             <HeroItem>
-              <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-y border-cyan/18 py-3 text-sm font-semibold text-ink/68">
-                <span>Care with Virginie Charles</span>
-                <span className="text-cobalt">Provider-led telehealth care</span>
-                <span>Booking through the practice platform</span>
-              </div>
-            </HeroItem>
-            <HeroItem>
-              <p className="mt-7 max-w-3xl text-xl font-semibold leading-8 text-cobalt sm:text-2xl sm:leading-9 md:text-4xl md:leading-tight">
-                Calm, direct access to a provider who explains the care path
-                before patients book.
+              <p className="mt-7 max-w-3xl text-3xl font-semibold leading-tight text-cobalt md:text-5xl">
+                Personal care, clearly guided from booking to next steps.
               </p>
             </HeroItem>
             <HeroItem>
-              <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72">
-                Virginie Charles provides focused, telehealth-affiliated
-                medical care through the practice platform. This public site
-                makes the provider, scope, booking path, and safety boundaries
-                easy to understand.
+              <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72 md:text-[1.35rem] md:leading-9">
+                Telehealth-affiliated care for patients who want the process to
+                feel calm, direct, and clearly explained before they book.
+                Scheduling, visits, records, and patient details stay inside
+                the established care platform.
               </p>
             </HeroItem>
             <HeroItem>
@@ -74,8 +65,8 @@ export default function Home() {
                   <CalendarCheck aria-hidden="true" size={20} />
                   Book an Appointment
                 </ButtonLink>
-                <ButtonLink href="/how-it-works" variant="secondary">
-                  See How It Works
+                <ButtonLink href="/about" variant="secondary">
+                  Meet the Provider
                   <ArrowRight aria-hidden="true" size={19} />
                 </ButtonLink>
               </div>
@@ -83,29 +74,55 @@ export default function Home() {
           </HeroEntrance>
 
           <HeroItem>
-            <div className="mx-auto w-full max-w-[640px] lg:ml-auto">
-              <CareCurrentVisual />
+            <div className="mx-auto w-full max-w-[660px] lg:ml-auto">
+              <StartCarePanel />
             </div>
           </HeroItem>
         </Container>
       </section>
 
-      <Section className="bg-deep-navy py-0 text-paper">
-        <Container className="grid divide-y divide-white/12 md:grid-cols-4 md:divide-x md:divide-y-0">
-          {practiceAtAGlance.map((item) => {
-            const Icon = item.icon;
-            return (
-              <MotionReveal key={item.title}>
-                <div className="py-9 md:px-6">
-                  <div className="flex items-center gap-3 text-aqua">
-                    <Icon aria-hidden="true" size={21} />
-                    <p className="label-caps">{item.title}</p>
-                  </div>
-                  <p className="mt-4 leading-7 text-paper/72">{item.body}</p>
-                </div>
-              </MotionReveal>
-            );
-          })}
+      <Section className="relative overflow-hidden bg-deep-navy py-20 text-paper">
+        <div className="care-current-lines absolute inset-0 opacity-10" />
+        <Container className="relative grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+          <MotionReveal>
+            <p className="label-caps text-aqua">Practice clarity</p>
+            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-tight md:text-5xl">
+              Know the care path before the visit begins.
+            </h2>
+            <p className="mt-5 max-w-lg text-lg leading-8 text-paper/72">
+              Premier NP Care explains the practical details first: who leads
+              care, what telehealth can handle, and when another setting is
+              safer.
+            </p>
+          </MotionReveal>
+
+          <div className="border-y border-white/14">
+            {practiceAtAGlance.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <MotionReveal delay={index * 0.05} key={item.title}>
+                  <article className="grid gap-4 border-b border-white/14 py-6 last:border-b-0 md:grid-cols-[84px_1fr]">
+                    <div className="flex items-center gap-3 text-aqua">
+                      <span className="font-display text-3xl leading-none text-paper/36">
+                        0{index + 1}
+                      </span>
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/14 bg-white/7">
+                        <Icon aria-hidden="true" size={20} />
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-paper">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 max-w-2xl leading-7 text-paper/68">
+                        {item.body}
+                      </p>
+                    </div>
+                  </article>
+                </MotionReveal>
+              );
+            })}
+          </div>
         </Container>
       </Section>
 

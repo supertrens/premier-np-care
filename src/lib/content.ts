@@ -53,7 +53,7 @@ export const services = [
 export const practiceFacts = [
   {
     label: "[PLACEHOLDER] Provider",
-    value: "Virginie Charles, [PLACEHOLDER Credentials]",
+    value: "Virginie Chavannes, [PLACEHOLDER Credentials]",
   },
   {
     label: "[PLACEHOLDER] New patient status",
@@ -71,23 +71,23 @@ export const practiceFacts = [
 
 export const practiceAtAGlance = [
   {
-    title: "Provider-led",
-    body: "Patients know who is responsible for the visit, the explanation, and the care plan.",
+    title: "Who leads the visit",
+    body: "Patients see that care is provider-led before they enter the practice platform.",
     icon: UserRoundCheck,
   },
   {
-    title: "Defined scope",
-    body: "Services are framed clearly, including when virtual care is not the safest setting.",
+    title: "What can be handled virtually",
+    body: "Services are framed with practical scope instead of vague promises.",
     icon: ClipboardCheck,
   },
   {
-    title: "Safe boundaries",
-    body: "Urgent symptoms, in-person needs, and patient data boundaries are stated plainly.",
+    title: "When another setting is safer",
+    body: "Urgent symptoms and in-person needs are separated from routine telehealth.",
     icon: ShieldCheck,
   },
   {
-    title: "Clear access",
-    body: "Booking connects to the practice scheduling link once the final URL is configured.",
+    title: "Where booking happens",
+    body: "Scheduling connects to the established practice platform once the final URL is configured.",
     icon: CalendarCheck,
   },
 ];
@@ -102,7 +102,7 @@ export const howItWorksSteps = [
   {
     title: "Consult",
     description:
-      "Meet with Virginie Charles, [PLACEHOLDER Credentials], through the existing telehealth platform for a focused, unrushed visit.",
+      "Meet with Virginie Chavannes, [PLACEHOLDER Credentials], through the existing telehealth platform for a focused, unrushed visit.",
     icon: UserRoundCheck,
   },
   {
@@ -129,7 +129,7 @@ export const patientJourney = [
   {
     title: "Consult",
     description:
-      "Meet with Virginie Charles, [PLACEHOLDER Credentials], for a focused visit through the established telehealth platform.",
+      "Meet with Virginie Chavannes, [PLACEHOLDER Credentials], for a focused visit through the established telehealth platform.",
     icon: UserRoundCheck,
   },
   {
