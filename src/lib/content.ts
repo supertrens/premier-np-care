@@ -23,6 +23,9 @@ export const services = [
   {
     title: "Everyday Primary Care",
     eyebrow: "Focused concerns",
+    image:
+      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "A calm clinical desktop with a stethoscope and care notes.",
     description:
       "Focused support for common concerns, medication questions, follow-up needs, and practical care planning.",
     fit: "Routine questions, stable symptoms, medication conversations, and follow-up planning.",
@@ -33,6 +36,9 @@ export const services = [
   {
     title: "Women's and Family Health",
     eyebrow: "Life-stage care",
+    image:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "A warm consultation setting prepared for a patient conversation.",
     description:
       "Preventive conversations, wellness guidance, and family-centered support within the practice scope.",
     fit: "Wellness questions, prevention conversations, education, and routine guidance.",
@@ -43,6 +49,9 @@ export const services = [
   {
     title: "Chronic Condition Support",
     eyebrow: "Steady follow-up",
+    image:
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Clinical follow-up tools arranged for ongoing care planning.",
     description:
       "Check-ins for stable conditions, lifestyle goals, and coordination when more care is needed.",
     fit: "Stable check-ins, recent readings, lifestyle goals, and care coordination.",
@@ -53,6 +62,9 @@ export const services = [
   {
     title: "Telehealth Check-ins",
     eyebrow: "Accessible visits",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "A laptop and medical workspace prepared for a virtual care visit.",
     description:
       "Convenient virtual visits for patients who want clear answers without losing the personal feel of care.",
     fit: "Questions that can be evaluated safely without an in-person exam.",

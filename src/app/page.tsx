@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowRight,
   CalendarCheck,
@@ -162,33 +163,41 @@ export default function Home() {
                   key={service.title}
                 >
                   <article className="grid min-h-[520px] overflow-hidden rounded-[30px] border border-line bg-porcelain shadow-[0_28px_80px_rgba(7,28,42,0.08)] md:grid-cols-[0.86fr_1.14fr]">
-                    <div className="relative min-h-[210px] overflow-hidden bg-[linear-gradient(135deg,#E7F8FB,#F7FCFD_54%,#D4F0F6)] p-6 md:min-h-full">
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-[linear-gradient(rgba(10,77,143,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(10,77,143,0.06)_1px,transparent_1px)] bg-[size:34px_34px]"
+                    <div className="relative min-h-[250px] overflow-hidden bg-deep-navy p-6 md:min-h-full">
+                      <Image
+                        alt={service.imageAlt}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        fill
+                        priority={index === 0}
+                        sizes="(min-width: 1024px) 36vw, (min-width: 768px) 38vw, 86vw"
+                        src={service.image}
                       />
                       <div
                         aria-hidden="true"
-                        className="absolute -right-12 top-10 h-48 w-48 rounded-full border border-cyan/30"
+                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0.18),rgba(7,28,42,0.56)),linear-gradient(135deg,rgba(7,4,95,0.28),rgba(18,174,196,0.08)_46%,rgba(247,252,253,0.22))]"
                       />
                       <div
                         aria-hidden="true"
-                        className="absolute bottom-8 left-8 h-32 w-32 rounded-full bg-cyan/10"
+                        className="absolute inset-0 bg-[linear-gradient(rgba(247,252,253,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,252,253,0.1)_1px,transparent_1px)] bg-[size:34px_34px]"
+                      />
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(0deg,rgba(7,28,42,0.64),transparent)]"
                       />
                       <div className="relative flex h-full min-h-[180px] flex-col justify-between">
                         <div className="flex items-center justify-between gap-4">
-                          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-paper/80 text-cobalt shadow-[0_16px_40px_rgba(10,77,143,0.08)]">
+                          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/22 bg-paper/88 text-cobalt shadow-[0_16px_40px_rgba(7,28,42,0.18)] backdrop-blur">
                             <Icon aria-hidden="true" size={26} />
                           </span>
-                          <span className="label-caps rounded-full border border-cyan/18 bg-paper/80 px-3 py-2 text-harbor">
+                          <span className="label-caps rounded-full border border-white/22 bg-paper/88 px-3 py-2 text-cobalt shadow-[0_16px_36px_rgba(7,28,42,0.16)] backdrop-blur">
                             {service.eyebrow}
                           </span>
                         </div>
                         <div className="mt-10">
-                          <p className="label-caps text-cobalt">
+                          <p className="label-caps text-paper/82">
                             Service area 0{index + 1}
                           </p>
-                          <div className="mt-4 h-2 w-28 rounded-full bg-[linear-gradient(90deg,#07045F,#12AEC4,#C9EEF3)]" />
+                          <div className="mt-4 h-2 w-28 rounded-full bg-[linear-gradient(90deg,#C9EEF3,#58C7D6,#F7FCFD)]" />
                         </div>
                       </div>
                     </div>
@@ -260,32 +269,39 @@ export default function Home() {
           <MotionReveal delay={0.12}>
             <div className="mt-12 grid gap-5 lg:grid-cols-[0.92fr_1.08fr_0.86fr]">
               <article className="overflow-hidden rounded-[30px] border border-line bg-paper shadow-[0_28px_90px_rgba(7,28,42,0.08)]">
-                <div className="relative min-h-[320px] overflow-hidden bg-[linear-gradient(135deg,#E8F7FA,#F7FCFD_58%,#D5F1F6)] p-6">
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-[linear-gradient(rgba(10,77,143,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(10,77,143,0.055)_1px,transparent_1px)] bg-[size:34px_34px]"
+                <div className="relative min-h-[320px] overflow-hidden bg-deep-navy p-6">
+                  <Image
+                    alt="A polished clinical workspace reserved for the future provider photo."
+                    className="absolute inset-0 h-full w-full object-cover"
+                    fill
+                    sizes="(min-width: 1024px) 28vw, 100vw"
+                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
                   />
                   <div
                     aria-hidden="true"
-                    className="absolute -right-12 top-10 h-52 w-52 rounded-full border border-cyan/28"
+                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0.12),rgba(7,28,42,0.68)),linear-gradient(135deg,rgba(7,4,95,0.32),rgba(18,174,196,0.06)_55%,rgba(247,252,253,0.16))]"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-[linear-gradient(rgba(247,252,253,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,252,253,0.1)_1px,transparent_1px)] bg-[size:34px_34px]"
                   />
                   <div className="relative flex h-full min-h-[270px] flex-col justify-between">
                     <div className="flex items-center justify-between">
-                      <span className="label-caps rounded-full border border-cyan/20 bg-paper/80 px-3 py-2 text-harbor">
+                      <span className="label-caps rounded-full border border-white/22 bg-paper/88 px-3 py-2 text-cobalt shadow-[0_16px_36px_rgba(7,28,42,0.16)] backdrop-blur">
                         Provider
                       </span>
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-deep-navy text-paper">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/18 bg-deep-navy text-paper shadow-[0_16px_36px_rgba(7,28,42,0.2)]">
                         <UserRoundCheck aria-hidden="true" size={22} />
                       </span>
                     </div>
                     <div>
-                      <div className="grid h-28 w-28 place-items-center rounded-[30px] bg-deep-navy font-display text-5xl font-medium text-paper shadow-[0_22px_60px_rgba(7,4,95,0.24)]">
+                      <div className="grid h-28 w-28 place-items-center rounded-[30px] border border-white/18 bg-deep-navy/94 font-display text-5xl font-medium text-paper shadow-[0_22px_60px_rgba(7,4,95,0.24)] backdrop-blur">
                         VC
                       </div>
-                      <h3 className="mt-6 font-display text-4xl font-medium leading-tight text-ink">
+                      <h3 className="mt-6 font-display text-4xl font-medium leading-tight text-paper">
                         Virginie Chavannes
                       </h3>
-                      <p className="mt-3 max-w-xs leading-7 text-ink/66">
+                      <p className="mt-3 max-w-xs leading-7 text-paper/74">
                         A professional headshot can replace this slot while
                         keeping the layout steady.
                       </p>
