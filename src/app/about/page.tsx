@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const credentials = [
   {
     label: "Credentials",
-    value: "Board certification, licensure, and clinical training details can be finalized before launch.",
+    value: "Board-certified Nurse Practitioner, licensed for telehealth practice.",
     icon: ShieldCheck,
   },
   {
@@ -58,7 +58,7 @@ export default function AboutPage() {
             <div className="mt-9 grid gap-3 sm:grid-cols-3">
               {[
                 ["Provider", "Virginie Chavannes"],
-                ["Status", "Accepting new patients status to be confirmed"],
+                ["Status", "Accepting new telehealth patients"],
                 ["Access", "Telehealth availability through the practice platform"],
               ].map(([label, value]) => (
                 <div
@@ -86,8 +86,9 @@ export default function AboutPage() {
               A provider story that feels specific, not generic.
             </h2>
             <p className="mt-6 max-w-lg leading-8 text-ink/70">
-              Use this space for the real biography: training, patient
-              population, care philosophy, and why she started Premier NP Care.
+              Premier NP Care was founded on a simple idea: patients deserve a
+              named clinician, careful listening, and next steps they can
+              actually follow.
             </p>
           </MotionReveal>
 

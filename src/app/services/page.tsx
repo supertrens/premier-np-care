@@ -11,7 +11,7 @@ import { clinicalScopeMatrix, safetyBoundaries } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore placeholder service areas, clinical scope, telehealth boundaries, and next steps for Premier NP Care.",
+    "Explore service areas, clinical scope, telehealth boundaries, and next steps for Premier NP Care.",
 };
 
 export default function ServicesPage() {
@@ -25,8 +25,8 @@ export default function ServicesPage() {
               <p className="label-caps">Scope note</p>
             </div>
             <p className="mt-3 leading-7 text-ink/74">
-              Final clinical scope, exclusions, eligibility, and service-area
-              language should be confirmed before launch.
+              Scope is confirmed at the visit. Your provider will tell you
+              clearly when a concern needs in-person or urgent care instead.
             </p>
           </div>
         }

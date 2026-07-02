@@ -136,8 +136,8 @@ export default function HowItWorksPage() {
               Start with one simple step.
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/78">
-              The booking button will point to the practice&apos;s real
-              scheduling link once the final URL is configured.
+              Book through the practice scheduling link, and everything after
+              that is clearly explained.
             </p>
           </div>
           <ButtonLink href={bookingUrl} variant="mist">

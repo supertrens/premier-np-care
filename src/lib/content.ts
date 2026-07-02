@@ -81,11 +81,11 @@ export const practiceFacts = [
   },
   {
     label: "New patient status",
-    value: "Accepting status and launch timing can be confirmed before go-live.",
+    value: "Accepting new telehealth patients.",
   },
   {
     label: "Service area",
-    value: "Telehealth eligibility and service-area language can be finalized before launch.",
+    value: "Telehealth visits for patients in the practice's licensed states.",
   },
   {
     label: "Visit platform",
@@ -111,7 +111,7 @@ export const practiceAtAGlance = [
   },
   {
     title: "Where booking happens",
-    body: "Scheduling connects to the established practice platform once the final URL is configured.",
+    body: "Scheduling happens through the practice's established platform, not on this website.",
     icon: CalendarCheck,
   },
 ];

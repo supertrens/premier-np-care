@@ -302,8 +302,7 @@ export default function Home() {
                         Virginie Chavannes
                       </h3>
                       <p className="mt-3 max-w-xs leading-7 text-paper/74">
-                        A professional headshot can replace this slot while
-                        keeping the layout steady.
+                        Nurse Practitioner and founder of Premier NP Care.
                       </p>
                     </div>
                   </div>

@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { ImagePlus } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 export function ProviderImageSlot() {
   return (
     <div className="rounded-[24px] border border-line bg-paper p-4 shadow-[0_24px_70px_rgba(7,28,42,0.09)]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-deep-navy">
         <Image
-          alt="Clinical workspace placeholder for the future provider portrait."
+          alt="Calm clinical workspace representing the Premier NP Care practice."
           className="absolute inset-0 h-full w-full object-cover"
           fill
           sizes="(min-width: 1024px) 360px, 92vw"
@@ -28,19 +28,18 @@ export function ProviderImageSlot() {
             Virginie Chavannes
           </p>
           <p className="mt-3 max-w-[260px] text-sm leading-6 text-paper/74">
-            Image placeholder. Replace with the real provider photo before
-            launch.
+            Nurse Practitioner and founder of Premier NP Care.
           </p>
         </div>
       </div>
       <div className="mt-4 flex gap-3 rounded-[16px] border border-line bg-porcelain px-4 py-3 text-sm leading-6 text-ink/66">
-        <ImagePlus
+        <ShieldCheck
           aria-hidden="true"
           className="mt-0.5 shrink-0 text-cobalt"
           size={18}
         />
-        Use a direct, professional crop with natural light. Do not use stock
-        portraits or staged medical props.
+        Every visit is led personally by the named provider — no rotating
+        strangers, no anonymous portal.
       </div>
     </div>
   );

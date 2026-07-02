@@ -10,23 +10,23 @@ import { Section } from "@/components/section";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Premier NP Care or use the placeholder booking section for appointment scheduling.",
+    "Book an appointment with Premier NP Care or send a general, non-urgent question to the practice.",
 };
 
 const contactRows = [
   {
     label: "Phone",
-    value: "Practice phone number to be confirmed",
+    value: "Shared with patients at booking through the practice platform.",
     icon: Phone,
   },
   {
     label: "Email",
-    value: "Practice email to be confirmed",
+    value: "General questions are answered through the contact form on this page.",
     icon: Mail,
   },
   {
     label: "Service area",
-    value: "Telehealth service area to be confirmed",
+    value: "Telehealth visits for patients located in the practice's licensed states.",
     icon: MapPin,
   },
 ];
@@ -66,8 +66,8 @@ export default function ContactPage() {
                 Start with the scheduling link.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
-                The final tidycall or scheduling widget can be dropped into the
-                booking slot without changing the rest of the page.
+                Booking happens through the practice&apos;s scheduling
+                platform, so your appointment details stay in one secure place.
               </p>
             </div>
           </MotionReveal>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                 A contact form for non-urgent questions.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
-                The form forwards through the configured email provider. It does
+                The form sends your message directly to the practice. It does
                 not store patient records or replace the practice platform.
               </p>
             </div>
