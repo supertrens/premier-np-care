@@ -3,7 +3,6 @@ import {
   ArrowRight,
   CalendarCheck,
   ClipboardCheck,
-  ImagePlus,
   ShieldCheck,
   TriangleAlert,
   UserRoundCheck,
@@ -16,6 +15,7 @@ import {
   MotionReveal,
 } from "@/components/motion-reveal";
 import { Section } from "@/components/section";
+import { ServiceRail } from "@/components/service-rail";
 import { bookingUrl } from "@/lib/config";
 import {
   patientJourney,
@@ -152,34 +152,56 @@ export default function Home() {
             </MotionReveal>
           </div>
 
-          <div className="-mx-5 mt-12 overflow-x-auto px-5 pb-3 [scrollbar-width:thin] md:-mx-8 md:px-8">
-            <div className="flex snap-x snap-mandatory gap-5">
-              {services.map((service, index) => {
-                const Icon = service.icon;
-                return (
-                  <MotionReveal
-                    className="w-[82vw] max-w-[390px] shrink-0 snap-start md:w-[360px]"
-                    delay={index * 0.05}
-                    key={service.title}
-                  >
-                    <article className="flex min-h-[520px] flex-col rounded-[28px] border border-line bg-porcelain p-6 shadow-[0_24px_70px_rgba(7,28,42,0.07)]">
-                      <div className="flex items-center justify-between gap-4">
-                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan/20 bg-mist text-cobalt">
-                          <Icon aria-hidden="true" size={23} />
-                        </span>
-                        <span className="label-caps rounded-full border border-cyan/18 bg-paper px-3 py-2 text-harbor">
-                          {service.eyebrow}
-                        </span>
+          <ServiceRail itemCount={services.length}>
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <MotionReveal
+                  className="w-[86vw] max-w-[760px] shrink-0 snap-center md:w-[74vw] lg:max-w-[900px]"
+                  delay={index * 0.05}
+                  key={service.title}
+                >
+                  <article className="grid min-h-[520px] overflow-hidden rounded-[30px] border border-line bg-porcelain shadow-[0_28px_80px_rgba(7,28,42,0.08)] md:grid-cols-[0.86fr_1.14fr]">
+                    <div className="relative min-h-[210px] overflow-hidden bg-[linear-gradient(135deg,#E7F8FB,#F7FCFD_54%,#D4F0F6)] p-6 md:min-h-full">
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-[linear-gradient(rgba(10,77,143,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(10,77,143,0.06)_1px,transparent_1px)] bg-[size:34px_34px]"
+                      />
+                      <div
+                        aria-hidden="true"
+                        className="absolute -right-12 top-10 h-48 w-48 rounded-full border border-cyan/30"
+                      />
+                      <div
+                        aria-hidden="true"
+                        className="absolute bottom-8 left-8 h-32 w-32 rounded-full bg-cyan/10"
+                      />
+                      <div className="relative flex h-full min-h-[180px] flex-col justify-between">
+                        <div className="flex items-center justify-between gap-4">
+                          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-paper/80 text-cobalt shadow-[0_16px_40px_rgba(10,77,143,0.08)]">
+                            <Icon aria-hidden="true" size={26} />
+                          </span>
+                          <span className="label-caps rounded-full border border-cyan/18 bg-paper/80 px-3 py-2 text-harbor">
+                            {service.eyebrow}
+                          </span>
+                        </div>
+                        <div className="mt-10">
+                          <p className="label-caps text-cobalt">
+                            Service area 0{index + 1}
+                          </p>
+                          <div className="mt-4 h-2 w-28 rounded-full bg-[linear-gradient(90deg,#07045F,#12AEC4,#C9EEF3)]" />
+                        </div>
                       </div>
+                    </div>
 
-                      <h3 className="mt-7 font-display text-3xl font-medium leading-tight text-ink">
+                    <div className="flex flex-col p-7 md:p-8">
+                      <h3 className="max-w-2xl font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
                         {service.title}
                       </h3>
-                      <p className="mt-4 leading-7 text-ink/70">
+                      <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
                         {service.description}
                       </p>
 
-                      <div className="mt-auto space-y-4 pt-7">
+                      <div className="mt-auto grid gap-4 pt-8 lg:grid-cols-2">
                         <div className="border-t border-line pt-4">
                           <div className="flex items-center gap-2 text-cobalt">
                             <ClipboardCheck aria-hidden="true" size={18} />
@@ -192,19 +214,21 @@ export default function Home() {
                         <div className="border-t border-line pt-4">
                           <div className="flex items-center gap-2 text-warn">
                             <TriangleAlert aria-hidden="true" size={18} />
-                            <p className="label-caps">Consider another setting</p>
+                            <p className="label-caps">
+                              Consider another setting
+                            </p>
                           </div>
                           <p className="mt-2 text-sm leading-6 text-ink/68">
                             {service.boundary}
                           </p>
                         </div>
                       </div>
-                    </article>
-                  </MotionReveal>
-                );
-              })}
-            </div>
-          </div>
+                    </div>
+                  </article>
+                </MotionReveal>
+              );
+            })}
+          </ServiceRail>
         </Container>
       </Section>
 
@@ -214,55 +238,85 @@ export default function Home() {
           <MotionReveal>
             <p className="label-caps text-cobalt">Provider accountability</p>
             <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
-              A real practice needs a visible clinician.
+              Care is easier to trust when the clinician is visible.
             </h2>
             <p className="mt-6 max-w-lg leading-8 text-ink/70">
-              The demo intentionally uses a polished provider image slot until
-              the real headshot is available. It keeps trust honest while still
-              looking launch-quality.
+              Premier NP Care centers the provider relationship so patients
+              know who is guiding the visit, explaining the plan, and setting
+              safe boundaries.
             </p>
+            <ButtonLink className="mt-9" href="/about" variant="secondary">
+              Meet the Provider
+              <ArrowRight aria-hidden="true" size={19} />
+            </ButtonLink>
           </MotionReveal>
           <MotionReveal delay={0.1}>
-            <div className="grid gap-8 border-y border-line py-8 md:grid-cols-[0.72fr_1fr] md:items-center">
-              <figure>
-                <div className="grid aspect-[4/5] max-h-[430px] place-items-center rounded-[28px] border border-dashed border-cyan/45 bg-paper/72">
-                  <div className="max-w-[240px] px-6 text-center">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[18px] bg-deep-navy text-paper shadow-[0_18px_42px_rgba(7,4,95,0.18)]">
-                      <UserRoundCheck aria-hidden="true" size={30} />
+            <div className="overflow-hidden rounded-[32px] border border-line bg-paper shadow-[0_28px_90px_rgba(7,28,42,0.08)]">
+              <div className="grid gap-0 md:grid-cols-[0.78fr_1.22fr]">
+                <figure className="border-b border-line bg-[linear-gradient(135deg,#F7FCFD,#E8F7FA)] p-6 md:border-b-0 md:border-r">
+                  <div className="grid aspect-[4/5] place-items-center rounded-[24px] border border-dashed border-cyan/45 bg-white/68">
+                    <div className="px-6 text-center">
+                      <div className="mx-auto grid h-24 w-24 place-items-center rounded-[28px] bg-deep-navy font-display text-4xl font-medium text-paper shadow-[0_20px_55px_rgba(7,4,95,0.22)]">
+                        VC
+                      </div>
+                      <p className="mt-6 font-display text-3xl font-medium leading-tight text-ink">
+                        Virginie Chavannes
+                      </p>
+                      <p className="mt-3 text-sm font-semibold leading-6 text-ink/60">
+                        Professional headshot slot
+                      </p>
                     </div>
-                    <p className="mt-5 font-display text-3xl font-medium leading-tight text-ink">
-                      Provider headshot
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-ink/64">
-                      Replace with the real provider photo before launch.
-                    </p>
+                  </div>
+                </figure>
+
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-3 text-cobalt">
+                    <UserRoundCheck aria-hidden="true" size={23} />
+                    <p className="label-caps">Provider-led care</p>
+                  </div>
+                  <p className="mt-5 max-w-xl font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+                    A direct care relationship, not a faceless portal.
+                  </p>
+                  <p className="mt-5 max-w-xl leading-8 text-ink/70">
+                    Patients should be able to understand who is responsible
+                    for the visit, what can be handled virtually, and what the
+                    next step should be.
+                  </p>
+
+                  <div className="mt-7 divide-y divide-line border-y border-line">
+                    {[
+                      {
+                        title: "Listen first",
+                        body: "The visit starts with context, symptoms, questions, and goals.",
+                        icon: UserRoundCheck,
+                      },
+                      {
+                        title: "Explain the plan",
+                        body: "Next steps are written plainly so patients know what happens after the visit.",
+                        icon: ClipboardCheck,
+                      },
+                      {
+                        title: "Name the limits",
+                        body: "When telehealth is not the right setting, that boundary is part of the care.",
+                        icon: ShieldCheck,
+                      },
+                    ].map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          className="grid gap-3 py-4 sm:grid-cols-[170px_1fr]"
+                          key={item.title}
+                        >
+                          <div className="flex items-center gap-3 text-cobalt">
+                            <Icon aria-hidden="true" size={20} />
+                            <p className="label-caps">{item.title}</p>
+                          </div>
+                          <p className="leading-7 text-ink/70">{item.body}</p>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-                <figcaption className="mt-4 flex gap-3 text-sm leading-6 text-ink/64">
-                  <ImagePlus
-                    aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-cobalt"
-                    size={18}
-                  />
-                  Use a direct, professional crop with natural light and no
-                  stock portraits.
-                </figcaption>
-              </figure>
-
-              <div>
-                <div className="flex items-center gap-3 text-cobalt">
-                  <UserRoundCheck aria-hidden="true" size={23} />
-                  <p className="label-caps">Provider-led care</p>
-                </div>
-                <p className="mt-5 max-w-xl font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
-                  Patients should know who is responsible for the visit and the
-                  care plan.
-                </p>
-                <p className="mt-5 max-w-xl leading-8 text-ink/70">
-                  This section keeps the provider visible while the final
-                  biography, training, and care philosophy are prepared for
-                  launch.
-                </p>
               </div>
             </div>
           </MotionReveal>
