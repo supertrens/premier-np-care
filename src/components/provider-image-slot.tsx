@@ -12,7 +12,7 @@ export function ProviderImageSlot() {
             Provider headshot
           </p>
           <p className="mt-3 text-sm leading-6 text-ink/64">
-            [PLACEHOLDER] Replace with the real provider photo before launch.
+            Replace with the real provider photo before launch.
           </p>
         </div>
       </div>

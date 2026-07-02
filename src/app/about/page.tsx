@@ -23,17 +23,17 @@ export const metadata: Metadata = {
 
 const credentials = [
   {
-    label: "[PLACEHOLDER] Credentials",
-    value: "Board certification, licensure, and clinical training details.",
+    label: "Credentials",
+    value: "Board certification, licensure, and clinical training details can be finalized before launch.",
     icon: ShieldCheck,
   },
   {
-    label: "[PLACEHOLDER] Training",
+    label: "Training",
     value: "Graduate program, specialty focus, and relevant clinical rotations.",
     icon: GraduationCap,
   },
   {
-    label: "[PLACEHOLDER] Experience",
+    label: "Experience",
     value: "Years in practice, care settings, and patient populations served.",
     icon: ClipboardCheck,
   },
@@ -57,9 +57,9 @@ export default function AboutPage() {
             </p>
             <div className="mt-9 grid gap-3 sm:grid-cols-3">
               {[
-                ["Provider", "Virginie Chavannes, [PLACEHOLDER Credentials]"],
-                ["Status", "[PLACEHOLDER] Accepting new patients"],
-                ["Access", "[PLACEHOLDER] Telehealth availability"],
+                ["Provider", "Virginie Chavannes"],
+                ["Status", "Accepting new patients status to be confirmed"],
+                ["Access", "Telehealth availability through the practice platform"],
               ].map(([label, value]) => (
                 <div
                   className="rounded-[18px] border border-line bg-paper/78 p-4 shadow-[0_14px_40px_rgba(7,28,42,0.05)]"
@@ -99,13 +99,13 @@ export default function AboutPage() {
                   <p className="label-caps">Care philosophy</p>
                 </div>
                 <p className="mt-5 max-w-3xl font-display text-4xl font-medium leading-tight text-ink">
-                  [PLACEHOLDER] Thoughtful assessment, clear next steps, and
-                  honest telehealth boundaries.
+                  Thoughtful assessment, clear next steps, and honest
+                  telehealth boundaries.
                 </p>
                 <p className="mt-5 max-w-3xl text-lg leading-8 text-ink/72">
-                  [PLACEHOLDER] Add a concise story here that explains the
-                  provider&apos;s training, patient care values, and the reason
-                  this independent practice exists.
+                  This practice is designed around direct provider access,
+                  careful listening, and care plans that help patients
+                  understand what happens next.
                 </p>
               </article>
 

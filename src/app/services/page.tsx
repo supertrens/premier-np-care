@@ -25,8 +25,8 @@ export default function ServicesPage() {
               <p className="label-caps">Scope note</p>
             </div>
             <p className="mt-3 leading-7 text-ink/74">
-              [PLACEHOLDER] Final clinical scope, exclusions, eligibility, and
-              service-area language should be confirmed before launch.
+              Final clinical scope, exclusions, eligibility, and service-area
+              language should be confirmed before launch.
             </p>
           </div>
         }

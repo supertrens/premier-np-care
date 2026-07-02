@@ -8,7 +8,7 @@ export function BookingEmbedSlot() {
       className="rounded-[24px] border border-line bg-paper p-6 shadow-[0_22px_70px_rgba(7,28,42,0.08)]"
       id="booking-placeholder"
     >
-      <p className="label-caps text-cobalt">[PLACEHOLDER] Booking embed slot</p>
+      <p className="label-caps text-cobalt">Booking embed slot</p>
       <h2 className="mt-4 font-display text-4xl font-medium leading-tight text-ink">
         Book an appointment
       </h2>
@@ -22,7 +22,7 @@ export function BookingEmbedSlot() {
       </p>
       {isBookingPlaceholder ? (
         <p className="mt-4 rounded-[16px] border border-cyan/20 bg-mist px-4 py-3 text-sm font-semibold leading-6 text-ink">
-          [PLACEHOLDER] Set a real tidycall or scheduling URL before launch.
+          Set a real tidycall or scheduling URL before launch.
         </p>
       ) : null}
       <ButtonLink className="mt-6" href={bookingUrl} variant="cobalt">

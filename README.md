@@ -11,9 +11,9 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Replace Placeholder Content
+## Update Demo Copy
 
-All launch copy that needs real practice details is marked with `[PLACEHOLDER]`. Search for that string across `src/` and replace provider identity, biography, services, contact details, and service-area language.
+The site uses polished demo copy so the design can be reviewed without visible placeholder flags. Before launch, review provider credentials, biography, service scope, contact details, booking URL, and service-area language across `src/`.
 
 ## Replace Images
 

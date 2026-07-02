@@ -15,18 +15,18 @@ export const metadata: Metadata = {
 
 const contactRows = [
   {
-    label: "[PLACEHOLDER] Phone",
-    value: "[PLACEHOLDER] Phone number",
+    label: "Phone",
+    value: "Practice phone number to be confirmed",
     icon: Phone,
   },
   {
-    label: "[PLACEHOLDER] Email",
-    value: "[PLACEHOLDER] Practice email",
+    label: "Email",
+    value: "Practice email to be confirmed",
     icon: Mail,
   },
   {
-    label: "[PLACEHOLDER] Service area",
-    value: "[PLACEHOLDER] Service area or address note",
+    label: "Service area",
+    value: "Telehealth service area to be confirmed",
     icon: MapPin,
   },
 ];

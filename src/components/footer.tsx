@@ -12,8 +12,7 @@ export function Footer() {
               Premier NP Care
             </p>
             <p className="mt-4 max-w-sm leading-7 text-paper/68">
-              Nurse Practitioner-led care with telehealth access.{" "}
-              [PLACEHOLDER: service area].
+              Nurse Practitioner-led care with telehealth access.
             </p>
             <p className="mt-6 rounded-[16px] border border-cyan/25 bg-white/8 px-4 py-3 text-sm leading-6 text-paper/72">
               Informational only. Not a patient portal.
@@ -38,16 +37,21 @@ export function Footer() {
           <div>
             <p className="label-caps text-aqua">Contact</p>
             <address className="mt-5 grid gap-3 not-italic">
-              {["[PLACEHOLDER] Phone", "[PLACEHOLDER] Email", "[PLACEHOLDER] Hours"].map((item) => (
-                <span key={item} className="text-base text-paper/64">{item}</span>
-              ))}
+              {["Phone to be confirmed", "Email to be confirmed", "Hours to be confirmed"].map(
+                (item) => (
+                  <span key={item} className="text-base text-paper/64">
+                    {item}
+                  </span>
+                ),
+              )}
             </address>
           </div>
 
           <div>
             <p className="label-caps text-aqua">Hours</p>
             <p className="mt-5 leading-7 text-paper/64">
-              [PLACEHOLDER: Appointment availability and telehealth hours.]
+              Appointment availability and telehealth hours will be finalized
+              before launch.
             </p>
           </div>
         </div>

@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   CalendarCheck,
+  ClipboardCheck,
   ImagePlus,
   ShieldCheck,
+  TriangleAlert,
   UserRoundCheck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
@@ -126,50 +128,82 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className="bg-paper py-24">
-        <Container className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-          <MotionReveal>
-            <p className="label-caps text-cobalt">Clinical scope</p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
-              Care areas presented with boundaries, not vague promises.
-            </h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-ink/70">
-              The services preview should help patients quickly understand what
-              the practice may handle virtually and when another care setting is
-              safer.
-            </p>
-            <ButtonLink className="mt-9" href="/services" variant="secondary">
-              View Services
-              <ArrowRight aria-hidden="true" size={19} />
-            </ButtonLink>
-          </MotionReveal>
+      <Section className="overflow-hidden bg-paper py-24">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+            <MotionReveal>
+              <p className="label-caps text-cobalt">Clinical scope</p>
+              <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+                Common care needs, framed clearly.
+              </h2>
+            </MotionReveal>
+            <MotionReveal delay={0.08}>
+              <div className="grid gap-5 border-y border-line py-6 md:grid-cols-[1fr_auto] md:items-center">
+                <p className="max-w-2xl text-lg leading-8 text-ink/70">
+                  Browse common starting points for care. Each service card
+                  keeps the promise practical: what may fit a telehealth visit
+                  and when another setting may be safer.
+                </p>
+                <ButtonLink href="/services" variant="secondary">
+                  View Services
+                  <ArrowRight aria-hidden="true" size={19} />
+                </ButtonLink>
+              </div>
+            </MotionReveal>
+          </div>
 
-          <div className="divide-y divide-line border-y border-line">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
-                <MotionReveal key={service.title}>
-                  <article className="grid gap-5 py-7 md:grid-cols-[190px_1fr]">
-                    <div className="flex items-center gap-3 text-cobalt">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mist">
-                        <Icon aria-hidden="true" size={21} />
-                      </span>
-                      <p className="label-caps text-harbor">
-                        {service.eyebrow}
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
+          <div className="-mx-5 mt-12 overflow-x-auto px-5 pb-3 [scrollbar-width:thin] md:-mx-8 md:px-8">
+            <div className="flex snap-x snap-mandatory gap-5">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                return (
+                  <MotionReveal
+                    className="w-[82vw] max-w-[390px] shrink-0 snap-start md:w-[360px]"
+                    delay={index * 0.05}
+                    key={service.title}
+                  >
+                    <article className="flex min-h-[520px] flex-col rounded-[28px] border border-line bg-porcelain p-6 shadow-[0_24px_70px_rgba(7,28,42,0.07)]">
+                      <div className="flex items-center justify-between gap-4">
+                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan/20 bg-mist text-cobalt">
+                          <Icon aria-hidden="true" size={23} />
+                        </span>
+                        <span className="label-caps rounded-full border border-cyan/18 bg-paper px-3 py-2 text-harbor">
+                          {service.eyebrow}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-7 font-display text-3xl font-medium leading-tight text-ink">
                         {service.title}
                       </h3>
-                      <p className="mt-3 max-w-2xl leading-7 text-ink/70">
+                      <p className="mt-4 leading-7 text-ink/70">
                         {service.description}
                       </p>
-                    </div>
-                  </article>
-                </MotionReveal>
-              );
-            })}
+
+                      <div className="mt-auto space-y-4 pt-7">
+                        <div className="border-t border-line pt-4">
+                          <div className="flex items-center gap-2 text-cobalt">
+                            <ClipboardCheck aria-hidden="true" size={18} />
+                            <p className="label-caps">May fit telehealth</p>
+                          </div>
+                          <p className="mt-2 text-sm leading-6 text-ink/68">
+                            {service.fit}
+                          </p>
+                        </div>
+                        <div className="border-t border-line pt-4">
+                          <div className="flex items-center gap-2 text-warn">
+                            <TriangleAlert aria-hidden="true" size={18} />
+                            <p className="label-caps">Consider another setting</p>
+                          </div>
+                          <p className="mt-2 text-sm leading-6 text-ink/68">
+                            {service.boundary}
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </MotionReveal>
+                );
+              })}
+            </div>
           </div>
         </Container>
       </Section>
@@ -200,8 +234,7 @@ export default function Home() {
                       Provider headshot
                     </p>
                     <p className="mt-3 text-sm leading-6 text-ink/64">
-                      [PLACEHOLDER] Replace with the real provider photo before
-                      launch.
+                      Replace with the real provider photo before launch.
                     </p>
                   </div>
                 </div>
@@ -226,8 +259,9 @@ export default function Home() {
                   care plan.
                 </p>
                 <p className="mt-5 max-w-xl leading-8 text-ink/70">
-                  [PLACEHOLDER] Add the provider story, training, and care
-                  philosophy here once final copy is approved.
+                  This section keeps the provider visible while the final
+                  biography, training, and care philosophy are prepared for
+                  launch.
                 </p>
               </div>
             </div>

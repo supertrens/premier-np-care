@@ -21,47 +21,59 @@ export const navItems = [
 
 export const services = [
   {
-    title: "[PLACEHOLDER] Everyday Primary Care",
+    title: "Everyday Primary Care",
     eyebrow: "Focused concerns",
     description:
-      "[PLACEHOLDER] Focused support for common concerns, medication questions, follow-up needs, and practical care planning.",
+      "Focused support for common concerns, medication questions, follow-up needs, and practical care planning.",
+    fit: "Routine questions, stable symptoms, medication conversations, and follow-up planning.",
+    boundary:
+      "Severe symptoms, sudden changes, procedures, imaging, labs, or hands-on exams may need another setting.",
     icon: Stethoscope,
   },
   {
-    title: "[PLACEHOLDER] Women and Family Health",
+    title: "Women's and Family Health",
     eyebrow: "Life-stage care",
     description:
-      "[PLACEHOLDER] Preventive conversations, wellness guidance, and family-centered support within the practice scope.",
+      "Preventive conversations, wellness guidance, and family-centered support within the practice scope.",
+    fit: "Wellness questions, prevention conversations, education, and routine guidance.",
+    boundary:
+      "Urgent pregnancy concerns, severe pain, heavy bleeding, or exams should be directed appropriately.",
     icon: HeartPulse,
   },
   {
-    title: "[PLACEHOLDER] Chronic Condition Support",
+    title: "Chronic Condition Support",
     eyebrow: "Steady follow-up",
     description:
-      "[PLACEHOLDER] Check-ins for stable conditions, lifestyle goals, and coordination when more care is needed.",
+      "Check-ins for stable conditions, lifestyle goals, and coordination when more care is needed.",
+    fit: "Stable check-ins, recent readings, lifestyle goals, and care coordination.",
+    boundary:
+      "Unstable readings, severe symptoms, or complex medication changes may require higher-touch care.",
     icon: ShieldCheck,
   },
   {
-    title: "[PLACEHOLDER] Telehealth Check-ins",
+    title: "Telehealth Check-ins",
     eyebrow: "Accessible visits",
     description:
-      "[PLACEHOLDER] Convenient virtual visits for patients who want clear answers without losing the personal feel of care.",
+      "Convenient virtual visits for patients who want clear answers without losing the personal feel of care.",
+    fit: "Questions that can be evaluated safely without an in-person exam.",
+    boundary:
+      "Emergencies, chest pain, breathing trouble, stroke symptoms, or serious injuries need urgent care.",
     icon: MessagesSquare,
   },
 ];
 
 export const practiceFacts = [
   {
-    label: "[PLACEHOLDER] Provider",
-    value: "Virginie Chavannes, [PLACEHOLDER Credentials]",
+    label: "Provider",
+    value: "Virginie Chavannes",
   },
   {
-    label: "[PLACEHOLDER] New patient status",
-    value: "[PLACEHOLDER] Accepting status, booking availability, and launch timing.",
+    label: "New patient status",
+    value: "Accepting status and launch timing can be confirmed before go-live.",
   },
   {
-    label: "[PLACEHOLDER] Service area",
-    value: "[PLACEHOLDER] State, county, or eligibility language for telehealth care.",
+    label: "Service area",
+    value: "Telehealth eligibility and service-area language can be finalized before launch.",
   },
   {
     label: "Visit platform",
@@ -102,7 +114,7 @@ export const howItWorksSteps = [
   {
     title: "Consult",
     description:
-      "Meet with Virginie Chavannes, [PLACEHOLDER Credentials], through the existing telehealth platform for a focused, unrushed visit.",
+      "Meet with Virginie Chavannes through the existing telehealth platform for a focused, unrushed visit.",
     icon: UserRoundCheck,
   },
   {
@@ -123,61 +135,61 @@ export const patientJourney = [
   {
     title: "Prepare",
     description:
-      "[PLACEHOLDER] The practice platform sends any visit instructions, forms, or reminders needed before the consultation.",
+      "The practice platform sends any visit instructions, forms, or reminders needed before the consultation.",
     icon: FileText,
   },
   {
     title: "Consult",
     description:
-      "Meet with Virginie Chavannes, [PLACEHOLDER Credentials], for a focused visit through the established telehealth platform.",
+      "Meet with Virginie Chavannes for a focused visit through the established telehealth platform.",
     icon: UserRoundCheck,
   },
   {
     title: "Care plan",
     description:
-      "[PLACEHOLDER] Leave with plain-language next steps, appropriate follow-up guidance, and safety instructions.",
+      "Leave with plain-language next steps, appropriate follow-up guidance, and safety instructions.",
     icon: ClipboardCheck,
   },
   {
     title: "Follow up",
     description:
-      "[PLACEHOLDER] Follow-up and records are handled through the practice systems, not this marketing website.",
+      "Follow-up and records are handled through the practice systems, not this marketing website.",
     icon: MessagesSquare,
   },
 ];
 
 export const patientFit = [
-  "[PLACEHOLDER] Patients who want a direct provider relationship rather than a faceless portal experience.",
-  "[PLACEHOLDER] Busy adults and families who need convenient access without feeling rushed.",
-  "[PLACEHOLDER] People who are new to telehealth and want the process explained plainly before booking.",
+  "Patients who want a direct provider relationship rather than a faceless portal experience.",
+  "Busy adults and families who need convenient access without feeling rushed.",
+  "People who are new to telehealth and want the process explained plainly before booking.",
 ];
 
 export const providerStandards = [
   {
     title: "Assessment before recommendation",
-    body: "[PLACEHOLDER] How the provider listens, reviews symptoms, asks targeted questions, and determines whether telehealth is appropriate.",
+    body: "The visit starts with listening, targeted questions, and a clear determination of whether telehealth is appropriate.",
   },
   {
     title: "Plain-language care planning",
-    body: "[PLACEHOLDER] How options, limitations, prescriptions, testing, referrals, or follow-up are explained after the visit.",
+    body: "Options, limits, prescriptions, testing, referrals, and follow-up are explained in language patients can use.",
   },
   {
     title: "Safety boundaries",
-    body: "[PLACEHOLDER] How patients are directed to urgent, emergency, specialist, or in-person care when that is safer.",
+    body: "Patients are directed to urgent, emergency, specialist, or in-person care when that is the safer path.",
   },
 ];
 
 export const patientExpectations = [
-  "[PLACEHOLDER] A direct visit with the Nurse Practitioner, not a generic patient portal experience.",
-  "[PLACEHOLDER] Clear explanation of what can be handled virtually and what cannot.",
-  "[PLACEHOLDER] Practical next steps that fit the patient's concern and the practice scope.",
+  "A direct visit with the Nurse Practitioner, not a generic patient portal experience.",
+  "Clear explanation of what can be handled virtually and what cannot.",
+  "Practical next steps that fit the patient's concern and the practice scope.",
 ];
 
 export const clinicalScopeMatrix = [
   {
-    area: "[PLACEHOLDER] Everyday primary care",
+    area: "Everyday primary care",
     appropriate:
-      "[PLACEHOLDER] Common concerns, medication questions, stable follow-up needs, and practical care planning.",
+      "Common concerns, medication questions, stable follow-up needs, and practical care planning.",
     mayRequire:
       "Severe symptoms, sudden changes, procedures, imaging, labs, or concerns needing a hands-on exam.",
     nextStep:
@@ -185,9 +197,9 @@ export const clinicalScopeMatrix = [
     icon: Stethoscope,
   },
   {
-    area: "[PLACEHOLDER] Women and family health",
+    area: "Women's and family health",
     appropriate:
-      "[PLACEHOLDER] Prevention conversations, wellness questions, education, and family-centered health guidance.",
+      "Prevention conversations, wellness questions, education, and family-centered health guidance.",
     mayRequire:
       "In-person exams, urgent pregnancy concerns, severe pain, heavy bleeding, or emergency symptoms.",
     nextStep:
@@ -195,9 +207,9 @@ export const clinicalScopeMatrix = [
     icon: HeartPulse,
   },
   {
-    area: "[PLACEHOLDER] Chronic condition support",
+    area: "Chronic condition support",
     appropriate:
-      "[PLACEHOLDER] Stable condition check-ins, lifestyle goals, medication conversations, and care coordination.",
+      "Stable condition check-ins, lifestyle goals, medication conversations, and care coordination.",
     mayRequire:
       "Unstable readings, severe symptoms, complex medication changes, or specialist-directed care.",
     nextStep:
@@ -205,9 +217,9 @@ export const clinicalScopeMatrix = [
     icon: ShieldCheck,
   },
   {
-    area: "[PLACEHOLDER] Telehealth check-ins",
+    area: "Telehealth check-ins",
     appropriate:
-      "[PLACEHOLDER] Convenient visits for questions that can be evaluated safely without an in-person exam.",
+      "Convenient visits for questions that can be evaluated safely without an in-person exam.",
     mayRequire:
       "Emergencies, chest pain, trouble breathing, stroke symptoms, severe allergic reactions, or injuries.",
     nextStep:

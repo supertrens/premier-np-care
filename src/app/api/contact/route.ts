@@ -84,7 +84,7 @@ export async function POST(request: Request) {
   }
 
   const payload = parsed.data;
-  const phone = payload.phone || "[PLACEHOLDER] Not provided";
+  const phone = payload.phone || "Not provided";
   const text = [
     "Premier NP Care website inquiry",
     "",
@@ -116,4 +116,3 @@ export async function POST(request: Request) {
     message: "Thank you. Your message has been sent to the practice.",
   });
 }
-

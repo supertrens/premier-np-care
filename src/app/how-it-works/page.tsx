@@ -17,15 +17,15 @@ export const metadata: Metadata = {
 const reassuranceRows = [
   {
     label: "Before the visit",
-    body: "[PLACEHOLDER] The practice platform provides any required visit instructions. This website does not collect intake forms or store medical records.",
+    body: "The practice platform provides any required visit instructions. This website does not collect intake forms or store medical records.",
   },
   {
     label: "During the visit",
-    body: "[PLACEHOLDER] Your provider clarifies the concern, discusses appropriate options, and explains when in-person or urgent care is safer.",
+    body: "Your provider clarifies the concern, discusses appropriate options, and explains when in-person or urgent care is safer.",
   },
   {
     label: "After the visit",
-    body: "[PLACEHOLDER] Follow-up details, records, and visit communication are handled through the practice systems.",
+    body: "Follow-up details, records, and visit communication are handled through the practice systems.",
   },
 ];
 
