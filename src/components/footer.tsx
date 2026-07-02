@@ -36,22 +36,23 @@ export function Footer() {
 
           <div>
             <p className="label-caps text-aqua">Contact</p>
-            <address className="mt-5 grid gap-3 not-italic">
-              {["Phone to be confirmed", "Email to be confirmed", "Hours to be confirmed"].map(
-                (item) => (
-                  <span key={item} className="text-base text-paper/64">
-                    {item}
-                  </span>
-                ),
-              )}
-            </address>
+            <p className="mt-5 leading-7 text-paper/64">
+              For booking and general questions, use the contact page. This
+              site does not handle urgent needs or private health details.
+            </p>
+            <Link
+              className="mt-4 inline-block text-base font-semibold text-aqua transition-colors hover:text-paper focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
+              href="/contact"
+            >
+              Contact the practice →
+            </Link>
           </div>
 
           <div>
-            <p className="label-caps text-aqua">Hours</p>
+            <p className="label-caps text-aqua">Visits</p>
             <p className="mt-5 leading-7 text-paper/64">
-              Appointment availability and telehealth hours will be finalized
-              before launch.
+              Telehealth visits are scheduled through the practice platform.
+              Booking opens from any page on this site.
             </p>
           </div>
         </div>
