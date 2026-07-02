@@ -2,6 +2,7 @@ import { CalendarCheck, Menu } from "lucide-react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
+import { NavLink } from "@/components/nav-link";
 import { bookingUrl } from "@/lib/config";
 import { navItems } from "@/lib/content";
 
@@ -39,13 +40,14 @@ export function Header() {
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-6 md:flex">
           {navItems.slice(1).map((item) => (
-            <Link
-              className="text-base font-semibold text-ink/68 transition-colors hover:text-cobalt focus-visible:rounded-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
+            <NavLink
+              activeClassName="text-cobalt underline decoration-2 underline-offset-8"
+              className="text-base font-semibold transition-colors hover:text-cobalt focus-visible:rounded-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
+              inactiveClassName="text-ink/68"
               href={item.href}
               key={item.href}
-            >
-              {item.label}
-            </Link>
+              label={item.label}
+            />
           ))}
         </nav>
 
@@ -64,13 +66,14 @@ export function Header() {
           <div className="absolute left-4 right-4 top-[76px] rounded-[18px] border border-line bg-paper p-4 shadow-[0_24px_70px_rgba(7,28,42,0.14)]">
             <nav aria-label="Mobile navigation" className="grid gap-1">
               {navItems.map((item) => (
-                <Link
-                  className="rounded-[12px] px-3 py-3 text-base font-semibold text-ink/74 hover:bg-mist hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
+                <NavLink
+                  activeClassName="bg-mist text-cobalt"
+                  className="rounded-[12px] px-3 py-3 text-base font-semibold hover:bg-mist focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan"
+                  inactiveClassName="text-ink/74 hover:text-ink"
                   href={item.href}
                   key={item.href}
-                >
-                  {item.label}
-                </Link>
+                  label={item.label}
+                />
               ))}
             </nav>
             <div className="mt-3">
