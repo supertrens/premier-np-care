@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   CalendarCheck,
@@ -24,7 +25,6 @@ import {
   safetyBoundaries,
   services,
 } from "@/lib/content";
-import { StartCarePanel } from "@/components/start-care-panel";
 
 export const metadata: Metadata = {
   title: "Nurse Practitioner-Led Medical Practice",
@@ -41,17 +41,18 @@ export default function Home() {
           <HeroEntrance className="max-w-3xl">
             <HeroItem>
               <p className="label-caps text-cobalt">
-                Nurse Practitioner-led medical practice
+                Premier NP Care · Nurse Practitioner-led medical practice
               </p>
             </HeroItem>
             <HeroItem>
-              <h1 className="mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.02] text-ink sm:text-6xl md:text-7xl lg:text-[5.25rem]">
-                Premier NP Care
+              <h1 className="mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.04] text-ink sm:text-6xl md:text-7xl">
+                Care you can understand, from a clinician{" "}
+                <em className="font-normal italic text-cobalt">you know.</em>
               </h1>
             </HeroItem>
             <HeroItem>
-              <p className="mt-7 max-w-3xl text-3xl font-semibold leading-tight text-cobalt md:text-5xl">
-                Personal care, clearly guided from booking to next steps.
+              <p className="mt-7 max-w-3xl text-2xl font-semibold leading-tight text-cobalt md:text-3xl">
+                Personal telehealth, clearly guided from booking to next steps.
               </p>
             </HeroItem>
             <HeroItem>
@@ -74,11 +75,55 @@ export default function Home() {
                 </ButtonLink>
               </div>
             </HeroItem>
+            <HeroItem>
+              <div className="mt-10 grid gap-x-6 gap-y-4 border-t border-ink/10 pt-6 sm:grid-cols-3">
+                {[
+                  ["Provider-led", "Every visit with a named NP"],
+                  ["Clear scope", "Honest telehealth boundaries"],
+                  ["Secure booking", "Records stay in the platform"],
+                ].map(([title, body]) => (
+                  <div key={title}>
+                    <div className="flex items-center gap-2 text-cobalt">
+                      <ShieldCheck aria-hidden="true" size={17} />
+                      <p className="text-sm font-bold tracking-wide">{title}</p>
+                    </div>
+                    <p className="mt-1.5 text-sm leading-6 text-ink/62">
+                      {body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </HeroItem>
           </HeroEntrance>
 
           <HeroItem>
-            <div className="mx-auto w-full max-w-[660px] lg:ml-auto">
-              <StartCarePanel />
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,28,42,0.16)] lg:ml-auto">
+              <Image
+                alt="The Nurse Practitioner behind Premier NP Care."
+                className="absolute inset-0 h-full w-full object-cover object-[center_22%]"
+                fill
+                priority
+                sizes="(min-width: 1024px) 560px, 92vw"
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0)_55%,rgba(7,28,42,0.55))]"
+              />
+              <Link
+                className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-4 rounded-[20px] border border-white/25 bg-white/14 px-5 py-4 backdrop-blur-md transition-colors hover:bg-white/24"
+                href="/about"
+              >
+                <div>
+                  <p className="font-display text-2xl font-medium leading-tight text-paper">
+                    Virginie Chavannes
+                  </p>
+                  <p className="mt-1 text-sm text-paper/80">
+                    Nurse Practitioner · Telehealth visits
+                  </p>
+                </div>
+                <ArrowRight aria-hidden="true" className="shrink-0 text-paper/80" size={20} />
+              </Link>
             </div>
           </HeroItem>
         </Container>

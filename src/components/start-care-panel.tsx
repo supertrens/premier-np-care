@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ArrowRight,
   CalendarCheck,
@@ -31,6 +32,23 @@ export function StartCarePanel() {
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(201,238,243,0.62),rgba(255,255,255,0.78)_48%,rgba(232,161,132,0.16))]" />
       <div className="care-current-lines absolute inset-0 opacity-35" />
       <div className="relative overflow-hidden rounded-[28px] border border-line bg-white/82">
+        <div className="relative h-44 overflow-hidden md:h-52">
+          <Image
+            alt="A clinician greeting a patient warmly during a telehealth visit."
+            className="absolute inset-0 h-full w-full object-cover object-[center_22%]"
+            fill
+            priority
+            sizes="(min-width: 1024px) 620px, 92vw"
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0.06),rgba(7,28,42,0.34)),linear-gradient(135deg,rgba(7,4,95,0.22),rgba(18,174,196,0.05)_55%,transparent)]"
+          />
+          <span className="label-caps absolute left-5 top-5 rounded-full border border-white/25 bg-paper/88 px-3 py-2 text-cobalt shadow-[0_16px_36px_rgba(7,28,42,0.16)] backdrop-blur">
+            Telehealth visits
+          </span>
+        </div>
         <div className="h-2 bg-[linear-gradient(90deg,#07045F,#12AEC4,#E8A184)]" />
         <div className="p-7 md:p-8">
           <p className="label-caps text-cobalt">Practice brief</p>
