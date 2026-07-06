@@ -34,12 +34,12 @@ export function StartCarePanel() {
       <div className="relative overflow-hidden rounded-[28px] border border-line bg-white/82">
         <div className="relative h-44 overflow-hidden md:h-52">
           <Image
-            alt="A clinician greeting a patient warmly during a telehealth visit."
-            className="absolute inset-0 h-full w-full object-cover object-[center_22%]"
+            alt="Portrait of Virginie Chavannes, Nurse Practitioner."
+            className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
             fill
             priority
             sizes="(min-width: 1024px) 620px, 92vw"
-            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80"
+            src="/images/virginie-chavannes.jpg"
           />
           <div
             aria-hidden="true"

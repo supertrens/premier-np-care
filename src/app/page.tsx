@@ -86,12 +86,12 @@ export default function Home() {
           <HeroItem>
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,28,42,0.16)] lg:ml-auto">
               <Image
-                alt="The Nurse Practitioner behind Premier NP Care."
-                className="absolute inset-0 h-full w-full object-cover object-[center_22%]"
+                alt="Portrait of Virginie Chavannes, Nurse Practitioner."
+                className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
                 fill
                 priority
                 sizes="(min-width: 1024px) 560px, 92vw"
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80"
+                src="/images/virginie-chavannes.jpg"
               />
               <div
                 aria-hidden="true"
@@ -297,19 +297,15 @@ export default function Home() {
               <article className="overflow-hidden rounded-[30px] border border-line bg-paper shadow-[0_28px_90px_rgba(7,28,42,0.08)]">
                 <div className="relative min-h-[320px] overflow-hidden bg-deep-navy p-6">
                   <Image
-                    alt="A polished clinical workspace reserved for the future provider photo."
-                    className="absolute inset-0 h-full w-full object-cover"
+                    alt="Portrait of Virginie Chavannes, Nurse Practitioner."
+                    className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
                     fill
                     sizes="(min-width: 1024px) 28vw, 100vw"
-                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
+                    src="/images/virginie-chavannes.jpg"
                   />
                   <div
                     aria-hidden="true"
-                    className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0.12),rgba(7,28,42,0.68)),linear-gradient(135deg,rgba(7,4,95,0.32),rgba(18,174,196,0.06)_55%,rgba(247,252,253,0.16))]"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-[linear-gradient(rgba(247,252,253,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,252,253,0.1)_1px,transparent_1px)] bg-[size:34px_34px]"
+                    className="absolute inset-x-0 bottom-0 h-1/2 bg-[linear-gradient(0deg,rgba(7,28,42,0.78),rgba(7,28,42,0.18)_62%,transparent)]"
                   />
                   <div className="relative flex h-full min-h-[270px] flex-col justify-between">
                     <div className="flex items-center justify-between">
@@ -321,10 +317,7 @@ export default function Home() {
                       </span>
                     </div>
                     <div>
-                      <div className="grid h-28 w-28 place-items-center rounded-[30px] border border-white/18 bg-deep-navy/94 font-display text-5xl font-medium text-paper shadow-[0_22px_60px_rgba(7,4,95,0.24)] backdrop-blur">
-                        VC
-                      </div>
-                      <h3 className="mt-6 font-display text-4xl font-medium leading-tight text-paper">
+                      <h3 className="font-display text-4xl font-medium leading-tight text-paper">
                         Virginie Chavannes
                       </h3>
                       <p className="mt-3 max-w-xs leading-7 text-paper/74">

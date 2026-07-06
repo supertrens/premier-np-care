@@ -17,15 +17,13 @@ The site uses polished first-revision copy so the design can be reviewed without
 
 ## Replace Images
 
-The current build uses Unsplash-hosted temporary visuals through `next/image`. They are configured in:
+The provider headshot is stored locally and rendered with `next/image`:
 
 ```text
-src/lib/content.ts
-src/components/provider-image-slot.tsx
-src/app/page.tsx
+public/images/virginie-chavannes.jpg
 ```
 
-Replace the provider visual with the real Virginie Chavannes headshot when ready. Keep the same aspect ratio or update the surrounding layout carefully to avoid layout shift.
+Service imagery still uses temporary Unsplash visuals configured in `src/lib/content.ts`. Replace those with approved practice imagery before launch if desired.
 
 ## Booking Link Or Embed
 
