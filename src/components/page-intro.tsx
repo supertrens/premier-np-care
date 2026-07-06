@@ -16,7 +16,7 @@ export function PageIntro({ eyebrow, title, children, aside }: PageIntroProps) {
       <Container className="relative grid gap-8 md:grid-cols-[1fr_0.48fr] md:items-end">
         <MotionReveal>
           <p className="label-caps mb-5 text-cobalt">{eyebrow}</p>
-          <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.03] text-ink md:text-7xl">
+          <h1 className="max-w-4xl font-display text-5xl font-medium leading-[1.03] text-ink md:text-6xl">
             {title}
           </h1>
           <div className="mt-6 max-w-2xl text-xl leading-8 text-ink/72">

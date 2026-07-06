@@ -41,7 +41,7 @@ export default function Home() {
           <HeroEntrance className="max-w-3xl">
             <HeroItem>
               <p className="label-caps text-cobalt">
-                Premier NP Care · Nurse Practitioner-led medical practice
+                Nurse Practitioner-led telehealth
               </p>
             </HeroItem>
             <HeroItem>
@@ -51,16 +51,9 @@ export default function Home() {
               </h1>
             </HeroItem>
             <HeroItem>
-              <p className="mt-7 max-w-3xl text-2xl font-semibold leading-tight text-cobalt md:text-3xl">
-                Personal telehealth, clearly guided from booking to next steps.
-              </p>
-            </HeroItem>
-            <HeroItem>
-              <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72 md:text-[1.35rem] md:leading-9">
-                Telehealth-affiliated care for patients who want the process to
-                feel calm, direct, and clearly explained before they book.
-                Scheduling, visits, records, and patient details stay inside
-                the established care platform.
+              <p className="mt-7 max-w-xl text-xl leading-8 text-ink/70 md:text-[1.3rem] md:leading-9">
+                Book a visit, meet your provider, and know exactly what happens
+                next. Calm, direct, and clearly explained.
               </p>
             </HeroItem>
             <HeroItem>
@@ -76,23 +69,17 @@ export default function Home() {
               </div>
             </HeroItem>
             <HeroItem>
-              <div className="mt-10 grid gap-x-6 gap-y-4 border-t border-ink/10 pt-6 sm:grid-cols-3">
-                {[
-                  ["Provider-led", "Every visit with a named NP"],
-                  ["Clear scope", "Honest telehealth boundaries"],
-                  ["Secure booking", "Records stay in the platform"],
-                ].map(([title, body]) => (
-                  <div key={title}>
-                    <div className="flex items-center gap-2 text-cobalt">
-                      <ShieldCheck aria-hidden="true" size={17} />
-                      <p className="text-sm font-bold tracking-wide">{title}</p>
-                    </div>
-                    <p className="mt-1.5 text-sm leading-6 text-ink/62">
-                      {body}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <p className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-ink/10 pt-6 text-sm text-ink/56">
+                <span>Provider-led visits</span>
+                <span aria-hidden="true" className="text-ink/24">
+                  ·
+                </span>
+                <span>Honest telehealth boundaries</span>
+                <span aria-hidden="true" className="text-ink/24">
+                  ·
+                </span>
+                <span>Records stay in the secure platform</span>
+              </p>
             </HeroItem>
           </HeroEntrance>
 
@@ -146,18 +133,12 @@ export default function Home() {
 
           <div className="border-y border-white/14">
             {practiceAtAGlance.map((item, index) => {
-              const Icon = item.icon;
               return (
                 <MotionReveal delay={index * 0.05} key={item.title}>
                   <article className="grid gap-4 border-b border-white/14 py-6 last:border-b-0 md:grid-cols-[84px_1fr]">
-                    <div className="flex items-center gap-3 text-aqua">
-                      <span className="font-display text-3xl leading-none text-paper/36">
-                        0{index + 1}
-                      </span>
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/14 bg-white/7">
-                        <Icon aria-hidden="true" size={20} />
-                      </span>
-                    </div>
+                    <span className="font-display text-3xl leading-none text-aqua/70">
+                      0{index + 1}
+                    </span>
                     <div>
                       <h3 className="text-xl font-semibold text-paper">
                         {item.title}
@@ -179,7 +160,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
             <MotionReveal>
               <p className="label-caps text-cobalt">Clinical scope</p>
-              <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
                 Common care needs, framed clearly.
               </h2>
             </MotionReveal>
@@ -248,7 +229,7 @@ export default function Home() {
                     </div>
 
                     <div className="flex flex-col p-7 md:p-8">
-                      <h3 className="max-w-2xl font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+                      <h3 className="max-w-2xl font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
                         {service.title}
                       </h3>
                       <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
@@ -292,7 +273,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-end">
             <MotionReveal>
               <p className="label-caps text-cobalt">Provider accountability</p>
-              <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
                 Meet the provider behind the plan.
               </h2>
             </MotionReveal>
@@ -359,7 +340,7 @@ export default function Home() {
                   <ClipboardCheck aria-hidden="true" size={23} />
                   <p className="label-caps">Care philosophy</p>
                 </div>
-                <p className="mt-5 max-w-2xl font-display text-4xl font-medium leading-tight text-ink md:text-5xl">
+                <p className="mt-5 max-w-2xl font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
                   A direct care relationship, not a faceless portal.
                 </p>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
@@ -432,7 +413,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
             <MotionReveal>
               <p className="label-caps text-cobalt">Patient journey</p>
-              <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
+              <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
                 A visit path patients can understand before they start.
               </h2>
             </MotionReveal>
@@ -480,20 +461,14 @@ export default function Home() {
 
                 <ol className="divide-y divide-line bg-paper">
                   {patientJourney.map((step, index) => {
-                    const Icon = step.icon;
                     return (
                       <li
-                        className="grid gap-5 p-6 md:grid-cols-[112px_1fr] md:items-start md:p-7"
+                        className="grid gap-5 p-6 md:grid-cols-[88px_1fr] md:items-start md:p-7"
                         key={step.title}
                       >
-                        <div className="flex items-center gap-4 text-cobalt">
-                          <span className="font-display text-4xl font-medium text-ink/28">
-                            0{index + 1}
-                          </span>
-                          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan/20 bg-mist">
-                            <Icon aria-hidden="true" size={21} />
-                          </span>
-                        </div>
+                        <span className="font-display text-4xl font-medium text-cobalt/40">
+                          0{index + 1}
+                        </span>
                         <div>
                           <h3 className="font-display text-3xl font-medium leading-tight text-ink">
                             {step.title}
@@ -512,44 +487,50 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className="bg-porcelain py-20">
-        <Container className="grid gap-6 lg:grid-cols-3">
-          {safetyBoundaries.map((item) => {
-            const Icon = item.icon;
-            return (
-              <MotionReveal key={item.title}>
-                <article className="h-full rounded-[22px] border border-line bg-paper p-6 shadow-[0_18px_55px_rgba(7,28,42,0.06)]">
-                  <Icon aria-hidden="true" className="text-warn" size={25} />
-                  <h3 className="mt-5 font-display text-3xl font-medium leading-tight text-ink">
+      <Section className="border-y border-line bg-porcelain py-16">
+        <Container>
+          <MotionReveal>
+            <p className="label-caps text-warn">Know the limits</p>
+            <div className="mt-8 grid gap-10 lg:grid-cols-3 lg:gap-8">
+              {safetyBoundaries.map((item) => (
+                <div
+                  className="border-t border-ink/12 pt-5"
+                  key={item.title}
+                >
+                  <h3 className="text-base font-semibold text-ink">
                     {item.title}
                   </h3>
-                  <p className="mt-4 leading-7 text-ink/70">{item.body}</p>
-                </article>
-              </MotionReveal>
-            );
-          })}
+                  <p className="mt-2 text-sm leading-6 text-ink/62">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </MotionReveal>
         </Container>
       </Section>
 
-      <Section className="bg-deep-navy text-paper">
-        <Container className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <div className="mb-5 flex items-center gap-3 text-aqua">
-              <ShieldCheck aria-hidden="true" size={24} />
-              <p className="label-caps">Start here</p>
+      <Section className="relative overflow-hidden bg-porcelain py-32 md:py-40">
+        <div className="ocean-field absolute inset-0 opacity-60" aria-hidden="true" />
+        <Container className="relative flex flex-col items-center text-center">
+          <MotionReveal>
+            <p className="label-caps text-cobalt">Premier NP Care</p>
+            <h2 className="mx-auto mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.06] text-ink md:text-6xl">
+              Begin with a conversation,{" "}
+              <em className="font-normal italic text-cobalt">
+                not a waiting room.
+              </em>
+            </h2>
+            <div className="mt-10 flex flex-col items-center gap-5">
+              <ButtonLink href={bookingUrl} variant="cobalt">
+                <CalendarCheck aria-hidden="true" size={20} />
+                Book an Appointment
+              </ButtonLink>
+              <p className="text-sm text-ink/56">
+                For urgent needs, always use emergency services.
+              </p>
             </div>
-            <p className="font-display text-5xl font-medium leading-tight">
-              Ready to start with the practice?
-            </p>
-            <p className="mt-4 max-w-2xl leading-7 text-paper/76">
-              Book through the practice scheduling link. For urgent needs, use
-              emergency services.
-            </p>
-          </div>
-          <ButtonLink href={bookingUrl} variant="mist">
-            <CalendarCheck aria-hidden="true" size={20} />
-            Book an Appointment
-          </ButtonLink>
+          </MotionReveal>
         </Container>
       </Section>
     </>

@@ -11,19 +11,21 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Update Demo Copy
+## Update Client-Review Copy
 
-The site uses polished demo copy so the design can be reviewed without visible placeholder flags. Before launch, review provider credentials, biography, service scope, contact details, booking URL, and service-area language across `src/`.
+The site uses polished first-revision copy so the design can be reviewed without visible placeholder flags. Before launch, review provider credentials, biography, service scope, contact details, booking URL, and service-area language across `src/`.
 
 ## Replace Images
 
-The temporary provider visual lives at:
+The current build uses Unsplash-hosted temporary visuals through `next/image`. They are configured in:
 
 ```text
-public/provider-placeholder.png
+src/lib/content.ts
+src/components/provider-image-slot.tsx
+src/app/page.tsx
 ```
 
-Replace it with the real provider headshot when ready, or update the `next/image` references in the home and about pages if you choose a new filename. Keep width/height or aspect ratio stable to avoid layout shift.
+Replace the provider visual with the real Virginie Chavannes headshot when ready. Keep the same aspect ratio or update the surrounding layout carefully to avoid layout shift.
 
 ## Booking Link Or Embed
 
@@ -33,7 +35,7 @@ Set the real scheduling URL in Vercel or `.env.local`:
 NEXT_PUBLIC_BOOKING_URL="https://your-booking-link.example"
 ```
 
-The booking placeholder component is `src/components/booking-embed-slot.tsx`. Replace that component’s inner block with the scheduling iframe or script when the exact platform is known.
+The booking component is `src/components/booking-embed-slot.tsx`. Replace that component’s inner block with the scheduling iframe or script when the exact platform is known.
 
 ## Contact Form And Resend
 
@@ -62,3 +64,12 @@ Useful checks before deployment:
 npm run lint
 npm run build
 ```
+
+## Pre-Launch Review Checklist
+
+- Confirm Virginie Chavannes' exact credential line and licensing language.
+- Replace temporary Unsplash visuals with approved practice imagery.
+- Set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`.
+- Add Resend environment variables.
+- Review service scope and safety language with the provider.
+- Submit a test contact form in production preview before launch.

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  ArrowRight,
   CalendarCheck,
   ClipboardCheck,
   GraduationCap,
@@ -13,30 +14,48 @@ import { PracticeStatusPanel } from "@/components/practice-status-panel";
 import { ProviderImageSlot } from "@/components/provider-image-slot";
 import { Section } from "@/components/section";
 import { bookingUrl } from "@/lib/config";
-import { patientExpectations, patientFit, providerStandards } from "@/lib/content";
+import {
+  patientExpectations,
+  patientFit,
+  providerStandards,
+} from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Provider",
   description:
-    "Learn about the provider, clinical philosophy, and care standards behind Premier NP Care.",
+    "Meet Virginie Chavannes and learn how Premier NP Care approaches provider-led telehealth visits.",
 };
 
-const credentials = [
+const profileRows = [
   {
-    label: "Credentials",
-    value: "Board-certified Nurse Practitioner, licensed for telehealth practice.",
+    label: "Provider",
+    value: "Virginie Chavannes",
+    icon: UserRoundCheck,
+  },
+  {
+    label: "Credential line",
+    value:
+      "Nurse Practitioner credentials and final licensing language should be confirmed with the provider before launch.",
     icon: ShieldCheck,
   },
   {
-    label: "Training",
-    value: "Graduate program, specialty focus, and relevant clinical rotations.",
+    label: "Clinical background",
+    value:
+      "Training, specialty focus, and practice experience can be expanded once the provider supplies final biography details.",
     icon: GraduationCap,
   },
   {
-    label: "Experience",
-    value: "Years in practice, care settings, and patient populations served.",
+    label: "Care model",
+    value:
+      "Provider-led telehealth visits with clear scope, practical next steps, and documented safety boundaries.",
     icon: ClipboardCheck,
   },
+];
+
+const providerPrinciples = [
+  ["Visible", "A named clinician is attached to the visit and care plan."],
+  ["Plain", "Patients should leave knowing what to do next."],
+  ["Bounded", "Telehealth limits are explained instead of hidden."],
 ];
 
 export default function AboutPage() {
@@ -46,29 +65,25 @@ export default function AboutPage() {
         <div className="ocean-field absolute inset-0" aria-hidden="true" />
         <Container className="relative grid gap-12 py-14 md:py-20 lg:grid-cols-[1fr_0.58fr] lg:items-center">
           <MotionReveal>
-            <p className="label-caps text-cobalt">Provider dossier</p>
-            <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.02] text-ink md:text-7xl">
-              Meet the clinician responsible for the visit.
+            <p className="label-caps text-cobalt">Provider</p>
+            <h1 className="mt-6 max-w-4xl font-display text-5xl font-medium leading-[1.02] text-ink md:text-6xl">
+              Care feels different when the clinician is visible from the
+              start.
             </h1>
             <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72">
-              Premier NP Care is built around direct access to a Nurse
-              Practitioner, clear clinical judgment, and practical guidance
-              patients can understand.
+              Premier NP Care is built around direct access to Virginie
+              Chavannes, practical telehealth guidance, and a visit experience
+              that explains what happens next.
             </p>
-            <div className="mt-9 grid gap-3 sm:grid-cols-3">
-              {[
-                ["Provider", "Virginie Chavannes"],
-                ["Status", "Accepting new telehealth patients"],
-                ["Access", "Telehealth availability through the practice platform"],
-              ].map(([label, value]) => (
-                <div
-                  className="rounded-[18px] border border-line bg-paper/78 p-4 shadow-[0_14px_40px_rgba(7,28,42,0.05)]"
-                  key={label}
-                >
-                  <p className="label-caps text-cobalt">{label}</p>
-                  <p className="mt-2 leading-7 text-ink/74">{value}</p>
-                </div>
-              ))}
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href={bookingUrl} variant="cobalt">
+                <CalendarCheck aria-hidden="true" size={20} />
+                Book an Appointment
+              </ButtonLink>
+              <ButtonLink href="/services" variant="secondary">
+                View Services
+                <ArrowRight aria-hidden="true" size={19} />
+              </ButtonLink>
             </div>
           </MotionReveal>
 
@@ -79,43 +94,51 @@ export default function AboutPage() {
       </section>
 
       <Section className="bg-paper py-24">
-        <Container className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <MotionReveal>
             <p className="label-caps text-cobalt">Clinical profile</p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
-              A provider story that feels specific, not generic.
+            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
+              A provider dossier for the first client review.
             </h2>
             <p className="mt-6 max-w-lg leading-8 text-ink/70">
-              Premier NP Care was founded on a simple idea: patients deserve a
-              named clinician, careful listening, and next steps they can
-              actually follow.
+              This page is structured so the provider can quickly validate the
+              final details: credential line, care philosophy, patient fit, and
+              where telehealth should stop.
             </p>
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <div className="grid gap-5">
-              <article className="rounded-[24px] border border-line bg-porcelain p-7 shadow-[0_18px_60px_rgba(7,28,42,0.06)]">
+            <div className="overflow-hidden rounded-[30px] border border-line bg-porcelain shadow-[0_28px_90px_rgba(7,28,42,0.08)]">
+              <div className="border-b border-line bg-paper p-7 md:p-8">
                 <div className="flex items-center gap-3 text-cobalt">
                   <UserRoundCheck aria-hidden="true" size={24} />
                   <p className="label-caps">Care philosophy</p>
                 </div>
-                <p className="mt-5 max-w-3xl font-display text-4xl font-medium leading-tight text-ink">
-                  Thoughtful assessment, clear next steps, and honest
-                  telehealth boundaries.
+                <p className="mt-5 max-w-3xl font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
+                  Direct provider access, clear clinical judgment, and guidance
+                  patients can actually follow.
                 </p>
-                <p className="mt-5 max-w-3xl text-lg leading-8 text-ink/72">
-                  This practice is designed around direct provider access,
-                  careful listening, and care plans that help patients
-                  understand what happens next.
-                </p>
-              </article>
+                <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                  {providerPrinciples.map(([label, body]) => (
+                    <div
+                      className="rounded-[18px] border border-line bg-porcelain p-4"
+                      key={label}
+                    >
+                      <p className="label-caps text-harbor">{label}</p>
+                      <p className="mt-2 text-sm leading-6 text-ink/70">
+                        {body}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-              <div className="grid gap-4">
-                {credentials.map((row) => {
+              <div className="divide-y divide-line">
+                {profileRows.map((row) => {
                   const Icon = row.icon;
                   return (
                     <article
-                      className="grid gap-4 rounded-[20px] border border-line bg-paper p-5 md:grid-cols-[220px_1fr]"
+                      className="grid gap-4 p-6 md:grid-cols-[220px_1fr] md:items-start"
                       key={row.label}
                     >
                       <div className="flex items-center gap-3 text-cobalt">
@@ -137,20 +160,27 @@ export default function AboutPage() {
       <Section className="bg-mist py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
-            <p className="label-caps text-cobalt">Care standards</p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink md:text-6xl">
-              What patients can expect from the visit.
+            <p className="label-caps text-cobalt">Visit standards</p>
+            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
+              What the visit should feel like for patients.
             </h2>
           </MotionReveal>
 
           <div className="grid gap-4">
-            {providerStandards.map((row) => (
-              <MotionReveal key={row.title}>
-                <article className="rounded-[22px] border border-line bg-paper p-6 shadow-[0_16px_50px_rgba(7,28,42,0.05)]">
-                  <h3 className="font-display text-3xl font-medium leading-tight text-ink">
-                    {row.title}
-                  </h3>
-                  <p className="mt-3 leading-7 text-ink/72">{row.body}</p>
+            {providerStandards.map((row, index) => (
+              <MotionReveal delay={index * 0.04} key={row.title}>
+                <article className="grid gap-5 border-t border-line py-6 md:grid-cols-[88px_1fr]">
+                  <span className="font-display text-4xl font-medium text-cobalt/34">
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <h3 className="font-display text-3xl font-medium leading-tight text-ink">
+                      {row.title}
+                    </h3>
+                    <p className="mt-3 max-w-3xl leading-7 text-ink/72">
+                      {row.body}
+                    </p>
+                  </div>
                 </article>
               </MotionReveal>
             ))}
@@ -162,31 +192,35 @@ export default function AboutPage() {
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
             <p className="label-caps text-cobalt">Patient fit</p>
-            <h2 className="mt-5 max-w-xl font-display text-5xl font-medium leading-[1.04] text-ink">
+            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
               Built for patients who want clarity before and after the visit.
             </h2>
           </MotionReveal>
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-[24px] border border-line bg-porcelain p-6">
-              <p className="label-caps text-cobalt">What to expect</p>
-              <div className="mt-5 grid gap-4">
-                {patientExpectations.map((item) => (
-                  <p className="leading-7 text-ink/74" key={item}>
-                    {item}
-                  </p>
-                ))}
+            <MotionReveal delay={0.06}>
+              <div className="h-full rounded-[24px] border border-line bg-porcelain p-6">
+                <p className="label-caps text-cobalt">What to expect</p>
+                <div className="mt-5 grid gap-4">
+                  {patientExpectations.map((item) => (
+                    <p className="leading-7 text-ink/74" key={item}>
+                      {item}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="rounded-[24px] border border-line bg-porcelain p-6">
-              <p className="label-caps text-cobalt">Designed for</p>
-              <div className="mt-5 grid gap-4">
-                {patientFit.map((item) => (
-                  <p className="leading-7 text-ink/74" key={item}>
-                    {item}
-                  </p>
-                ))}
+            </MotionReveal>
+            <MotionReveal delay={0.1}>
+              <div className="h-full rounded-[24px] border border-line bg-porcelain p-6">
+                <p className="label-caps text-cobalt">Designed for</p>
+                <div className="mt-5 grid gap-4">
+                  {patientFit.map((item) => (
+                    <p className="leading-7 text-ink/74" key={item}>
+                      {item}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
+            </MotionReveal>
           </div>
         </Container>
       </Section>
@@ -195,11 +229,12 @@ export default function AboutPage() {
         <Container className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div>
             <p className="label-caps text-aqua">Practice status</p>
-            <p className="mt-4 font-display text-5xl font-medium leading-tight">
+            <p className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
               Ready to meet the provider?
             </p>
             <p className="mt-4 max-w-2xl leading-7 text-paper/72">
-              Booking is handled through the practice scheduling link.
+              Booking is handled through the practice scheduling link. For
+              urgent needs, use emergency services.
             </p>
             <ButtonLink className="mt-7" href={bookingUrl} variant="mist">
               <CalendarCheck aria-hidden="true" size={20} />
