@@ -77,8 +77,9 @@ export default function AboutPage() {
               A practice shaped around listening first.
             </h2>
             <p className="mt-6 max-w-lg leading-8 text-ink/70">
-              A strong provider page should feel like a warm introduction, not
-              a resume. Patients should understand the person behind the care.
+              Virginie built Premier NP Care for patients who want clear
+              answers, steady guidance, and a provider relationship that feels
+              personal from the beginning.
             </p>
           </MotionReveal>
 
@@ -194,7 +195,7 @@ export default function AboutPage() {
       <Section className="bg-deep-navy text-paper">
         <Container>
           <div className="max-w-3xl">
-            <p className="label-caps text-aqua">Practice status</p>
+            <p className="label-caps text-aqua">Meet Virginie</p>
             <p className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
               Ready to meet the provider?
             </p>
