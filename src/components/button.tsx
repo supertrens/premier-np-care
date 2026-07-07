@@ -17,23 +17,23 @@ type ButtonVariant =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "border border-cobalt bg-cobalt text-paper shadow-[0_16px_34px_rgba(10,77,143,0.22)] hover:border-deep-navy hover:bg-deep-navy",
+    "border border-gold bg-deep-navy text-paper shadow-[0_16px_34px_rgba(26,53,87,0.22)] hover:border-gold hover:bg-ink",
   secondary:
-    "border border-line bg-paper text-ink hover:border-cyan hover:bg-mist",
+    "border border-line bg-paper text-ink hover:border-gold hover:bg-mist",
   ghost:
-    "min-h-0 rounded-none border-b border-ink/28 px-0 py-0 text-ink hover:border-cobalt hover:text-cobalt",
+    "min-h-0 rounded-none border-b border-ink/28 px-0 py-0 text-ink hover:border-gold hover:text-ink",
   quiet:
     "min-h-0 rounded-none border-b border-transparent px-0 py-0 text-ink/58 hover:border-ink/25 hover:text-ink",
   ink:
-    "border border-deep-navy bg-deep-navy text-paper hover:border-cobalt hover:bg-cobalt",
+    "border border-deep-navy bg-deep-navy text-paper hover:border-gold hover:bg-ink",
   cobalt:
-    "border border-cobalt bg-cobalt text-paper shadow-[0_16px_34px_rgba(10,77,143,0.22)] hover:border-deep-navy hover:bg-deep-navy",
+    "border border-gold bg-deep-navy text-paper shadow-[0_16px_34px_rgba(26,53,87,0.22)] hover:border-gold hover:bg-ink",
   mist:
-    "border border-pale-mist bg-mist text-ink hover:border-cyan hover:bg-paper",
+    "border border-pale-mist bg-mist text-ink hover:border-gold hover:bg-paper",
 };
 
 const baseClasses =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan disabled:pointer-events-none disabled:opacity-60";
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-5 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:pointer-events-none disabled:opacity-60";
 
 export function buttonClasses({
   variant = "cobalt",

@@ -55,7 +55,7 @@ export default function ServicesPage() {
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.08}>
-              <p className="max-w-2xl border-y border-line py-6 text-lg leading-8 text-ink/70">
+              <p className="max-w-2xl border-y border-gold/35 py-6 text-lg leading-8 text-ink/70">
                 These categories are written for people, not paperwork: clear
                 enough to scan, warm enough to feel approachable.
               </p>

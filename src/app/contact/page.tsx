@@ -116,7 +116,10 @@ export default function ContactPage() {
           </MotionReveal>
 
           <MotionReveal delay={0.1}>
-            <div className="rounded-[28px] border border-line bg-paper p-6 shadow-[0_22px_70px_rgba(7,28,42,0.08)]">
+            <div
+              className="rounded-[28px] border border-line bg-paper p-6 shadow-[0_22px_70px_rgba(26,53,87,0.08)]"
+              id="contact-form"
+            >
               <ContactForm />
             </div>
           </MotionReveal>

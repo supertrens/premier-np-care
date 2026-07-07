@@ -167,7 +167,7 @@ export default function Home() {
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.08}>
-              <div className="grid gap-5 border-y border-line py-6 md:grid-cols-[1fr_auto] md:items-center">
+              <div className="grid gap-5 border-y border-gold/35 py-6 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="max-w-2xl text-lg leading-8 text-ink/70">
                   Browse common starting points for care. Each service card
                   keeps the promise practical, warm, and easy to scan.
@@ -201,15 +201,15 @@ export default function Home() {
                       />
                       <div
                         aria-hidden="true"
-                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0.18),rgba(7,28,42,0.56)),linear-gradient(135deg,rgba(7,4,95,0.28),rgba(18,174,196,0.08)_46%,rgba(247,252,253,0.22))]"
+                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,53,87,0.18),rgba(26,53,87,0.56)),linear-gradient(135deg,rgba(26,53,87,0.28),rgba(26,53,87,0.08)_46%,rgba(255,255,255,0.22))]"
                       />
                       <div
                         aria-hidden="true"
-                        className="absolute inset-0 bg-[linear-gradient(rgba(247,252,253,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,252,253,0.1)_1px,transparent_1px)] bg-[size:34px_34px]"
+                        className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:34px_34px]"
                       />
                       <div
                         aria-hidden="true"
-                        className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(0deg,rgba(7,28,42,0.64),transparent)]"
+                        className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(0deg,rgba(26,53,87,0.64),transparent)]"
                       />
                       <div className="relative flex h-full min-h-[180px] flex-col justify-between">
                         <div className="flex items-center justify-between gap-4">
@@ -224,7 +224,7 @@ export default function Home() {
                           <p className="label-caps text-paper/82">
                             Service area 0{index + 1}
                           </p>
-                          <div className="mt-4 h-2 w-28 rounded-full bg-[linear-gradient(90deg,#C9EEF3,#58C7D6,#F7FCFD)]" />
+                          <div className="mt-4 h-2 w-28 rounded-full bg-gold" />
                         </div>
                       </div>
                     </div>
@@ -268,7 +268,7 @@ export default function Home() {
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.08}>
-              <div className="grid gap-5 border-y border-line py-6 md:grid-cols-[1fr_auto] md:items-center">
+              <div className="grid gap-5 border-y border-gold/35 py-6 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="max-w-2xl text-lg leading-8 text-ink/70">
                   Premier NP Care makes the clinician relationship visible
                   before booking, so patients know who is listening, guiding,
@@ -401,7 +401,7 @@ export default function Home() {
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.08}>
-              <p className="max-w-2xl border-y border-line py-6 text-lg leading-8 text-ink/70">
+              <p className="max-w-2xl border-y border-gold/35 py-6 text-lg leading-8 text-ink/70">
                 The public site explains the path, so booking feels simple and
                 the visit feels familiar before it begins.
               </p>
@@ -469,7 +469,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className="border-y border-line bg-porcelain py-16">
+      <Section className="border-y border-gold/35 bg-porcelain py-16">
         <Container>
           <MotionReveal>
             <p className="label-caps text-warn">Care guidance</p>

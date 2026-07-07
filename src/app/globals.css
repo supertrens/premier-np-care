@@ -1,29 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7fcfd;
-  --foreground: #071c2a;
+  --background: #ffffff;
+  --foreground: #1a3557;
 }
 
 @theme inline {
-  --color-background: #f7fcfd;
-  --color-foreground: #071c2a;
-  --color-ink: #071c2a;
+  --color-background: #ffffff;
+  --color-foreground: #1a3557;
+  --color-ink: #1a3557;
   --color-paper: #ffffff;
-  --color-porcelain: #f7fcfd;
-  --color-deep-navy: #07045f;
-  --color-cobalt: #0a4d8f;
-  --color-harbor: #087eae;
-  --color-cyan: #12aec4;
-  --color-aqua: #58c7d6;
-  --color-pale-mist: #c9eef3;
-  --color-mist: #edf8fa;
-  --color-glass: #f3fbfc;
-  --color-line: #cfeaf0;
+  --color-porcelain: #ffffff;
+  --color-deep-navy: #1a3557;
+  --color-cobalt: #1a3557;
+  --color-harbor: #1a3557;
+  --color-cyan: #1a3557;
+  --color-aqua: #d7dfeb;
+  --color-gold: #c9a84c;
+  --color-pale-mist: #eef4f7;
+  --color-mist: #f4f8fa;
+  --color-glass: #f8fbfc;
+  --color-line: #d8e1e7;
   --color-warn: #a75f38;
 
-  --font-sans: "Source Sans 3", "Source Sans 3 Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Newsreader", "Newsreader Fallback", Georgia, serif;
+  --font-sans: "Nunito Sans", "Nunito Sans Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif;
 }
 
 * { box-sizing: border-box; }
@@ -33,19 +34,19 @@ html { -webkit-font-smoothing: antialiased; }
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-source-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-nunito-sans), "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
   text-rendering: geometricPrecision;
 }
 
 ::selection {
-  background: rgba(18, 174, 196, 0.24);
-  color: #071c2a;
+  background: rgba(26, 53, 87, 0.18);
+  color: #1a3557;
 }
 
 a { text-underline-offset: 0.2em; }
 
 .font-display {
-  font-family: var(--font-newsreader), "Newsreader", Georgia, serif;
+  font-family: var(--font-cormorant-garamond), "Cormorant Garamond", Georgia, serif;
 }
 .label-caps {
   font-size: 0.76rem;
@@ -58,17 +59,17 @@ a { text-underline-offset: 0.2em; }
 
 .ocean-field {
   background-image:
-    linear-gradient(120deg, rgba(18, 174, 196, 0.16), transparent 32%),
-    linear-gradient(180deg, rgba(201, 238, 243, 0.72), rgba(247, 252, 253, 0.08)),
-    linear-gradient(to right, rgba(8, 126, 174, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(8, 126, 174, 0.045) 1px, transparent 1px);
+    linear-gradient(120deg, rgba(26, 53, 87, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(244, 248, 250, 0.92), rgba(255, 255, 255, 0.08)),
+    linear-gradient(to right, rgba(26, 53, 87, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 53, 87, 0.04) 1px, transparent 1px);
   background-size: auto, auto, 72px 72px, 72px 72px;
 }
 
 .care-current-lines {
   background-image:
-    linear-gradient(90deg, rgba(7, 4, 95, 0.07) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(8, 126, 174, 0.07) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(26, 53, 87, 0.065) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(26, 53, 87, 0.055) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
 }

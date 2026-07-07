@@ -116,7 +116,7 @@ export function ServiceRail({ children, itemCount }: ServiceRailProps) {
         <div className="flex items-center gap-2">
           <button
             aria-label="Previous service"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-[0_12px_30px_rgba(7,28,42,0.07)] transition-colors hover:border-cyan hover:text-cobalt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-paper text-ink shadow-[0_12px_30px_rgba(26,53,87,0.07)] transition-colors hover:border-gold hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-40"
             onClick={() => {
               scrollToIndex(activeIndex - 1);
             }}
@@ -126,7 +126,7 @@ export function ServiceRail({ children, itemCount }: ServiceRailProps) {
           </button>
           <button
             aria-label="Next service"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-cobalt bg-cobalt text-paper shadow-[0_12px_30px_rgba(10,77,143,0.16)] transition-colors hover:border-deep-navy hover:bg-deep-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-gold bg-deep-navy text-paper shadow-[0_12px_30px_rgba(26,53,87,0.16)] transition-colors hover:border-gold hover:bg-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold disabled:cursor-not-allowed disabled:opacity-40"
             onClick={() => {
               scrollToIndex(activeIndex + 1);
             }}

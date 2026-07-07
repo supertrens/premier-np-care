@@ -13,8 +13,8 @@ export default function Image() {
       <div
         style={{
           alignItems: "center",
-          background: "linear-gradient(135deg, #f7fcfd 0%, #c9eef3 58%, #ffffff 100%)",
-          color: "#071c2a",
+          background: "linear-gradient(135deg, #ffffff 0%, #f4f8fa 58%, #ffffff 100%)",
+          color: "#1A3557",
           display: "flex",
           height: "100%",
           justifyContent: "center",
@@ -25,7 +25,7 @@ export default function Image() {
         <div
           style={{
             background: "rgba(255,255,255,0.72)",
-            border: "2px solid rgba(10,77,143,0.14)",
+            border: "2px solid rgba(26,53,87,0.14)",
             borderRadius: 28,
             display: "flex",
             flexDirection: "column",
@@ -34,13 +34,13 @@ export default function Image() {
             width: "100%",
           }}
         >
-          <div style={{ color: "#0a4d8f", fontSize: 24, fontWeight: 700, letterSpacing: 0, textTransform: "uppercase" }}>
+          <div style={{ color: "#1A3557", fontSize: 24, fontWeight: 700, letterSpacing: 0, textTransform: "uppercase" }}>
             Nurse Practitioner-led telehealth care
           </div>
-          <div style={{ fontSize: 82, fontWeight: 300, lineHeight: 1.05, color: "#071c2a" }}>
+          <div style={{ fontSize: 82, fontWeight: 300, lineHeight: 1.05, color: "#1A3557" }}>
             Premier NP Care
           </div>
-          <div style={{ color: "rgba(7,28,42,0.68)", fontSize: 32 }}>
+          <div style={{ color: "rgba(26,53,87,0.68)", fontSize: 32 }}>
             Personal care with Virginie Chavannes, NP.
           </div>
         </div>

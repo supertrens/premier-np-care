@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 };
 
 const bioParagraphs = [
-  "Virginie Chavannes, NP, founded Premier NP Care to make medical care feel more personal, more accessible, and easier to understand. Her practice is built around the kind of visit many patients wish they had more often: a direct conversation with a clinician who listens carefully, explains clearly, and treats the person in front of her with respect. [PLACEHOLDER]",
-  "Her approach blends clinical judgment with warmth. Patients can expect thoughtful questions, practical education, and care plans that make sense for real life, whether the visit is about a new concern, a follow-up need, or a health goal that deserves steady support. [PLACEHOLDER]",
+  "Virginie Chavannes is a board-certified Nurse Practitioner with clinical training in primary and preventive care. [PLACEHOLDER: confirm licensing state and board certification]",
+  "With a background in patient-centered telehealth practice, Virginie founded Premier NP Care to give patients direct access to a provider who explains, listens, and follows through. [PLACEHOLDER: add specialty focus and years of experience]",
   "Premier NP Care is designed for patients and families who want convenient telehealth access without losing the feeling of a trusted provider relationship. The goal is simple: help people feel informed, cared for, and confident about their next step. [PLACEHOLDER]",
 ];
 
