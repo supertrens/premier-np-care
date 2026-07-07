@@ -70,8 +70,7 @@ export async function POST(request: Request) {
       return Response.json(
         {
           ok: true,
-          message:
-            "Development placeholder: form received, but Resend is not configured yet.",
+          message: "Thanks — your message was received in this preview.",
         },
         { status: 202 },
       );

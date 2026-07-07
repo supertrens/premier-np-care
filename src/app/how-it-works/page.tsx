@@ -22,15 +22,15 @@ export const metadata: Metadata = {
 const reassuranceRows = [
   {
     label: "Before the visit",
-    body: "The practice platform provides visit instructions and any required preparation. This website does not collect intake forms.",
+    body: "You receive simple visit instructions so you know what to expect and how to prepare.",
   },
   {
     label: "During the visit",
-    body: "The provider clarifies the concern, discusses appropriate options, and explains whether telehealth is the right setting.",
+    body: "Virginie listens, asks focused questions, and talks through the care options that fit your concern.",
   },
   {
     label: "After the visit",
-    body: "Follow-up details, records, and visit communication are handled through the practice systems.",
+    body: "You leave with plain-language next steps and follow-up guidance.",
   },
 ];
 
@@ -40,11 +40,10 @@ export default function HowItWorksPage() {
       <PageIntro
         aside={
           <div className="rounded-[22px] border border-line bg-paper/82 p-5 shadow-[0_16px_50px_rgba(7,28,42,0.06)]">
-            <p className="label-caps text-cobalt">No portal here</p>
+            <p className="label-caps text-cobalt">Simple from the start</p>
             <p className="mt-3 leading-7 text-ink/74">
-              This public website explains the path into care. Scheduling,
-              forms, visits, and records stay in the established practice
-              platform.
+              The care path is easy to follow: book, prepare, meet with the
+              provider, and leave with next steps.
             </p>
           </div>
         }
@@ -52,9 +51,8 @@ export default function HowItWorksPage() {
         title="From booking to next steps, the path stays clear."
       >
         <p>
-          Telehealth should not feel mysterious. Premier NP Care separates the
-          public website from the secure systems that handle patient
-          information, while making the care journey easy to understand.
+          Telehealth should feel clear before the visit starts. Premier NP Care
+          makes the care journey easy to understand from the first click.
         </p>
       </PageIntro>
 
@@ -72,16 +70,16 @@ export default function HowItWorksPage() {
                         Book once. Know what comes next.
                       </h2>
                       <p className="mt-5 max-w-md leading-7 text-paper/72">
-                        The path is intentionally simple: book through the
-                        scheduling link, prepare through the platform, meet
-                        with the provider, and leave with a plan.
+                        The path is intentionally simple: choose a time,
+                        prepare for the visit, meet with the provider, and
+                        leave with a plan.
                       </p>
                     </div>
                     <div className="mt-8 grid gap-3 border-y border-white/14 py-5">
                       {[
-                        "No account created on this website",
-                        "No patient records stored here",
-                        "Urgent needs use urgent care",
+                        "Choose a visit time",
+                        "Meet Virginie Chavannes",
+                        "Leave with a care plan",
                       ].map((item) => (
                         <div className="flex items-center gap-3" key={item}>
                           <span className="h-2 w-2 rounded-full bg-aqua" />
@@ -132,7 +130,7 @@ export default function HowItWorksPage() {
           <MotionReveal>
             <p className="label-caps text-cobalt">New to telehealth</p>
             <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-              The process should feel legible before anything is submitted.
+              The process should feel calm before the visit begins.
             </h2>
           </MotionReveal>
           <div className="grid gap-4">
@@ -160,8 +158,8 @@ export default function HowItWorksPage() {
                 <p className="label-caps">Important</p>
               </div>
               <p className="max-w-4xl font-display text-3xl font-medium leading-[1.08] text-ink md:text-4xl">
-                This website does not collect intake forms, store records, or
-                replace urgent care.
+                If symptoms feel urgent, choose urgent or emergency care right
+                away.
               </p>
             </div>
           </MotionReveal>
@@ -180,7 +178,7 @@ export default function HowItWorksPage() {
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/78">
               Book through the practice scheduling link, and the next steps are
-              handled through the practice platform.
+              explained from there.
             </p>
           </div>
           <ButtonLink href={bookingUrl} variant="mist">

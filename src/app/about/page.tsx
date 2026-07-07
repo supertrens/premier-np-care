@@ -2,15 +2,11 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   CalendarCheck,
-  ClipboardCheck,
-  GraduationCap,
-  ShieldCheck,
   UserRoundCheck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
-import { PracticeStatusPanel } from "@/components/practice-status-panel";
 import { ProviderImageSlot } from "@/components/provider-image-slot";
 import { Section } from "@/components/section";
 import { bookingUrl } from "@/lib/config";
@@ -26,36 +22,16 @@ export const metadata: Metadata = {
     "Meet Virginie Chavannes and learn how Premier NP Care approaches provider-led telehealth visits.",
 };
 
-const profileRows = [
-  {
-    label: "Provider",
-    value: "Virginie Chavannes",
-    icon: UserRoundCheck,
-  },
-  {
-    label: "Credential line",
-    value:
-      "Nurse Practitioner credentials and final licensing language should be confirmed with the provider before launch.",
-    icon: ShieldCheck,
-  },
-  {
-    label: "Clinical background",
-    value:
-      "Training, specialty focus, and practice experience can be expanded once the provider supplies final biography details.",
-    icon: GraduationCap,
-  },
-  {
-    label: "Care model",
-    value:
-      "Provider-led telehealth visits with clear scope, practical next steps, and documented safety boundaries.",
-    icon: ClipboardCheck,
-  },
+const bioParagraphs = [
+  "Virginie Chavannes, NP, founded Premier NP Care to make medical care feel more personal, more accessible, and easier to understand. Her practice is built around the kind of visit many patients wish they had more often: a direct conversation with a clinician who listens carefully, explains clearly, and treats the person in front of her with respect. [PLACEHOLDER]",
+  "Her approach blends clinical judgment with warmth. Patients can expect thoughtful questions, practical education, and care plans that make sense for real life, whether the visit is about a new concern, a follow-up need, or a health goal that deserves steady support. [PLACEHOLDER]",
+  "Premier NP Care is designed for patients and families who want convenient telehealth access without losing the feeling of a trusted provider relationship. The goal is simple: help people feel informed, cared for, and confident about their next step. [PLACEHOLDER]",
 ];
 
 const providerPrinciples = [
-  ["Visible", "A named clinician is attached to the visit and care plan."],
-  ["Plain", "Patients should leave knowing what to do next."],
-  ["Bounded", "Telehealth limits are explained instead of hidden."],
+  ["Personal", "Patients meet the named provider behind the practice."],
+  ["Plain", "Care plans are explained in language people can use."],
+  ["Steady", "Follow-up guidance is part of the visit, not an afterthought."],
 ];
 
 export default function AboutPage() {
@@ -96,14 +72,13 @@ export default function AboutPage() {
       <Section className="bg-paper py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
           <MotionReveal>
-            <p className="label-caps text-cobalt">Clinical profile</p>
+            <p className="label-caps text-cobalt">Her story</p>
             <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-              A provider dossier for the first client review.
+              A practice shaped around listening first.
             </h2>
             <p className="mt-6 max-w-lg leading-8 text-ink/70">
-              This page is structured so the provider can quickly validate the
-              final details: credential line, care philosophy, patient fit, and
-              where telehealth should stop.
+              A strong provider page should feel like a warm introduction, not
+              a resume. Patients should understand the person behind the care.
             </p>
           </MotionReveal>
 
@@ -133,24 +108,15 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="divide-y divide-line">
-                {profileRows.map((row) => {
-                  const Icon = row.icon;
-                  return (
-                    <article
-                      className="grid gap-4 p-6 md:grid-cols-[220px_1fr] md:items-start"
-                      key={row.label}
-                    >
-                      <div className="flex items-center gap-3 text-cobalt">
-                        <Icon aria-hidden="true" size={21} />
-                        <p className="label-caps">{row.label}</p>
-                      </div>
-                      <p className="text-lg leading-8 text-ink/74">
-                        {row.value}
-                      </p>
-                    </article>
-                  );
-                })}
+              <div className="grid gap-6 p-7 md:p-8">
+                {bioParagraphs.map((paragraph) => (
+                  <p
+                    className="max-w-3xl text-lg leading-8 text-ink/74"
+                    key={paragraph}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
           </MotionReveal>
@@ -226,22 +192,21 @@ export default function AboutPage() {
       </Section>
 
       <Section className="bg-deep-navy text-paper">
-        <Container className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-          <div>
+        <Container>
+          <div className="max-w-3xl">
             <p className="label-caps text-aqua">Practice status</p>
             <p className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
               Ready to meet the provider?
             </p>
             <p className="mt-4 max-w-2xl leading-7 text-paper/72">
-              Booking is handled through the practice scheduling link. For
-              urgent needs, use emergency services.
+              Book a visit and meet Virginie through the practice scheduling
+              flow.
             </p>
             <ButtonLink className="mt-7" href={bookingUrl} variant="mist">
               <CalendarCheck aria-hidden="true" size={20} />
               Book an Appointment
             </ButtonLink>
           </div>
-          <PracticeStatusPanel />
         </Container>
       </Section>
     </>

@@ -6,7 +6,6 @@ import {
   CalendarCheck,
   ClipboardCheck,
   ShieldCheck,
-  TriangleAlert,
   UserRoundCheck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
@@ -84,10 +83,10 @@ export default function Home() {
           </HeroEntrance>
 
           <HeroItem>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,28,42,0.16)] lg:ml-auto">
+            <div className="group/portrait relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,28,42,0.16)] lg:ml-auto">
               <Image
                 alt="Portrait of Virginie Chavannes, Nurse Practitioner."
-                className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
+                className="absolute inset-0 h-full w-full object-cover object-[center_18%] transition-transform duration-700 ease-out group-hover/portrait:scale-[1.035]"
                 fill
                 priority
                 sizes="(min-width: 1024px) 560px, 92vw"
@@ -109,7 +108,11 @@ export default function Home() {
                     Nurse Practitioner · Telehealth visits
                   </p>
                 </div>
-                <ArrowRight aria-hidden="true" className="shrink-0 text-paper/80" size={20} />
+                <ArrowRight
+                  aria-hidden="true"
+                  className="shrink-0 text-paper/80 transition-transform duration-300 group-hover/portrait:translate-x-1"
+                  size={20}
+                />
               </Link>
             </div>
           </HeroItem>
@@ -125,9 +128,8 @@ export default function Home() {
               Know the care path before the visit begins.
             </h2>
             <p className="mt-5 max-w-lg text-lg leading-8 text-paper/72">
-              Premier NP Care explains the practical details first: who leads
-              care, what telehealth can handle, and when another setting is
-              safer.
+              Premier NP Care helps patients understand who they will see, what
+              to expect, and how the visit can fit into everyday life.
             </p>
           </MotionReveal>
 
@@ -168,8 +170,7 @@ export default function Home() {
               <div className="grid gap-5 border-y border-line py-6 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="max-w-2xl text-lg leading-8 text-ink/70">
                   Browse common starting points for care. Each service card
-                  keeps the promise practical: what may fit a telehealth visit
-                  and when another setting may be safer.
+                  keeps the promise practical, warm, and easy to scan.
                 </p>
                 <ButtonLink href="/services" variant="secondary">
                   View Services
@@ -236,25 +237,14 @@ export default function Home() {
                         {service.description}
                       </p>
 
-                      <div className="mt-auto grid gap-4 pt-8 lg:grid-cols-2">
-                        <div className="border-t border-line pt-4">
+                      <div className="mt-auto pt-8">
+                        <div className="rounded-[18px] border border-line bg-porcelain p-4">
                           <div className="flex items-center gap-2 text-cobalt">
                             <ClipboardCheck aria-hidden="true" size={18} />
-                            <p className="label-caps">May fit telehealth</p>
+                            <p className="label-caps">Helpful for</p>
                           </div>
                           <p className="mt-2 text-sm leading-6 text-ink/68">
                             {service.fit}
-                          </p>
-                        </div>
-                        <div className="border-t border-line pt-4">
-                          <div className="flex items-center gap-2 text-warn">
-                            <TriangleAlert aria-hidden="true" size={18} />
-                            <p className="label-caps">
-                              Consider another setting
-                            </p>
-                          </div>
-                          <p className="mt-2 text-sm leading-6 text-ink/68">
-                            {service.boundary}
                           </p>
                         </div>
                       </div>
@@ -281,8 +271,8 @@ export default function Home() {
               <div className="grid gap-5 border-y border-line py-6 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="max-w-2xl text-lg leading-8 text-ink/70">
                   Premier NP Care makes the clinician relationship visible
-                  before booking, so patients know who guides the visit and how
-                  care boundaries are handled.
+                  before booking, so patients know who is listening, guiding,
+                  and following through.
                 </p>
                 <ButtonLink href="/about" variant="secondary">
                   Meet the Provider
@@ -334,12 +324,12 @@ export default function Home() {
                   <p className="label-caps">Care philosophy</p>
                 </div>
                 <p className="mt-5 max-w-2xl font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
-                  A direct care relationship, not a faceless portal.
+                  A direct care relationship that feels personal.
                 </p>
                 <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
-                  Patients should be able to understand who is responsible for
-                  the visit, what can be handled virtually, and what the next
-                  step should be.
+                  Patients should feel known from the first click: a named
+                  clinician, a clear conversation, and next steps that make
+                  sense.
                 </p>
 
                 <div className="mt-8 grid gap-3 sm:grid-cols-3">
@@ -374,8 +364,8 @@ export default function Home() {
                     icon: ClipboardCheck,
                   },
                   {
-                    title: "Name the limits",
-                    body: "When telehealth is not the right setting, that boundary is part of the care.",
+                    title: "Guide the next step",
+                    body: "If a local exam or additional care is helpful, patients hear that clearly and kindly.",
                     icon: ShieldCheck,
                   },
                 ].map((item) => {
@@ -412,9 +402,8 @@ export default function Home() {
             </MotionReveal>
             <MotionReveal delay={0.08}>
               <p className="max-w-2xl border-y border-line py-6 text-lg leading-8 text-ink/70">
-                The public site explains the path. Booking, visit instructions,
-                patient records, and follow-up details stay inside the practice
-                platform.
+                The public site explains the path, so booking feels simple and
+                the visit feels familiar before it begins.
               </p>
             </MotionReveal>
           </div>
@@ -437,9 +426,9 @@ export default function Home() {
 
                     <div className="mt-8 grid gap-3 border-y border-white/14 py-5">
                       {[
-                        "No portal on this website",
-                        "No records stored here",
-                        "Urgent needs use urgent care",
+                        "Book from any page",
+                        "Meet the named provider",
+                        "Leave with next steps",
                       ].map((item) => (
                         <div className="flex items-center gap-3" key={item}>
                           <span className="h-2 w-2 rounded-full bg-aqua" />
@@ -483,7 +472,7 @@ export default function Home() {
       <Section className="border-y border-line bg-porcelain py-16">
         <Container>
           <MotionReveal>
-            <p className="label-caps text-warn">Know the limits</p>
+            <p className="label-caps text-warn">Care guidance</p>
             <div className="mt-8 grid gap-10 lg:grid-cols-3 lg:gap-8">
               {safetyBoundaries.map((item) => (
                 <div
@@ -520,7 +509,7 @@ export default function Home() {
                 Book an Appointment
               </ButtonLink>
               <p className="text-sm text-ink/56">
-                For urgent needs, always use emergency services.
+                For urgent symptoms, use emergency services.
               </p>
             </div>
           </MotionReveal>

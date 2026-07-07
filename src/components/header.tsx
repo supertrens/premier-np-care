@@ -52,14 +52,14 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <ButtonLink className="min-h-10 px-4 py-2" href={bookingUrl} variant="cobalt">
+          <ButtonLink className="px-4 py-2" href={bookingUrl} variant="cobalt">
             <CalendarCheck aria-hidden="true" size={18} />
             Book
           </ButtonLink>
         </div>
 
         <details className="nav-details group md:hidden">
-          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-center rounded-[10px] border border-line bg-paper px-3 text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan">
+          <summary className="flex min-h-12 cursor-pointer list-none items-center justify-center rounded-[10px] border border-line bg-paper px-3 text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan">
             <Menu aria-hidden="true" size={22} />
             <span className="sr-only">Open navigation</span>
           </summary>

@@ -7,16 +7,11 @@ import {
   TriangleAlert,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
-import { ClinicalScopePanel } from "@/components/clinical-scope-panel";
 import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
-import {
-  clinicalScopeMatrix,
-  safetyBoundaries,
-  services,
-} from "@/lib/content";
+import { safetyBoundaries, services } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -35,18 +30,18 @@ export default function ServicesPage() {
               <p className="label-caps">Scope first</p>
             </div>
             <p className="mt-3 leading-7 text-ink/74">
-              Service information is designed to help patients understand what
-              may fit telehealth and when a different setting may be safer.
+              Service information is designed to help patients recognize a good
+              starting point for care.
             </p>
           </div>
         }
         eyebrow="Services"
-        title="Care options, with the boundaries named up front."
+        title="Care options that feel simple to understand."
       >
         <p>
           Premier NP Care keeps the service menu practical. Patients can scan
           common starting points, understand likely fit, and move into booking
-          with clearer expectations.
+          with confidence.
         </p>
       </PageIntro>
 
@@ -56,13 +51,13 @@ export default function ServicesPage() {
             <MotionReveal>
               <p className="label-caps text-cobalt">Common starting points</p>
               <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-                A clearer service preview for the first visit decision.
+                Common reasons patients start with Premier NP Care.
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.08}>
               <p className="max-w-2xl border-y border-line py-6 text-lg leading-8 text-ink/70">
-                These categories are written for patient understanding, not as
-                a promise that every concern can be handled virtually.
+                These categories are written for people, not paperwork: clear
+                enough to scan, warm enough to feel approachable.
               </p>
             </MotionReveal>
           </div>
@@ -101,25 +96,14 @@ export default function ServicesPage() {
                       <p className="mt-4 leading-7 text-ink/70">
                         {service.description}
                       </p>
-                      <div className="mt-6 grid gap-4 border-t border-line pt-5">
-                        <div>
-                          <div className="flex items-center gap-2 text-cobalt">
-                            <ClipboardCheck aria-hidden="true" size={18} />
-                            <p className="label-caps">May fit telehealth</p>
-                          </div>
-                          <p className="mt-2 text-sm leading-6 text-ink/66">
-                            {service.fit}
-                          </p>
+                      <div className="mt-6 rounded-[18px] border border-line bg-paper p-4">
+                        <div className="flex items-center gap-2 text-cobalt">
+                          <ClipboardCheck aria-hidden="true" size={18} />
+                          <p className="label-caps">Helpful for</p>
                         </div>
-                        <div>
-                          <div className="flex items-center gap-2 text-warn">
-                            <TriangleAlert aria-hidden="true" size={18} />
-                            <p className="label-caps">Consider another setting</p>
-                          </div>
-                          <p className="mt-2 text-sm leading-6 text-ink/66">
-                            {service.boundary}
-                          </p>
-                        </div>
+                        <p className="mt-2 text-sm leading-6 text-ink/66">
+                          {service.fit}
+                        </p>
                       </div>
                     </div>
                   </article>
@@ -133,46 +117,21 @@ export default function ServicesPage() {
       <Section className="bg-mist py-24">
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
-            <p className="label-caps text-cobalt">Clinical matrix</p>
-            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-              The practical difference between fit, limits, and next steps.
-            </h2>
-          </MotionReveal>
-
-          <div className="grid gap-6">
-            {clinicalScopeMatrix.map((service, index) => (
-              <MotionReveal delay={index * 0.04} key={service.area}>
-                <ClinicalScopePanel
-                  appropriate={service.appropriate}
-                  area={service.area}
-                  icon={service.icon}
-                  mayRequire={service.mayRequire}
-                  nextStep={service.nextStep}
-                />
-              </MotionReveal>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section className="bg-paper py-24">
-        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
-          <MotionReveal>
             <div className="flex items-center gap-3 text-warn">
               <TriangleAlert aria-hidden="true" size={24} />
-              <p className="label-caps">Safety boundaries</p>
+              <p className="label-caps">When another setting is best</p>
             </div>
             <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-              Telehealth is useful, but it is not every kind of care.
+              Clear guidance is part of feeling cared for.
             </h2>
           </MotionReveal>
 
-          <div className="grid gap-4">
-            {safetyBoundaries.map((item, index) => {
+          <div className="grid gap-4 rounded-[28px] border border-line bg-paper p-6 shadow-[0_22px_70px_rgba(7,28,42,0.06)]">
+            {safetyBoundaries.slice(0, 1).map((item) => {
               const Icon = item.icon;
               return (
-                <MotionReveal delay={index * 0.04} key={item.title}>
-                  <article className="grid gap-4 border-t border-line py-6 md:grid-cols-[240px_1fr]">
+                <MotionReveal key={item.title}>
+                  <article className="grid gap-4 md:grid-cols-[240px_1fr]">
                     <div className="flex items-center gap-3 text-warn">
                       <Icon aria-hidden="true" size={21} />
                       <p className="label-caps">{item.title}</p>
@@ -193,8 +152,8 @@ export default function ServicesPage() {
               Not sure where your concern fits?
             </h2>
             <p className="mt-3 max-w-2xl leading-7 text-paper/76">
-              Book a visit or send a general question. Emergencies should
-              always use emergency services.
+              Book a visit or send a general question. If symptoms feel urgent,
+              choose urgent or emergency care right away.
             </p>
           </div>
           <ButtonLink href="/contact" variant="mist">

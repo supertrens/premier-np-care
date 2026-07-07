@@ -1,4 +1,4 @@
-import { CalendarCheck } from "lucide-react";
+import { CalendarCheck, Phone } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import { bookingUrl, isBookingPlaceholder } from "@/lib/config";
 
@@ -15,15 +15,19 @@ export function BookingEmbedSlot() {
           Book an appointment
         </h2>
         <p className="mt-4 leading-7 text-ink/74">
-          Appointments are scheduled through the practice&apos;s secure
-          platform. Choose a time that works, and visit instructions follow
-          from there.
+          Online scheduling coming soon. Call or message us to book your
+          appointment.
         </p>
         {isBookingPlaceholder ? (
-          <p className="mt-5 rounded-[16px] border border-cyan/20 bg-mist px-4 py-3 text-sm font-semibold leading-6 text-ink">
-            Online scheduling opens soon. The final booking link or embed can
-            be dropped into this section without changing the page structure.
-          </p>
+          <div className="mt-5 rounded-[18px] border border-cyan/20 bg-mist p-4">
+            <div className="flex items-center gap-3 text-cobalt">
+              <Phone aria-hidden="true" size={20} />
+              <p className="label-caps">Call to book</p>
+            </div>
+            <p className="mt-2 font-display text-3xl font-medium text-ink">
+              (555) 123-4567
+            </p>
+          </div>
         ) : null}
         <ButtonLink className="mt-6" href={bookingUrl} variant="cobalt">
           <CalendarCheck aria-hidden="true" size={19} />

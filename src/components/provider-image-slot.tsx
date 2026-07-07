@@ -31,8 +31,7 @@ export function ProviderImageSlot() {
           className="mt-0.5 shrink-0 text-cobalt"
           size={18}
         />
-        Every visit is led personally by the named provider — no rotating
-        strangers, no anonymous portal.
+        Every visit starts with the named provider patients see here.
       </div>
     </div>
   );

@@ -105,8 +105,8 @@ export function ContactForm() {
         />
       </div>
       <p className="rounded-[16px] border border-cyan/20 bg-mist px-4 py-3 text-sm leading-6 text-ink">
-        Please do not include urgent concerns, medical emergencies, or sensitive
-        health details in this form.
+        For urgent symptoms, call 911 or use urgent care. For this form, a
+        general note is best.
       </p>
       <Button disabled={isSubmitting} type="submit" variant="cobalt">
         <Send aria-hidden="true" size={18} />

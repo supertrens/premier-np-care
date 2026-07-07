@@ -15,7 +15,7 @@ export function Footer() {
               Nurse Practitioner-led care with telehealth access.
             </p>
             <p className="mt-6 rounded-[16px] border border-cyan/25 bg-white/8 px-4 py-3 text-sm leading-6 text-paper/72">
-              Informational only. Not a patient portal.
+              Personal care, clear next steps, and a calmer way to begin.
             </p>
           </div>
 
@@ -37,8 +37,8 @@ export function Footer() {
           <div>
             <p className="label-caps text-aqua">Contact</p>
             <p className="mt-5 leading-7 text-paper/64">
-              For booking and general questions, use the contact page. This
-              site does not handle urgent needs or private health details.
+              For booking help or general questions, send a message and the
+              practice will help you with the next step.
             </p>
             <Link
               className="mt-4 inline-block text-base font-semibold text-aqua transition-colors hover:text-paper focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan"
@@ -51,8 +51,8 @@ export function Footer() {
           <div>
             <p className="label-caps text-aqua">Visits</p>
             <p className="mt-5 leading-7 text-paper/64">
-              Telehealth visits are scheduled through the practice platform.
-              Booking opens from any page on this site.
+              Start from any page. The booking path is designed to be simple
+              and easy to follow.
             </p>
           </div>
         </div>
@@ -61,9 +61,7 @@ export function Footer() {
           <p className="text-sm text-paper/48">
             © {new Date().getFullYear()} Premier NP Care
           </p>
-          <p className="text-sm text-paper/48">
-            For emergencies, call 911
-          </p>
+          <p className="text-sm text-paper/48">For emergencies, call 911</p>
         </div>
       </Container>
     </footer>

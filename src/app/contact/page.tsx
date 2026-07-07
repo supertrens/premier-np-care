@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  CalendarCheck,
-  Mail,
-  MapPin,
-  Phone,
-  ShieldCheck,
-  TriangleAlert,
-} from "lucide-react";
+import { CalendarCheck, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { BookingEmbedSlot } from "@/components/booking-embed-slot";
 import { ContactForm } from "@/components/contact/contact-form";
 import { Container } from "@/components/container";
@@ -23,12 +16,12 @@ export const metadata: Metadata = {
 const contactRows = [
   {
     label: "Phone",
-    value: "Shared with patients through the practice platform after booking.",
+    value: "(555) 123-4567",
     icon: Phone,
   },
   {
     label: "Email",
-    value: "Use the general inquiry form for non-urgent questions.",
+    value: "Use the general inquiry form below.",
     icon: Mail,
   },
   {
@@ -40,9 +33,9 @@ const contactRows = [
 ];
 
 const safetyNotes = [
-  "Do not send urgent concerns through this form.",
-  "Do not include private medical details or sensitive health history.",
-  "Scheduling, visit instructions, and records stay in the practice platform.",
+  "For urgent symptoms, call 911 or use urgent care.",
+  "Use the form for general questions and booking help.",
+  "Visit instructions are shared after your appointment is scheduled.",
 ];
 
 export default function ContactPage() {
@@ -50,14 +43,14 @@ export default function ContactPage() {
     <>
       <PageIntro
         aside={
-          <div className="rounded-[22px] border border-warn/20 bg-paper/82 p-5 shadow-[0_16px_50px_rgba(7,28,42,0.06)]">
-            <div className="flex items-center gap-3 text-warn">
-              <TriangleAlert aria-hidden="true" size={22} />
-              <p className="label-caps">Important</p>
+          <div className="rounded-[22px] border border-line bg-paper/82 p-5 shadow-[0_16px_50px_rgba(7,28,42,0.06)]">
+            <div className="flex items-center gap-3 text-cobalt">
+              <Phone aria-hidden="true" size={22} />
+              <p className="label-caps">Prefer to call?</p>
             </div>
             <p className="mt-3 leading-7 text-ink/76">
-              For emergencies or urgent symptoms, call 911 or use urgent care.
-              This website is not monitored for urgent medical needs.
+              Online scheduling is coming soon. For now, call or send a message
+              and the practice will help you find the right appointment path.
             </p>
           </div>
         }
@@ -65,9 +58,8 @@ export default function ContactPage() {
         title="Book care or send a general question."
       >
         <p>
-          Booking and general inquiries are intentionally separated. Patient
-          information belongs in the practice platform, while this website keeps
-          the path into care clear.
+          Start with the booking card or send a message below. The goal is to
+          make the next step feel simple.
         </p>
       </PageIntro>
 
@@ -80,12 +72,11 @@ export default function ContactPage() {
                 <p className="label-caps">Booking first</p>
               </div>
               <h2 className="mt-5 max-w-lg font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-                The scheduling link is the cleanest way to start.
+                The easiest way to begin is right here.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
-                Appointment details, visit instructions, patient forms, and
-                follow-up communication stay inside the established practice
-                platform.
+                Online scheduling is almost ready. Until then, the practice can
+                help you book by phone or message.
               </p>
             </div>
           </MotionReveal>
@@ -102,12 +93,12 @@ export default function ContactPage() {
             <div>
               <p className="label-caps text-cobalt">General inquiries</p>
               <h2 className="mt-5 max-w-lg font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-                A simple form for non-urgent questions.
+                A simple form for questions and booking help.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
-                Use this for general questions about the practice or booking
-                path. Please keep medical details in the secure practice
-                platform.
+                Send a quick note and the practice can help with the next step.
+                Keep the message general; detailed health conversations belong
+                in the visit.
               </p>
               <div className="mt-8 grid gap-3 border-y border-line py-5">
                 {safetyNotes.map((note) => (
@@ -137,7 +128,7 @@ export default function ContactPage() {
           <MotionReveal>
             <p className="label-caps text-cobalt">Practice info</p>
             <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-              Contact details stay separate from patient records.
+              A few ways to reach the practice.
             </h2>
           </MotionReveal>
 
