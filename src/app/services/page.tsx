@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight,
+  CheckCircle2,
   ClipboardCheck,
   ShieldCheck,
   TriangleAlert,
@@ -11,7 +12,7 @@ import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
-import { safetyBoundaries, services } from "@/lib/content";
+import { safetyBoundaries, serviceHighlights, services } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -27,11 +28,11 @@ export default function ServicesPage() {
           <div className="rounded-[22px] border border-line bg-paper/82 p-5 shadow-[0_16px_50px_rgba(7,28,42,0.06)]">
             <div className="flex items-center gap-3 text-cobalt">
               <ShieldCheck aria-hidden="true" size={22} />
-              <p className="label-caps">Scope first</p>
+              <p className="label-caps">Patients 14 and up</p>
             </div>
             <p className="mt-3 leading-7 text-ink/74">
-              Service information is designed to help patients recognize a good
-              starting point for care.
+              Premier NP Care provides prevention, sick visits, screenings,
+              chronic disease support, and lifestyle counseling.
             </p>
           </div>
         }
@@ -39,11 +40,37 @@ export default function ServicesPage() {
         title="Care options that feel simple to understand."
       >
         <p>
-          Premier NP Care keeps the service menu practical. Patients can scan
-          common starting points, understand likely fit, and move into booking
-          with confidence.
+          Premier NP Care provides patient-centered primary and preventive care
+          for everyday health needs, common illnesses, and ongoing conditions.
         </p>
       </PageIntro>
+
+      <Section className="bg-mist py-20">
+        <Container className="grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-start">
+          <MotionReveal>
+            <p className="label-caps text-cobalt">Services provided</p>
+            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
+              A practical menu for prevention, common concerns, and ongoing
+              care.
+            </h2>
+          </MotionReveal>
+
+          <MotionReveal delay={0.08}>
+            <div className="grid gap-3 rounded-[28px] border border-line bg-paper p-6 shadow-[0_22px_70px_rgba(26,53,87,0.07)] sm:grid-cols-2">
+              {serviceHighlights.map((item) => (
+                <div className="flex gap-3" key={item}>
+                  <CheckCircle2
+                    aria-hidden="true"
+                    className="mt-1 shrink-0 text-cobalt"
+                    size={18}
+                  />
+                  <p className="leading-7 text-ink/74">{item}</p>
+                </div>
+              ))}
+            </div>
+          </MotionReveal>
+        </Container>
+      </Section>
 
       <Section className="bg-paper py-24">
         <Container>

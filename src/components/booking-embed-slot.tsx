@@ -22,7 +22,8 @@ export function BookingEmbedSlot() {
       </h2>
       <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-[#555555]">
         We are setting up our online booking system. In the meantime, reach out
-        directly and we will get you scheduled within 24 hours.
+        directly and we will help you get scheduled during regular office
+        hours.
       </p>
       <ButtonLink className="mt-8" href="#contact-form" variant="cobalt">
         Send Us a Message

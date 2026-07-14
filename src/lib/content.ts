@@ -20,57 +20,100 @@ export const navItems = [
 
 export const services = [
   {
-    title: "Everyday Primary Care",
-    eyebrow: "Focused concerns",
+    title: "Preventive Care & Annual Physicals",
+    eyebrow: "Prevention",
     image:
       "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "A calm clinical desktop with a stethoscope and care notes.",
     description:
-      "A comfortable place to start for common concerns, medication questions, follow-up needs, and practical care planning.",
-    fit: "Routine questions, stable symptoms, medication conversations, and follow-up planning.",
+      "Routine checkups, annual physical exams, health risk assessments, and prevention-focused visits for patients age 14 and up.",
+    fit: "Preventive care, annual physicals, health risk assessments, and wellness planning.",
     boundary:
-      "Concerns that need imaging, lab work, procedures, or a hands-on exam may be guided to in-person care.",
+      "Some preventive screenings, labs, or procedures may require coordination with an in-person facility.",
     icon: Stethoscope,
   },
   {
-    title: "Women's and Family Health",
-    eyebrow: "Life-stage care",
+    title: "Screenings & Immunizations",
+    eyebrow: "Protection",
     image:
       "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "A warm consultation setting prepared for a patient conversation.",
     description:
-      "Preventive conversations, wellness guidance, and family-centered support for patients who want care that feels personal.",
-    fit: "Wellness questions, prevention conversations, education, and routine guidance.",
+      "Screening support for conditions such as high blood pressure, diabetes, high cholesterol, and certain cancers.",
+    fit: "Screening conversations, vaccine planning, prevention education, and follow-up guidance.",
     boundary:
-      "Urgent pregnancy concerns, severe pain, heavy bleeding, or exams should be directed appropriately.",
+      "Vaccines, lab draws, imaging, or cancer screening procedures may be completed through an appropriate local site.",
     icon: HeartPulse,
   },
   {
-    title: "Chronic Condition Support",
-    eyebrow: "Steady follow-up",
+    title: "Common Illness & Minor Injury Visits",
+    eyebrow: "Sick visits",
     image:
       "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Clinical follow-up tools arranged for ongoing care planning.",
     description:
-      "Steady check-ins for ongoing health goals, recent readings, lifestyle changes, and care coordination.",
-    fit: "Stable check-ins, recent readings, lifestyle goals, and care coordination.",
+      "Diagnosis and treatment guidance for colds, flu, sore throat, infections, fever, and minor injuries.",
+    fit: "Acute symptoms that can be safely reviewed through the visit process.",
     boundary:
-      "Unstable readings, severe symptoms, or complex medication changes may require higher-touch care.",
+      "Severe symptoms, breathing trouble, chest pain, major injuries, or rapidly worsening concerns need urgent care.",
     icon: ShieldCheck,
   },
   {
-    title: "Telehealth Check-ins",
-    eyebrow: "Accessible visits",
+    title: "Skin, Allergy & Digestive Concerns",
+    eyebrow: "Common concerns",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "A laptop and medical workspace prepared for a virtual care visit.",
     description:
-      "Convenient virtual visits for patients who want clear answers without losing the personal feel of care.",
-    fit: "Questions that can be evaluated safely without an in-person exam.",
+      "Support for skin conditions, allergies, and gastrointestinal problems with clear next steps.",
+    fit: "Rashes, allergy symptoms, stomach concerns, and questions that benefit from timely guidance.",
     boundary:
-      "Emergencies, chest pain, breathing trouble, stroke symptoms, or serious injuries need urgent care.",
+      "Severe allergic reactions, severe abdominal pain, dehydration, or rapidly worsening symptoms need urgent care.",
     icon: MessagesSquare,
   },
+  {
+    title: "Chronic Disease Management",
+    eyebrow: "Ongoing care",
+    image:
+      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "A clinician reviewing ongoing health information for chronic care planning.",
+    description:
+      "Ongoing management and education for chronic conditions, including diabetes and lifestyle-related health goals.",
+    fit: "Stable chronic condition follow-up, diabetes care conversations, medication questions, and care planning.",
+    boundary:
+      "Unstable readings, severe symptoms, or complex medication changes may require higher-touch or in-person care.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Lifestyle Counseling",
+    eyebrow: "Health goals",
+    image:
+      "https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Nutritious food and wellness planning materials on a bright table.",
+    description:
+      "Patient-centered counseling for nutrition, exercise, smoking cessation, prevention, and sustainable health routines.",
+    fit: "Education, prevention planning, habit changes, and family-centered support.",
+    boundary:
+      "Specialized nutrition therapy, procedures, or urgent behavioral health needs may require a referral or another care setting.",
+    icon: UserRoundCheck,
+  },
+];
+
+export const serviceHighlights = [
+  "Preventive care",
+  "Routine checkups and annual physical exams",
+  "Health risk assessments",
+  "Immunizations and vaccinations",
+  "Screening for high blood pressure, diabetes, high cholesterol, and certain cancers",
+  "Lifestyle counseling for nutrition, exercise, and smoking cessation",
+  "Diagnosis and treatment of common illnesses",
+  "Colds, flu, sore throat, and other infections",
+  "Fever and minor injuries",
+  "Skin conditions",
+  "Allergies",
+  "Gastrointestinal problems",
+  "Management of chronic diseases",
+  "Diabetes care",
 ];
 
 export const practiceAtAGlance = [
@@ -130,31 +173,48 @@ export const patientJourney = [
 ];
 
 export const patientFit = [
-  "Patients who want a direct provider relationship and a calmer care experience.",
-  "Busy adults and families who need convenient access without feeling rushed.",
-  "People who are new to telehealth and want the process explained plainly before booking.",
+  "Patients age 14 and up who want a direct provider relationship and a calmer care experience.",
+  "People who value evidence-based care, clear education, and shared decision-making.",
+  "Patients and families who want prevention, routine care, and chronic condition support explained plainly.",
 ];
 
 export const providerStandards = [
   {
-    title: "Assessment before recommendation",
-    body: "The visit starts with listening, thoughtful questions, and a shared understanding of the concern.",
+    title: "Evidence-based care",
+    body: "Care is grounded in clinical evidence, careful assessment, and a respectful understanding of each patient's goals, values, and concerns.",
   },
   {
-    title: "Plain-language care planning",
-    body: "Options, prescriptions, testing, referrals, and follow-up are explained in language patients can use.",
+    title: "Clear communication",
+    body: "Virginie prioritizes active listening, patient education, and shared decision-making so patients feel informed and supported.",
   },
   {
-    title: "Right care, right setting",
-    body: "When a local exam, specialist, urgent care, or emergency support is the right move, patients are guided clearly.",
+    title: "Holistic support",
+    body: "The practice helps patients and families understand their health, manage next steps, and participate actively in their well-being.",
   },
 ];
 
 export const patientExpectations = [
-  "A direct visit with the Nurse Practitioner.",
-  "Clear explanation of what can be handled virtually and what cannot.",
-  "Practical next steps that fit the patient's concern and the practice scope.",
+  "A direct visit with Virginie Chavannes, a board-certified Adult-Gerontology Primary Care Nurse Practitioner.",
+  "Care that is medically sound, personally respectful, and focused on clear next steps.",
+  "Education and guidance that help patients actively manage their own health.",
 ];
+
+export const providerBio = [
+  "I am a board-certified Adult-Gerontology Primary Care Nurse Practitioner with experience in primary care, acute care, and chronic disease management. My career began in nursing, where I developed a strong foundation in assessment, patient education, and compassionate care across a wide range of settings. Over time, I realized I wanted to do more, especially by diagnosing and managing complex health needs, coordinating care, and advocating for patients throughout their health journeys.",
+  "As a Nurse Practitioner, my approach is rooted in evidence-based medicine and a commitment to understanding each patient's goals, values, and concerns. I prioritize clear communication, active listening, and shared decision-making so patients feel informed and supported. Whether I am addressing acute symptoms, managing chronic conditions, or focusing on prevention, I aim to deliver care that is both medically sound and personally respectful.",
+  "I am passionate about providing holistic, patient-centered care and empowering patients and their families through education so they can actively manage their own health, which I find incredibly rewarding.",
+];
+
+export const missionStatement =
+  "My mission is to serve every patient with compassion, respect, and clinical excellence. I am committed to delivering evidence-based, patient-centered care, promoting health through education and prevention, and advocating for equitable access to quality healthcare. I strive to build trusting relationships that empower patients to actively participate in their health and well-being while continually growing as a lifelong learner and healthcare leader.";
+
+export const practiceDetails = {
+  schedule: "Monday-Thursday 8-5pm; Friday 9-5pm",
+  payment: "Accepting insurance and self pay",
+  address: "412 East Washington Avenue, Washington, New Jersey 07882",
+  ageRange: "Treating patients from 14 and up",
+  phone: "(555) 123-4567",
+};
 
 export const safetyBoundaries = [
   {

@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
+import { practiceDetails } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -16,8 +17,23 @@ export const metadata: Metadata = {
 const contactRows = [
   {
     label: "Phone",
-    value: "(555) 123-4567",
+    value: practiceDetails.phone,
     icon: Phone,
+  },
+  {
+    label: "Schedule",
+    value: practiceDetails.schedule,
+    icon: CalendarCheck,
+  },
+  {
+    label: "Payment",
+    value: practiceDetails.payment,
+    icon: ShieldCheck,
+  },
+  {
+    label: "Age range",
+    value: practiceDetails.ageRange,
+    icon: ShieldCheck,
   },
   {
     label: "Email",
@@ -25,9 +41,8 @@ const contactRows = [
     icon: Mail,
   },
   {
-    label: "Service area",
-    value:
-      "Telehealth availability depends on licensure and patient location at the time of care.",
+    label: "Address",
+    value: practiceDetails.address,
     icon: MapPin,
   },
 ];
@@ -51,6 +66,9 @@ export default function ContactPage() {
             <p className="mt-3 leading-7 text-ink/76">
               Online scheduling is coming soon. For now, call or send a message
               and the practice will help you find the right appointment path.
+            </p>
+            <p className="mt-3 font-semibold leading-7 text-ink">
+              {practiceDetails.schedule}
             </p>
           </div>
         }
@@ -76,7 +94,7 @@ export default function ContactPage() {
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
                 Online scheduling is almost ready. Until then, the practice can
-                help you book by phone or message.
+                help you book by phone or message during regular office hours.
               </p>
             </div>
           </MotionReveal>
