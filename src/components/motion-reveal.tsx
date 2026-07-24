@@ -65,6 +65,32 @@ export function HeroEntrance({
   );
 }
 
+export function DrawRule({
+  className,
+  delay = 0,
+}: {
+  className?: string;
+  delay?: number;
+}) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <span aria-hidden="true" className={className} />;
+  }
+
+  return (
+    <motion.span
+      aria-hidden="true"
+      className={className}
+      initial={{ scaleX: 0 }}
+      style={{ transformOrigin: "left center" }}
+      transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.6 }}
+      whileInView={{ scaleX: 1 }}
+    />
+  );
+}
+
 export function HeroItem({
   children,
   className,
