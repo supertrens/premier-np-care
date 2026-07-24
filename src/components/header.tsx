@@ -19,10 +19,10 @@ export function Header() {
           <Image
             alt=""
             className="h-12 w-12 shrink-0 rounded-[10px]"
-            height={40}
+            height={42}
             priority
             src="/images/logo-icon.png"
-            width={40}
+            width={42}
           />
           <span className="font-display text-2xl font-semibold leading-none text-ink transition-colors group-hover:text-ink">
             Premier NP Care
