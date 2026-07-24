@@ -76,52 +76,59 @@ export default function ServicesPage() {
               return (
                 <MotionReveal delay={index * 0.04} key={service.title}>
                   <article className="overflow-hidden rounded-[28px] border border-line bg-paper shadow-[0_22px_70px_rgba(26,53,87,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_28px_84px_rgba(26,53,87,0.1)]">
-                    <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                      <div className="border-b border-line bg-[linear-gradient(145deg,rgba(201,238,243,0.62),rgba(247,252,253,0.95)_48%,#ffffff)] p-6 md:p-8 lg:border-b-0 lg:border-r">
-                        <div className="flex items-center gap-3">
-                          <span className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan/25 bg-paper text-cobalt">
-                            <Icon aria-hidden="true" size={22} />
-                          </span>
+                    <div className="p-6 md:p-8">
+                      <div className="flex items-center gap-3">
+                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-mist text-cobalt">
+                          <Icon aria-hidden="true" size={22} />
+                        </span>
+                        <div>
                           <p className="label-caps text-harbor">
                             {service.eyebrow}
                           </p>
+                          <h3 className="font-display text-2xl font-medium leading-tight text-ink md:text-3xl">
+                            {service.title}
+                          </h3>
                         </div>
-                        <h3 className="mt-5 font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
-                          {service.title}
-                        </h3>
-                        <p className="mt-4 max-w-xl leading-7 text-ink/70">
-                          {service.description}
-                        </p>
-                        <p className="mt-6 text-sm leading-6 text-ink/58">
-                          <span className="font-semibold text-ink/72">
-                            Helpful for:{" "}
-                          </span>
-                          {service.fit}
-                        </p>
-                        <p className="mt-4 flex gap-2.5 rounded-[14px] border border-warn/25 bg-warn/6 px-4 py-3 text-sm leading-6 text-ink/68">
-                          <TriangleAlert
-                            aria-hidden="true"
-                            className="mt-0.5 shrink-0 text-warn"
-                            size={16}
-                          />
-                          {service.boundary}
-                        </p>
+                      </div>
+                      <p className="mt-4 max-w-2xl leading-7 text-ink/70">
+                        {service.description}
+                      </p>
+
+                      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                        <div className="rounded-[14px] border border-cyan/25 bg-mist/60 p-3.5">
+                          <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-harbor">
+                            <CheckCircle2 aria-hidden="true" size={14} />
+                            Helpful for
+                          </p>
+                          <p className="mt-1.5 text-sm leading-6 text-ink/66">
+                            {service.fit}
+                          </p>
+                        </div>
+                        <div className="rounded-[14px] border border-warn/25 bg-warn/6 p-3.5">
+                          <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-warn">
+                            <TriangleAlert aria-hidden="true" size={14} />
+                            Consider in-person
+                          </p>
+                          <p className="mt-1.5 text-sm leading-6 text-ink/66">
+                            {service.boundary}
+                          </p>
+                        </div>
                       </div>
 
-                      <div className="p-6 md:p-8">
+                      <div className="mt-6 border-t border-line pt-5">
                         <p className="label-caps text-cobalt">Includes</p>
-                        <ul className="mt-5 grid gap-3 sm:grid-cols-1">
+                        <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
                           {service.items.map((item) => (
                             <li
-                              className="flex gap-3 rounded-[16px] border border-line/80 bg-porcelain px-4 py-3"
+                              className="flex gap-2.5 rounded-[12px] border border-line/80 bg-porcelain px-3.5 py-2.5"
                               key={item}
                             >
                               <CheckCircle2
                                 aria-hidden="true"
                                 className="mt-0.5 shrink-0 text-harbor"
-                                size={18}
+                                size={16}
                               />
-                              <span className="leading-7 text-ink/78">
+                              <span className="text-sm leading-6 text-ink/76">
                                 {item}
                               </span>
                             </li>
