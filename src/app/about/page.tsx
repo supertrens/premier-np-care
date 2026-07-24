@@ -83,7 +83,7 @@ export default function AboutPage() {
             credential="Nurse Practitioner · Telehealth · New Jersey"
             name="Virginie Chavannes, APN"
             sizes="(min-width: 1024px) 32vw, 90vw"
-            src="/images/virginie-chavannes.jpg"
+            src="/images/virginie-chavannes.jpeg"
             trailing={
               <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-paper px-3 py-2 text-sm font-semibold text-harbor">
                 <ShieldCheck aria-hidden="true" size={15} />
