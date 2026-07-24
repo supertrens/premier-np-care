@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
-import { navItems, practiceDetails } from "@/lib/content";
+import {
+  insuranceAccepted,
+  navItems,
+  practiceDetails,
+} from "@/lib/content";
 
 export function Footer() {
   return (
@@ -54,7 +58,11 @@ export function Footer() {
               {practiceDetails.schedule}
             </p>
             <p className="mt-3 leading-7 text-paper/64">
-              {practiceDetails.payment}
+              {insuranceAccepted.summary}
+            </p>
+            <p className="mt-3 text-sm leading-6 text-paper/52">
+              Including {insuranceAccepted.featured.join(" and ")}, plus other
+              major New Jersey plans and self pay.
             </p>
           </div>
         </div>

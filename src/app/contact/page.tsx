@@ -6,7 +6,7 @@ import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
-import { practiceDetails } from "@/lib/content";
+import { insuranceAccepted, practiceDetails } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -163,9 +163,22 @@ export default function ContactPage() {
                       <Icon aria-hidden="true" size={21} />
                       <p className="label-caps">{row.label}</p>
                     </div>
-                    <p className="text-lg leading-8 text-ink/76">
-                      {row.value}
-                    </p>
+                    <div>
+                      <p className="text-lg leading-8 text-ink/76">
+                        {row.value}
+                      </p>
+                      {row.label === "Payment" ? (
+                        <p className="mt-2 text-sm leading-6 text-ink/58">
+                          Including{" "}
+                          <span className="font-semibold text-harbor">
+                            {insuranceAccepted.featured.join(" and ")}
+                          </span>
+                          , UnitedHealthcare, Aetna, AmeriHealth, and self pay.
+                          {" "}
+                          {insuranceAccepted.note}
+                        </p>
+                      ) : null}
+                    </div>
                   </article>
                 </MotionReveal>
               );

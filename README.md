@@ -65,7 +65,7 @@ npm run build
 
 ## Pre-Launch Review Checklist
 
-- Confirm Virginie Chavannes' exact credential line and licensing language.
+- Confirm the exact credential line and licensing language for Virginie Chavannes, APN.
 - Replace temporary Unsplash visuals with approved practice imagery.
 - Set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`.
 - Add Resend environment variables.

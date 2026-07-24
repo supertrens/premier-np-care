@@ -78,7 +78,7 @@ export default function HowItWorksPage() {
                     <div className="mt-8 grid gap-3 border-y border-white/14 py-5">
                       {[
                         "Choose a visit time",
-                        "Meet Virginie Chavannes",
+                        "Meet Virginie Chavannes, APN",
                         "Leave with a care plan",
                       ].map((item) => (
                         <div className="flex items-center gap-3" key={item}>

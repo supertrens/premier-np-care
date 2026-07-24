@@ -1,4 +1,5 @@
 import {
+  Brain,
   CalendarCheck,
   ClipboardCheck,
   FileText,
@@ -18,102 +19,102 @@ export const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
+export const insuranceAccepted = {
+  summary: "Accepting all major insurance plans in New Jersey, plus self pay.",
+  note: "Coverage may vary by plan. Contact the practice if you have questions about your benefits.",
+  featured: ["Braven Health", "Horizon BCBS"],
+  examples: [
+    "Braven Health",
+    "Horizon BCBS",
+    "UnitedHealthcare",
+    "Aetna",
+    "AmeriHealth",
+    "Self pay",
+  ],
+};
+
 export const services = [
   {
-    title: "Preventive Care & Annual Physicals",
+    title: "Preventive care",
     eyebrow: "Prevention",
     image:
       "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "A calm clinical desktop with a stethoscope and care notes.",
     description:
-      "Routine checkups, annual physical exams, health risk assessments, and prevention-focused visits for patients age 14 and up.",
-    fit: "Preventive care, annual physicals, health risk assessments, and wellness planning.",
+      "Routine checkups, screenings, immunizations, and lifestyle guidance that help patients stay ahead of health concerns.",
+    items: [
+      "Routine checkups and annual physical exams",
+      "Health risk assessments",
+      "Immunizations and vaccinations",
+      "Screening for conditions such as high blood pressure, diabetes, high cholesterol, and certain cancers",
+      "Lifestyle counseling (nutrition, exercise, smoking cessation)",
+    ],
+    fit: "Annual physicals, prevention planning, and wellness support for patients age 14 and up.",
     boundary:
       "Some preventive screenings, labs, or procedures may require coordination with an in-person facility.",
     icon: Stethoscope,
   },
   {
-    title: "Screenings & Immunizations",
-    eyebrow: "Protection",
-    image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "A warm consultation setting prepared for a patient conversation.",
-    description:
-      "Screening support for conditions such as high blood pressure, diabetes, high cholesterol, and certain cancers.",
-    fit: "Screening conversations, vaccine planning, prevention education, and follow-up guidance.",
-    boundary:
-      "Vaccines, lab draws, imaging, or cancer screening procedures may be completed through an appropriate local site.",
-    icon: HeartPulse,
-  },
-  {
-    title: "Common Illness & Minor Injury Visits",
+    title: "Diagnosis and treatment of common illnesses",
     eyebrow: "Sick visits",
     image:
       "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Clinical follow-up tools arranged for ongoing care planning.",
     description:
-      "Diagnosis and treatment guidance for colds, flu, sore throat, infections, fever, and minor injuries.",
+      "Timely evaluation and treatment guidance for everyday illnesses, minor injuries, and common acute concerns.",
+    items: [
+      "Colds, flu, sore throat, and other infections",
+      "Fever and minor injuries",
+      "Skin conditions",
+      "Allergies",
+      "Gastrointestinal problems",
+    ],
     fit: "Acute symptoms that can be safely reviewed through the visit process.",
     boundary:
       "Severe symptoms, breathing trouble, chest pain, major injuries, or rapidly worsening concerns need urgent care.",
     icon: ShieldCheck,
   },
   {
-    title: "Skin, Allergy & Digestive Concerns",
-    eyebrow: "Common concerns",
+    title: "Management of chronic diseases",
+    eyebrow: "Ongoing care",
+    image:
+      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "A clinician reviewing ongoing health information for chronic care planning.",
+    description:
+      "Ongoing support for long-term conditions, with education, monitoring, and clear next steps.",
+    items: [
+      "Diabetes",
+      "Hypertension (high blood pressure)",
+      "Asthma and chronic obstructive pulmonary disease (COPD)",
+      "Heart disease",
+      "Arthritis",
+      "Thyroid disorders",
+    ],
+    fit: "Stable chronic condition follow-up, medication questions, and care planning.",
+    boundary:
+      "Unstable readings, severe symptoms, or complex medication changes may require higher-touch or in-person care.",
+    icon: HeartPulse,
+  },
+  {
+    title: "Mental health services",
+    eyebrow: "Support",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "A laptop and medical workspace prepared for a virtual care visit.",
     description:
-      "Support for skin conditions, allergies, and gastrointestinal problems with clear next steps.",
-    fit: "Rashes, allergy symptoms, stomach concerns, and questions that benefit from timely guidance.",
+      "Screening, basic counseling, medication management for common conditions, and specialist referral when needed.",
+    items: [
+      "Screening for depression, anxiety, and substance use",
+      "Basic counseling and support",
+      "Medication management for common mental health conditions",
+      "Referral to mental health specialists when needed",
+    ],
+    fit: "Patients who need screening, early support, or coordinated mental health next steps.",
     boundary:
-      "Severe allergic reactions, severe abdominal pain, dehydration, or rapidly worsening symptoms need urgent care.",
-    icon: MessagesSquare,
+      "Crisis symptoms, suicidal thoughts, or urgent behavioral health needs require emergency or crisis services right away.",
+    icon: Brain,
   },
-  {
-    title: "Chronic Disease Management",
-    eyebrow: "Ongoing care",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "A clinician reviewing ongoing health information for chronic care planning.",
-    description:
-      "Ongoing management and education for chronic conditions, including diabetes and lifestyle-related health goals.",
-    fit: "Stable chronic condition follow-up, diabetes care conversations, medication questions, and care planning.",
-    boundary:
-      "Unstable readings, severe symptoms, or complex medication changes may require higher-touch or in-person care.",
-    icon: ClipboardCheck,
-  },
-  {
-    title: "Lifestyle Counseling",
-    eyebrow: "Health goals",
-    image:
-      "https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Nutritious food and wellness planning materials on a bright table.",
-    description:
-      "Patient-centered counseling for nutrition, exercise, smoking cessation, prevention, and sustainable health routines.",
-    fit: "Education, prevention planning, habit changes, and family-centered support.",
-    boundary:
-      "Specialized nutrition therapy, procedures, or urgent behavioral health needs may require a referral or another care setting.",
-    icon: UserRoundCheck,
-  },
-];
-
-export const serviceHighlights = [
-  "Preventive care",
-  "Routine checkups and annual physical exams",
-  "Health risk assessments",
-  "Immunizations and vaccinations",
-  "Screening for high blood pressure, diabetes, high cholesterol, and certain cancers",
-  "Lifestyle counseling for nutrition, exercise, and smoking cessation",
-  "Diagnosis and treatment of common illnesses",
-  "Colds, flu, sore throat, and other infections",
-  "Fever and minor injuries",
-  "Skin conditions",
-  "Allergies",
-  "Gastrointestinal problems",
-  "Management of chronic diseases",
-  "Diabetes care",
 ];
 
 export const practiceAtAGlance = [
@@ -155,7 +156,7 @@ export const patientJourney = [
   {
     title: "Consult",
     description:
-      "Meet with Virginie Chavannes for a focused telehealth conversation.",
+      "Meet with Virginie Chavannes, APN, for a focused telehealth conversation.",
     icon: UserRoundCheck,
   },
   {
@@ -166,8 +167,7 @@ export const patientJourney = [
   },
   {
     title: "Follow up",
-    description:
-      "Continue care through the practice's follow-up process.",
+    description: "Continue care through the practice's follow-up process.",
     icon: MessagesSquare,
   },
 ];
@@ -194,7 +194,7 @@ export const providerStandards = [
 ];
 
 export const patientExpectations = [
-  "A direct visit with Virginie Chavannes, a board-certified Adult-Gerontology Primary Care Nurse Practitioner.",
+  "A direct visit with Virginie Chavannes, APN, a board-certified Adult-Gerontology Primary Care Nurse Practitioner.",
   "Care that is medically sound, personally respectful, and focused on clear next steps.",
   "Education and guidance that help patients actively manage their own health.",
 ];
@@ -210,7 +210,7 @@ export const missionStatement =
 
 export const practiceDetails = {
   schedule: "Monday-Thursday 8-5pm; Friday 9-5pm",
-  payment: "Accepting insurance and self pay",
+  payment: insuranceAccepted.summary,
   address: "412 East Washington Avenue, Washington, New Jersey 07882",
   ageRange: "Treating patients from 14 and up",
   phone: "(555) 123-4567",

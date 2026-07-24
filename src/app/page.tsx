@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CalendarCheck,
+  CheckCircle2,
   ClipboardCheck,
   ShieldCheck,
   UserRoundCheck,
@@ -16,9 +17,9 @@ import {
   MotionReveal,
 } from "@/components/motion-reveal";
 import { Section } from "@/components/section";
-import { ServiceRail } from "@/components/service-rail";
 import { bookingUrl } from "@/lib/config";
 import {
+  insuranceAccepted,
   patientJourney,
   practiceAtAGlance,
   safetyBoundaries,
@@ -68,24 +69,38 @@ export default function Home() {
               </div>
             </HeroItem>
             <HeroItem>
-              <p className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-ink/10 pt-6 text-sm text-ink/56">
-                <span>Provider-led visits</span>
-                <span aria-hidden="true" className="text-ink/24">
-                  ·
-                </span>
-                <span>Honest telehealth boundaries</span>
-                <span aria-hidden="true" className="text-ink/24">
-                  ·
-                </span>
-                <span>Records stay in the secure platform</span>
-              </p>
+              <div className="mt-10 border-t border-ink/10 pt-6">
+                <p className="text-sm font-semibold text-ink/72">
+                  {insuranceAccepted.summary}
+                </p>
+                <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-ink/58">
+                  {insuranceAccepted.examples.map((plan, index) => (
+                    <span className="inline-flex items-center gap-2" key={plan}>
+                      {index > 0 ? (
+                        <span aria-hidden="true" className="text-ink/24">
+                          ·
+                        </span>
+                      ) : null}
+                      <span
+                        className={
+                          insuranceAccepted.featured.includes(plan)
+                            ? "font-semibold text-harbor"
+                            : undefined
+                        }
+                      >
+                        {plan}
+                      </span>
+                    </span>
+                  ))}
+                </p>
+              </div>
             </HeroItem>
           </HeroEntrance>
 
           <HeroItem>
             <div className="group/portrait relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,28,42,0.16)] lg:ml-auto">
               <Image
-                alt="Portrait of Virginie Chavannes, Nurse Practitioner."
+                alt="Portrait of Virginie Chavannes, APN."
                 className="absolute inset-0 h-full w-full object-cover object-[center_18%] transition-transform duration-700 ease-out group-hover/portrait:scale-[1.035]"
                 fill
                 priority
@@ -102,7 +117,7 @@ export default function Home() {
               >
                 <div>
                   <p className="font-display text-2xl font-medium leading-tight text-paper">
-                    Virginie Chavannes
+                    Virginie Chavannes, APN
                   </p>
                   <p className="mt-1 text-sm text-paper/80">
                     Nurse Practitioner · Telehealth visits
@@ -161,16 +176,17 @@ export default function Home() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
             <MotionReveal>
-              <p className="label-caps text-cobalt">Clinical scope</p>
+              <p className="label-caps text-cobalt">Services provided</p>
               <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-                Common care needs, framed clearly.
+                Care areas patients can scan with confidence.
               </h2>
             </MotionReveal>
             <MotionReveal delay={0.08}>
               <div className="grid gap-5 border-y border-gold/35 py-6 md:grid-cols-[1fr_auto] md:items-center">
                 <p className="max-w-2xl text-lg leading-8 text-ink/70">
-                  Browse common starting points for care. Each service card
-                  keeps the promise practical, warm, and easy to scan.
+                  Prevention, common illnesses, chronic disease support, and
+                  mental health services — organized the way patients ask about
+                  care.
                 </p>
                 <ButtonLink href="/services" variant="secondary">
                   View Services
@@ -180,80 +196,47 @@ export default function Home() {
             </MotionReveal>
           </div>
 
-          <ServiceRail itemCount={services.length}>
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <MotionReveal
-                  className="w-[86vw] max-w-[760px] shrink-0 snap-center md:w-[74vw] lg:max-w-[900px]"
-                  delay={index * 0.05}
-                  key={service.title}
-                >
-                  <article className="grid min-h-[520px] overflow-hidden rounded-[30px] border border-line bg-porcelain shadow-[0_28px_80px_rgba(7,28,42,0.08)] md:grid-cols-[0.86fr_1.14fr]">
-                    <div className="relative min-h-[250px] overflow-hidden bg-deep-navy p-6 md:min-h-full">
-                      <Image
-                        alt={service.imageAlt}
-                        className="absolute inset-0 h-full w-full object-cover"
-                        fill
-                        priority={index === 0}
-                        sizes="(min-width: 1024px) 36vw, (min-width: 768px) 38vw, 86vw"
-                        src={service.image}
-                      />
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,53,87,0.18),rgba(26,53,87,0.56)),linear-gradient(135deg,rgba(26,53,87,0.28),rgba(26,53,87,0.08)_46%,rgba(255,255,255,0.22))]"
-                      />
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:34px_34px]"
-                      />
-                      <div
-                        aria-hidden="true"
-                        className="absolute inset-x-0 bottom-0 h-32 bg-[linear-gradient(0deg,rgba(26,53,87,0.64),transparent)]"
-                      />
-                      <div className="relative flex h-full min-h-[180px] flex-col justify-between">
-                        <div className="flex items-center justify-between gap-4">
-                          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/22 bg-paper/88 text-cobalt shadow-[0_16px_40px_rgba(7,28,42,0.18)] backdrop-blur">
-                            <Icon aria-hidden="true" size={26} />
-                          </span>
-                          <span className="label-caps rounded-full border border-white/22 bg-paper/88 px-3 py-2 text-cobalt shadow-[0_16px_36px_rgba(7,28,42,0.16)] backdrop-blur">
-                            {service.eyebrow}
-                          </span>
-                        </div>
-                        <div className="mt-10">
-                          <p className="label-caps text-paper/82">
-                            Service area 0{index + 1}
-                          </p>
-                          <div className="mt-4 h-2 w-28 rounded-full bg-gold" />
-                        </div>
+                <MotionReveal delay={index * 0.05} key={service.title}>
+                  <article className="flex h-full flex-col overflow-hidden rounded-[28px] border border-line bg-porcelain shadow-[0_22px_70px_rgba(7,28,42,0.06)]">
+                    <div className="flex items-start gap-4 border-b border-line bg-[linear-gradient(135deg,rgba(201,238,243,0.55),rgba(247,252,253,0.9)_55%,#ffffff)] px-6 py-5 md:px-7">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-paper text-cobalt shadow-[0_12px_30px_rgba(8,126,174,0.1)]">
+                        <Icon aria-hidden="true" size={22} />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="label-caps text-harbor">
+                          {service.eyebrow}
+                        </p>
+                        <h3 className="mt-2 font-display text-3xl font-medium leading-tight text-ink">
+                          {service.title}
+                        </h3>
                       </div>
                     </div>
-
-                    <div className="flex flex-col p-7 md:p-8">
-                      <h3 className="max-w-2xl font-display text-3xl font-medium leading-tight text-ink md:text-4xl">
-                        {service.title}
-                      </h3>
-                      <p className="mt-5 max-w-2xl text-lg leading-8 text-ink/70">
+                    <div className="flex flex-1 flex-col p-6 md:p-7">
+                      <p className="leading-7 text-ink/70">
                         {service.description}
                       </p>
-
-                      <div className="mt-auto pt-8">
-                        <div className="rounded-[18px] border border-line bg-porcelain p-4">
-                          <div className="flex items-center gap-2 text-cobalt">
-                            <ClipboardCheck aria-hidden="true" size={18} />
-                            <p className="label-caps">Helpful for</p>
-                          </div>
-                          <p className="mt-2 text-sm leading-6 text-ink/68">
-                            {service.fit}
-                          </p>
-                        </div>
-                      </div>
+                      <ul className="mt-6 grid gap-3">
+                        {service.items.map((item) => (
+                          <li className="flex gap-3" key={item}>
+                            <CheckCircle2
+                              aria-hidden="true"
+                              className="mt-0.5 shrink-0 text-harbor"
+                              size={18}
+                            />
+                            <span className="leading-7 text-ink/78">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </article>
                 </MotionReveal>
               );
             })}
-          </ServiceRail>
+          </div>
         </Container>
       </Section>
 
@@ -287,7 +270,7 @@ export default function Home() {
               <article className="overflow-hidden rounded-[30px] border border-line bg-paper shadow-[0_28px_90px_rgba(7,28,42,0.08)]">
                 <div className="relative min-h-[320px] overflow-hidden bg-deep-navy p-6">
                   <Image
-                    alt="Portrait of Virginie Chavannes, Nurse Practitioner."
+                    alt="Portrait of Virginie Chavannes, APN."
                     className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
                     fill
                     sizes="(min-width: 1024px) 28vw, 100vw"
@@ -308,7 +291,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-display text-4xl font-medium leading-tight text-paper">
-                        Virginie Chavannes
+                        Virginie Chavannes, APN
                       </h3>
                       <p className="mt-3 max-w-xs leading-7 text-paper/74">
                         Nurse Practitioner and founder of Premier NP Care.

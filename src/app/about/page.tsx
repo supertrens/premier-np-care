@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "Provider",
   description:
-    "Meet Virginie Chavannes and learn how Premier NP Care approaches provider-led telehealth visits.",
+    "Meet Virginie Chavannes, APN, and learn how Premier NP Care approaches provider-led telehealth visits.",
 };
 
 const providerPrinciples = [
@@ -44,8 +44,8 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-xl leading-8 text-ink/72">
               Premier NP Care is built around direct access to Virginie
-              Chavannes, practical telehealth guidance, and a visit experience
-              that explains what happens next.
+              Chavannes, APN, practical telehealth guidance, and a visit
+              experience that explains what happens next.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href={bookingUrl} variant="cobalt">
@@ -151,8 +151,9 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="bg-paper py-24">
-        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+      <Section className="relative overflow-hidden bg-paper py-24">
+        <div className="ocean-field absolute inset-0 opacity-70" aria-hidden="true" />
+        <Container className="relative grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
           <MotionReveal>
             <p className="label-caps text-cobalt">Mission statement</p>
             <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
@@ -161,11 +162,15 @@ export default function AboutPage() {
           </MotionReveal>
 
           <MotionReveal delay={0.08}>
-            <div className="rounded-[28px] border border-line bg-porcelain p-7 shadow-[0_22px_70px_rgba(26,53,87,0.07)] md:p-8">
-              <p className="max-w-4xl text-xl leading-9 text-ink/76">
+            <blockquote className="rounded-[28px] border border-cyan/25 bg-paper/90 p-7 shadow-[0_22px_70px_rgba(26,53,87,0.07)] md:p-8">
+              <div className="h-1.5 w-20 rounded-full bg-[linear-gradient(90deg,#12aec4,#58c7d6,#c9eef3)]" />
+              <p className="mt-6 max-w-4xl font-display text-2xl font-medium leading-9 text-ink md:text-[1.7rem] md:leading-10">
                 {missionStatement}
               </p>
-            </div>
+              <footer className="mt-6 text-sm font-semibold text-harbor">
+                Virginie Chavannes, APN
+              </footer>
+            </blockquote>
           </MotionReveal>
         </Container>
       </Section>

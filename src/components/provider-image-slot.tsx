@@ -6,7 +6,7 @@ export function ProviderImageSlot() {
     <div className="rounded-[24px] border border-line bg-paper p-4 shadow-[0_24px_70px_rgba(7,28,42,0.09)]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-deep-navy">
         <Image
-          alt="Portrait of Virginie Chavannes, Nurse Practitioner."
+          alt="Portrait of Virginie Chavannes, APN."
           className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
           fill
           sizes="(min-width: 1024px) 360px, 92vw"
@@ -18,7 +18,7 @@ export function ProviderImageSlot() {
         />
         <div className="relative flex h-full flex-col justify-end p-6 text-paper">
           <p className="max-w-[250px] font-display text-3xl font-medium leading-tight">
-            Virginie Chavannes
+            Virginie Chavannes, APN
           </p>
           <p className="mt-3 max-w-[260px] text-sm leading-6 text-paper/74">
             Nurse Practitioner and founder of Premier NP Care.

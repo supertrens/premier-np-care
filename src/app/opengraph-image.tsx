@@ -41,7 +41,7 @@ export default function Image() {
             Premier NP Care
           </div>
           <div style={{ color: "rgba(26,53,87,0.68)", fontSize: 32 }}>
-            Personal care with Virginie Chavannes, NP.
+            Personal care with Virginie Chavannes, APN.
           </div>
         </div>
       </div>
