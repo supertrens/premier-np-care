@@ -90,6 +90,20 @@ export function HomeHero() {
                 </ButtonLink>
               </div>
             </HeroItem>
+
+            <HeroItem>
+              <p className="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-sm font-medium text-ink/62">
+                <span>Provider-led visits</span>
+                <span aria-hidden="true" className="text-gold">
+                  ·
+                </span>
+                <span>Honest telehealth boundaries</span>
+                <span aria-hidden="true" className="text-gold">
+                  ·
+                </span>
+                <span>Secure platform</span>
+              </p>
+            </HeroItem>
           </HeroEntrance>
 
           <HeroPortrait />
