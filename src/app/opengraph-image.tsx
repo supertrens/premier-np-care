@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const alt = "Premier NP Care";
@@ -7,13 +9,19 @@ export const size = {
 };
 export const contentType = "image/png";
 
-export default function Image() {
+export default async function Image() {
+  const logoData = await readFile(
+    path.join(process.cwd(), "public/images/logo-official.png"),
+  );
+  const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
         style={{
           alignItems: "center",
-          background: "linear-gradient(135deg, #ffffff 0%, #f4f8fa 58%, #ffffff 100%)",
+          background:
+            "linear-gradient(135deg, #ffffff 0%, #f4f8fa 58%, #ffffff 100%)",
           color: "#1A3557",
           display: "flex",
           height: "100%",
@@ -24,23 +32,28 @@ export default function Image() {
       >
         <div
           style={{
-            background: "rgba(255,255,255,0.72)",
+            alignItems: "center",
+            background: "rgba(255,255,255,0.78)",
             border: "2px solid rgba(26,53,87,0.14)",
             borderRadius: 28,
             display: "flex",
             flexDirection: "column",
-            gap: 24,
-            padding: 56,
+            gap: 28,
+            padding: 64,
             width: "100%",
           }}
         >
-          <div style={{ color: "#1A3557", fontSize: 24, fontWeight: 700, letterSpacing: 0, textTransform: "uppercase" }}>
-            Nurse Practitioner-led telehealth care
-          </div>
-          <div style={{ fontSize: 82, fontWeight: 300, lineHeight: 1.05, color: "#1A3557" }}>
-            Premier NP Care
-          </div>
-          <div style={{ color: "rgba(26,53,87,0.68)", fontSize: 32 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img alt="Premier NP Care" height={186} src={logoSrc} width={372} />
+          <div
+            style={{
+              background: "linear-gradient(90deg,#12AEC4,#58C7D6,#C9A84C)",
+              borderRadius: 999,
+              height: 4,
+              width: 96,
+            }}
+          />
+          <div style={{ color: "rgba(26,53,87,0.72)", fontSize: 32 }}>
             Personal care with Virginie Chavannes, APN.
           </div>
         </div>
