@@ -48,7 +48,7 @@ export default function AboutPage() {
               experience that explains what happens next.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href={bookingUrl} variant="cobalt">
+              <ButtonLink href={bookingUrl} id="hero-book" variant="cobalt">
                 <CalendarCheck aria-hidden="true" size={20} />
                 Book an Appointment
               </ButtonLink>
@@ -212,24 +212,6 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="bg-deep-navy text-paper">
-        <Container>
-          <div className="max-w-3xl">
-            <p className="label-caps text-aqua">Meet Virginie</p>
-            <p className="mt-4 font-display text-4xl font-medium leading-tight md:text-5xl">
-              Ready to meet the provider?
-            </p>
-            <p className="mt-4 max-w-2xl leading-7 text-paper/72">
-              Book a visit and meet Virginie through the practice scheduling
-              flow.
-            </p>
-            <ButtonLink className="mt-7" href={bookingUrl} variant="mist">
-              <CalendarCheck aria-hidden="true" size={20} />
-              Book an Appointment
-            </ButtonLink>
-          </div>
-        </Container>
-      </Section>
     </>
   );
 }

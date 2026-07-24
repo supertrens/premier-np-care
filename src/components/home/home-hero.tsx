@@ -70,6 +70,7 @@ export function HomeHero() {
                 <ButtonLink
                   className="hero-cta-primary transition-transform duration-300 hover:-translate-y-0.5"
                   href={bookingUrl}
+                  id="hero-book"
                   variant="cobalt"
                 >
                   <CalendarCheck aria-hidden="true" size={20} />
