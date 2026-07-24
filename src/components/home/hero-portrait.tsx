@@ -69,24 +69,24 @@ export function HeroPortrait() {
         </div>
       </div>
 
-        <div className="mt-6 flex items-end justify-between gap-4 px-1">
-          <div>
-            <span aria-hidden="true" className="block h-px w-10 bg-gold/70" />
-            <p className="mt-4 font-display text-2xl font-medium text-ink transition-colors group-hover:text-cobalt">
-              Virginie Chavannes, APN
-            </p>
-            <p className="mt-1 text-sm font-medium text-ink/78">
+        <div className="mt-6 px-1">
+          <span aria-hidden="true" className="block h-px w-10 bg-gold/70" />
+          <p className="mt-4 whitespace-nowrap font-display text-2xl font-medium text-ink transition-colors group-hover:text-cobalt">
+            Virginie Chavannes, APN
+          </p>
+          <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm font-medium text-ink/78">
               Nurse Practitioner · Telehealth · New Jersey
             </p>
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-paper px-3 py-2 text-sm font-semibold text-harbor transition-colors group-hover:border-gold group-hover:bg-mist">
+              View Profile
+              <ArrowRight
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+                size={14}
+              />
+            </span>
           </div>
-          <span className="mb-1 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-paper px-3 py-2 text-sm font-semibold text-harbor transition-colors group-hover:border-gold group-hover:bg-mist">
-            View Profile
-            <ArrowRight
-              aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-0.5"
-              size={14}
-            />
-          </span>
         </div>
       </Link>
     </motion.figure>
