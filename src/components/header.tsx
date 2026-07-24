@@ -11,14 +11,14 @@ import { navItems } from "@/lib/content";
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-porcelain/88 backdrop-blur-xl">
-      <Container className="flex min-h-[68px] items-center justify-between gap-4">
+      <Container className="flex min-h-[76px] items-center justify-between gap-4">
         <Link
           className="group flex items-center gap-3 focus-visible:rounded-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
           href="/"
         >
           <Image
             alt=""
-            className="h-9 w-9 shrink-0 rounded-[10px]"
+            className="h-12 w-12 shrink-0 rounded-[10px]"
             height={36}
             priority
             src="/images/logo-icon.png"
