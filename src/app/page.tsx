@@ -114,6 +114,16 @@ export default function Home() {
                         {service.description}
                       </p>
                     </div>
+                    <div className="flex flex-wrap gap-2">
+                      {service.tags.map((tag) => (
+                        <span
+                          className="rounded-full border border-line bg-paper px-3 py-1 text-xs font-semibold text-ink/62"
+                          key={tag}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                     <p className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-harbor transition-transform duration-300 group-hover:translate-x-1">
                       Explore
                       <ArrowRight aria-hidden="true" size={15} />
@@ -148,20 +158,39 @@ export default function Home() {
             </MotionReveal>
           </div>
 
-          <div className="relative mt-12">
-            <DrawRule className="absolute left-5 right-[15%] top-5 hidden h-px bg-[linear-gradient(90deg,#1a3557,#12aec4,#c9a84c)] sm:block" />
-            <DrawRule
-              className="absolute bottom-16 left-5 top-10 w-px bg-[linear-gradient(180deg,#1a3557,#12aec4,#c9a84c)] sm:hidden"
-              orientation="y"
-            />
-            <div className="grid gap-10 sm:grid-cols-3 sm:gap-8">
-              {[
-                ["Book", "Choose a time through the secure scheduling platform."],
-                ["Meet", "Talk with Virginie directly — no waiting room, no rush."],
-                ["Know your plan", "Leave with next steps written in plain language."],
-              ].map(([title, body], index) => (
+          <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-8">
+            {[
+              ["Book", "Choose a time through the secure scheduling platform."],
+              ["Meet", "Talk with Virginie directly — no waiting room, no rush."],
+              ["Know your plan", "Leave with next steps written in plain language."],
+            ].map(([title, body], index, steps) => {
+              const isLast = index === steps.length - 1;
+              const gradient =
+                index === 0
+                  ? "linear-gradient(90deg,#1a3557,#12aec4)"
+                  : "linear-gradient(90deg,#12aec4,#c9a84c)";
+              const gradientVertical =
+                index === 0
+                  ? "linear-gradient(180deg,#1a3557,#12aec4)"
+                  : "linear-gradient(180deg,#12aec4,#c9a84c)";
+              return (
                 <MotionReveal delay={0.15 + index * 0.18} key={title}>
                   <div className="relative grid grid-cols-[40px_1fr] gap-x-4 sm:block">
+                    {isLast ? null : (
+                      <>
+                        <DrawRule
+                          className="absolute left-5 top-5 hidden h-px w-[calc(100%+2rem)] sm:block"
+                          delay={0.3 + index * 0.18}
+                          style={{ backgroundImage: gradient }}
+                        />
+                        <DrawRule
+                          className="absolute left-5 top-5 h-[calc(100%+2.5rem)] w-px sm:hidden"
+                          delay={0.3 + index * 0.18}
+                          orientation="y"
+                          style={{ backgroundImage: gradientVertical }}
+                        />
+                      </>
+                    )}
                     <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-cyan/30 bg-paper font-display text-lg font-semibold text-cobalt shadow-[0_10px_24px_rgba(26,53,87,0.1)]">
                       {index + 1}
                     </span>
@@ -175,8 +204,8 @@ export default function Home() {
                     </div>
                   </div>
                 </MotionReveal>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </Container>
       </Section>

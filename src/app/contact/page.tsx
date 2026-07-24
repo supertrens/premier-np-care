@@ -6,6 +6,7 @@ import { Container } from "@/components/container";
 import { MotionReveal } from "@/components/motion-reveal";
 import { PageIntro } from "@/components/page-intro";
 import { Section } from "@/components/section";
+import { isPhoneConfirmed, phoneNumber } from "@/lib/config";
 import { insuranceAccepted, practiceDetails } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export const metadata: Metadata = {
 const contactRows = [
   {
     label: "Phone",
-    value: practiceDetails.phone,
+    value: isPhoneConfirmed
+      ? phoneNumber
+      : "Use the form below — a phone line is being set up.",
     icon: Phone,
   },
   {

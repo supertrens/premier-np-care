@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 interface MotionRevealProps {
   children: ReactNode;
@@ -69,15 +69,17 @@ export function DrawRule({
   className,
   delay = 0,
   orientation = "x",
+  style,
 }: {
   className?: string;
   delay?: number;
   orientation?: "x" | "y";
+  style?: CSSProperties;
 }) {
   const shouldReduceMotion = useReducedMotion();
 
   if (shouldReduceMotion) {
-    return <span aria-hidden="true" className={className} />;
+    return <span aria-hidden="true" className={className} style={style} />;
   }
 
   const vertical = orientation === "y";
@@ -89,6 +91,7 @@ export function DrawRule({
       initial={{
         clipPath: vertical ? "inset(0 0 100% 0)" : "inset(0 100% 0 0)",
       }}
+      style={style}
       transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
       viewport={{ once: true }}
       whileInView={{ clipPath: "inset(0 0 0 0)" }}

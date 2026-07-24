@@ -52,6 +52,7 @@ export const services = [
     fit: "Annual physicals, prevention planning, and wellness support for patients age 14 and up.",
     boundary:
       "Some preventive screenings, labs, or procedures may require coordination with an in-person facility.",
+    tags: ["Annual physicals", "Immunizations", "Screenings"],
     icon: Stethoscope,
   },
   {
@@ -72,6 +73,7 @@ export const services = [
     fit: "Acute symptoms that can be safely reviewed through the visit process.",
     boundary:
       "Severe symptoms, breathing trouble, chest pain, major injuries, or rapidly worsening concerns need urgent care.",
+    tags: ["Cold & flu", "Infections", "Minor injuries"],
     icon: ShieldCheck,
   },
   {
@@ -94,6 +96,7 @@ export const services = [
     fit: "Stable chronic condition follow-up, medication questions, and care planning.",
     boundary:
       "Unstable readings, severe symptoms, or complex medication changes may require higher-touch or in-person care.",
+    tags: ["Diabetes", "Hypertension", "Asthma"],
     icon: HeartPulse,
   },
   {
@@ -113,29 +116,30 @@ export const services = [
     fit: "Patients who need screening, early support, or coordinated mental health next steps.",
     boundary:
       "Crisis symptoms, suicidal thoughts, or urgent behavioral health needs require emergency or crisis services right away.",
+    tags: ["Anxiety & depression", "Medication management", "Specialist referrals"],
     icon: Brain,
   },
 ];
 
 export const practiceAtAGlance = [
   {
-    title: "Who leads the visit",
+    title: "You'll know who's treating you",
     body: "Patients know the clinician behind the visit before they book.",
     icon: UserRoundCheck,
   },
   {
-    title: "What can be handled virtually",
+    title: "What telehealth can treat",
     body: "Services are explained in plain language so patients can choose confidently.",
     icon: ClipboardCheck,
   },
   {
-    title: "When in-person care may help",
+    title: "Clear guidance when you need more care",
     body: "Some concerns need a local exam or urgent support, and that guidance is part of good care.",
     icon: ShieldCheck,
   },
   {
-    title: "Where booking happens",
-    body: "Booking begins from the site and continues through the practice's scheduling path.",
+    title: "Instant online scheduling",
+    body: "No phone calls required — booking begins from the site and continues through the practice's scheduling path.",
     icon: CalendarCheck,
   },
 ];
@@ -213,7 +217,6 @@ export const practiceDetails = {
   payment: insuranceAccepted.summary,
   address: "412 East Washington Avenue, Washington, New Jersey 07882",
   ageRange: "Treating patients from 14 and up",
-  phone: "(555) 123-4567",
 };
 
 export const safetyBoundaries = [

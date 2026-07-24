@@ -1,15 +1,15 @@
-import { CalendarCheck, Clock, MapPin, Phone } from "lucide-react";
+import { CalendarCheck, Clock, MapPin, MessageCircle, Phone } from "lucide-react";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
-import { bookingUrl } from "@/lib/config";
+import { bookingUrl, isPhoneConfirmed, phoneNumber } from "@/lib/config";
 import {
   insuranceAccepted,
   navItems,
   practiceDetails,
 } from "@/lib/content";
 
-const phoneHref = `tel:+1${practiceDetails.phone.replace(/\D/g, "")}`;
+const phoneHref = `tel:+1${phoneNumber.replace(/\D/g, "")}`;
 
 export function Footer() {
   return (
@@ -73,17 +73,31 @@ export function Footer() {
                 />
                 {practiceDetails.schedule}
               </p>
-              <a
-                className="flex gap-3 leading-7 transition-colors hover:text-paper focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
-                href={phoneHref}
-              >
-                <Phone
-                  aria-hidden="true"
-                  className="mt-1 shrink-0 text-aqua/80"
-                  size={17}
-                />
-                {practiceDetails.phone}
-              </a>
+              {isPhoneConfirmed ? (
+                <a
+                  className="flex gap-3 leading-7 transition-colors hover:text-paper focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                  href={phoneHref}
+                >
+                  <Phone
+                    aria-hidden="true"
+                    className="mt-1 shrink-0 text-aqua/80"
+                    size={17}
+                  />
+                  {phoneNumber}
+                </a>
+              ) : (
+                <Link
+                  className="flex gap-3 leading-7 transition-colors hover:text-paper focus-visible:rounded-[8px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                  href="/contact"
+                >
+                  <MessageCircle
+                    aria-hidden="true"
+                    className="mt-1 shrink-0 text-aqua/80"
+                    size={17}
+                  />
+                  Reach us through the contact form
+                </Link>
+              )}
               <p className="flex gap-3 leading-7">
                 <MapPin
                   aria-hidden="true"
