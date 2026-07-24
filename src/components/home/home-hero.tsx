@@ -46,7 +46,7 @@ export function HomeHero() {
             </HeroItem>
 
             <HeroItem>
-              <p className="mt-6 max-w-lg text-lg leading-8 text-ink/68">
+              <p className="mt-6 max-w-lg text-lg font-medium leading-8 text-ink/74">
                 Personal telehealth with Virginie Chavannes, APN — calm, direct,
                 and clearly explained before you book.
               </p>

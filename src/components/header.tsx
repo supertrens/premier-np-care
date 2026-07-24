@@ -35,9 +35,9 @@ export function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <ButtonLink className="px-4 py-2" href={bookingUrl} variant="cobalt">
+          <ButtonLink className="px-4 py-2" href={bookingUrl} variant="secondary">
             <CalendarCheck aria-hidden="true" size={18} />
-            Book
+            Book Appointment
           </ButtonLink>
         </div>
 

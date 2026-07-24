@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
 export function HeroPortrait() {
@@ -8,11 +10,16 @@ export function HeroPortrait() {
 
   return (
     <motion.figure
-      className="group mx-auto w-full max-w-[480px] lg:ml-auto lg:max-w-none"
+      className="mx-auto w-full max-w-[480px] lg:ml-auto lg:max-w-none"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 28, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
     >
+      <Link
+        aria-label="View Virginie Chavannes' full profile"
+        className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        href="/about"
+      >
       <div className="relative">
         <motion.div
           aria-hidden="true"
@@ -62,18 +69,26 @@ export function HeroPortrait() {
         </div>
       </div>
 
-      <figcaption className="mt-6 px-1">
-        <span
-          aria-hidden="true"
-          className="block h-px w-10 bg-gold/70"
-        />
-        <p className="mt-4 font-display text-2xl font-medium text-ink">
-          Virginie Chavannes, APN
-        </p>
-        <p className="mt-1 text-sm text-ink/55">
-          Nurse Practitioner · Telehealth · New Jersey
-        </p>
-      </figcaption>
+        <div className="mt-6 flex items-end justify-between gap-4 px-1">
+          <div>
+            <span aria-hidden="true" className="block h-px w-10 bg-gold/70" />
+            <p className="mt-4 font-display text-2xl font-medium text-ink transition-colors group-hover:text-cobalt">
+              Virginie Chavannes, APN
+            </p>
+            <p className="mt-1 text-sm font-medium text-ink/78">
+              Nurse Practitioner · Telehealth · New Jersey
+            </p>
+          </div>
+          <span className="mb-1 inline-flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-paper px-3 py-2 text-sm font-semibold text-harbor transition-colors group-hover:border-gold group-hover:bg-mist">
+            View Profile
+            <ArrowRight
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-0.5"
+              size={14}
+            />
+          </span>
+        </div>
+      </Link>
     </motion.figure>
   );
 }
