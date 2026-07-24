@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarCheck } from "lucide-react";
 import { ButtonLink } from "@/components/button";
@@ -100,34 +101,57 @@ export default function Home() {
               return (
                 <MotionReveal className="h-full" delay={index * 0.05} key={service.title}>
                   <Link
-                    className="group flex h-full flex-col gap-4 rounded-[24px] border border-line bg-[linear-gradient(160deg,#ffffff_0%,#f7fcfd_55%,#f0f9fb_100%)] p-6 shadow-[0_14px_40px_rgba(26,53,87,0.07)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_24px_60px_rgba(26,53,87,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                    className="group flex h-full flex-col overflow-hidden rounded-[24px] border border-line bg-[linear-gradient(160deg,#ffffff_0%,#f7fcfd_55%,#f0f9fb_100%)] shadow-[0_14px_40px_rgba(26,53,87,0.07)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_24px_60px_rgba(26,53,87,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
                     href="/services"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-paper text-cobalt shadow-[0_8px_20px_rgba(8,126,174,0.12)] transition-colors duration-300 group-hover:border-deep-navy group-hover:bg-deep-navy group-hover:text-paper">
-                      <Icon aria-hidden="true" size={20} />
-                    </span>
-                    <div>
-                      <h3 className="font-display text-2xl font-medium leading-tight text-ink">
-                        {service.title}
-                      </h3>
-                      <p className="mt-2 leading-7 text-ink/68">
-                        {service.description}
+                    <div className="relative min-h-[210px] overflow-hidden bg-mist">
+                      <Image
+                        alt={service.homeImageAlt}
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        fill
+                        sizes="(min-width: 640px) 46vw, 92vw"
+                        src={service.homeImage}
+                      />
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(26,53,87,0)_45%,rgba(26,53,87,0.52))]"
+                      />
+                      <div className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-3">
+                        <span className="label-caps rounded-full border border-white/28 bg-white/82 px-3 py-2 text-cobalt shadow-[0_12px_32px_rgba(26,53,87,0.14)] backdrop-blur">
+                          {service.eyebrow}
+                        </span>
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/24 bg-paper/90 text-cobalt shadow-[0_8px_20px_rgba(26,53,87,0.14)] backdrop-blur transition-colors duration-300 group-hover:border-gold group-hover:bg-deep-navy group-hover:text-paper">
+                          <Icon aria-hidden="true" size={20} />
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-1 flex-col gap-4 p-6">
+                      <div>
+                        <h3 className="font-display text-2xl font-medium leading-tight text-ink">
+                          {service.title}
+                        </h3>
+                        <p className="mt-2 leading-7 text-ink/68">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {service.tags.map((tag) => (
+                          <span
+                            className="rounded-full border border-line bg-paper px-3 py-1 text-xs font-semibold text-ink/62"
+                            key={tag}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      <p className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-harbor transition-transform duration-300 group-hover:translate-x-1">
+                        Explore
+                        <ArrowRight aria-hidden="true" size={15} />
                       </p>
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      {service.tags.map((tag) => (
-                        <span
-                          className="rounded-full border border-line bg-paper px-3 py-1 text-xs font-semibold text-ink/62"
-                          key={tag}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <p className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-harbor transition-transform duration-300 group-hover:translate-x-1">
-                      Explore
-                      <ArrowRight aria-hidden="true" size={15} />
-                    </p>
                   </Link>
                 </MotionReveal>
               );

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle2,
@@ -75,7 +76,27 @@ export default function ServicesPage() {
               const Icon = service.icon;
               return (
                 <MotionReveal delay={index * 0.04} key={service.title}>
-                  <article className="overflow-hidden rounded-[28px] border border-line bg-paper shadow-[0_22px_70px_rgba(26,53,87,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_28px_84px_rgba(26,53,87,0.1)]">
+                  <article className="grid overflow-hidden rounded-[28px] border border-line bg-paper shadow-[0_22px_70px_rgba(26,53,87,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_28px_84px_rgba(26,53,87,0.1)] lg:grid-cols-[0.45fr_0.55fr]">
+                    <div className="relative min-h-[260px] overflow-hidden border-b border-line bg-mist lg:min-h-full lg:border-b-0 lg:border-r">
+                      <Image
+                        alt={service.imageAlt}
+                        className="object-cover"
+                        fill
+                        sizes="(min-width: 1024px) 38vw, 92vw"
+                        src={service.image}
+                      />
+                      <div
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_48%,rgba(26,53,87,0.12))]"
+                      />
+                      <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/70 bg-white/82 px-3 py-2 text-sm font-semibold text-ink shadow-[0_14px_38px_rgba(26,53,87,0.1)] backdrop-blur">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-deep-navy text-paper">
+                          <Icon aria-hidden="true" size={16} />
+                        </span>
+                        Service category 0{index + 1}
+                      </div>
+                    </div>
+
                     <div className="p-6 md:p-8">
                       <div className="flex items-center gap-3">
                         <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-mist text-cobalt">

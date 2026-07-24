@@ -37,9 +37,12 @@ export const services = [
   {
     title: "Preventive care",
     eyebrow: "Prevention",
-    image:
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "A calm clinical desktop with a stethoscope and care notes.",
+    image: "/images/client/19.jpeg",
+    imageAlt:
+      "Fresh vegetables arranged for preventive care and lifestyle counseling.",
+    homeImage: "/images/client/19.jpeg",
+    homeImageAlt:
+      "Fresh vegetables arranged for preventive care and lifestyle counseling.",
     description:
       "Routine checkups, screenings, immunizations, and lifestyle guidance that help patients stay ahead of health concerns.",
     items: [
@@ -58,9 +61,12 @@ export const services = [
   {
     title: "Diagnosis and treatment of common illnesses",
     eyebrow: "Sick visits",
-    image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Clinical follow-up tools arranged for ongoing care planning.",
+    image: "/images/client/3.jpeg",
+    imageAlt:
+      "A clinician checking a patient's eyes during a routine health visit.",
+    homeImage: "/images/client/3.jpeg",
+    homeImageAlt:
+      "A clinician checking a patient's eyes during a routine health visit.",
     description:
       "Timely evaluation and treatment guidance for everyday illnesses, minor injuries, and common acute concerns.",
     items: [
@@ -79,10 +85,12 @@ export const services = [
   {
     title: "Management of chronic diseases",
     eyebrow: "Ongoing care",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/client/10.jpeg",
     imageAlt:
-      "A clinician reviewing ongoing health information for chronic care planning.",
+      "A glucose meter and healthy meal for chronic disease management.",
+    homeImage: "/images/client/10.jpeg",
+    homeImageAlt:
+      "A glucose meter and healthy meal for chronic disease management.",
     description:
       "Ongoing support for long-term conditions, with education, monitoring, and clear next steps.",
     items: [
@@ -102,9 +110,12 @@ export const services = [
   {
     title: "Mental health services",
     eyebrow: "Support",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "A laptop and medical workspace prepared for a virtual care visit.",
+    image: "/images/client/4.jpeg",
+    imageAlt:
+      "A clinician speaking with a patient in a calm care conversation.",
+    homeImage: "/images/client/4.jpeg",
+    homeImageAlt:
+      "A clinician speaking with a patient in a calm care conversation.",
     description:
       "Screening, basic counseling, medication management for common conditions, and specialist referral when needed.",
     items: [

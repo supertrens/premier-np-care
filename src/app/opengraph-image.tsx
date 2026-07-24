@@ -43,7 +43,6 @@ export default async function Image() {
             width: "100%",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img alt="Premier NP Care" height={186} src={logoSrc} width={372} />
           <div
             style={{
