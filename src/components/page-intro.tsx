@@ -13,6 +13,14 @@ export function PageIntro({ eyebrow, title, children, aside }: PageIntroProps) {
   return (
     <section className="relative overflow-hidden border-b border-line bg-porcelain py-14 md:py-20">
       <div className="ocean-field absolute inset-0 opacity-70" aria-hidden="true" />
+      <div
+        aria-hidden="true"
+        className="hero-glow hero-glow-a pointer-events-none absolute -left-24 top-0 h-[340px] w-[340px] rounded-full bg-cyan/16 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="hero-glow hero-glow-c pointer-events-none absolute right-1/4 bottom-0 h-36 w-36 rounded-full bg-gold/12 blur-2xl"
+      />
       <Container className="relative grid gap-8 md:grid-cols-[1fr_0.48fr] md:items-end">
         <MotionReveal>
           <p className="label-caps mb-5 text-cobalt">{eyebrow}</p>

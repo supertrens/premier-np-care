@@ -29,8 +29,8 @@ export default function ServicesPage() {
               <p className="label-caps">Patients 14 and up</p>
             </div>
             <p className="mt-3 leading-7 text-ink/74">
-              Premier NP Care provides prevention, sick visits, chronic disease
-              support, and mental health services.
+              Every category below states its own scope, so you always know
+              when a concern fits telehealth and when in-person care is safer.
             </p>
             <p className="mt-4 border-t border-line pt-4 text-sm leading-6 text-ink/66">
               {insuranceAccepted.summary}
@@ -38,7 +38,14 @@ export default function ServicesPage() {
           </div>
         }
         eyebrow="Services"
-        title="Care options that feel simple to understand."
+        title={
+          <>
+            Care options that feel{" "}
+            <em className="font-normal italic text-cobalt">
+              simple to understand.
+            </em>
+          </>
+        }
       >
         <p>
           Premier NP Care provides patient-centered primary and preventive care
@@ -68,7 +75,7 @@ export default function ServicesPage() {
               const Icon = service.icon;
               return (
                 <MotionReveal delay={index * 0.04} key={service.title}>
-                  <article className="overflow-hidden rounded-[28px] border border-line bg-paper shadow-[0_22px_70px_rgba(26,53,87,0.06)]">
+                  <article className="overflow-hidden rounded-[28px] border border-line bg-paper shadow-[0_22px_70px_rgba(26,53,87,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_28px_84px_rgba(26,53,87,0.1)]">
                     <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
                       <div className="border-b border-line bg-[linear-gradient(145deg,rgba(201,238,243,0.62),rgba(247,252,253,0.95)_48%,#ffffff)] p-6 md:p-8 lg:border-b-0 lg:border-r">
                         <div className="flex items-center gap-3">
@@ -90,6 +97,14 @@ export default function ServicesPage() {
                             Helpful for:{" "}
                           </span>
                           {service.fit}
+                        </p>
+                        <p className="mt-4 flex gap-2.5 rounded-[14px] border border-warn/25 bg-warn/6 px-4 py-3 text-sm leading-6 text-ink/68">
+                          <TriangleAlert
+                            aria-hidden="true"
+                            className="mt-0.5 shrink-0 text-warn"
+                            size={16}
+                          />
+                          {service.boundary}
                         </p>
                       </div>
 
@@ -122,34 +137,23 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      <Section className="bg-paper py-24">
-        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr]">
+      <Section className="border-y border-line bg-porcelain py-16">
+        <Container>
           <MotionReveal>
-            <div className="flex items-center gap-3 text-warn">
-              <TriangleAlert aria-hidden="true" size={24} />
-              <p className="label-caps">When another setting is best</p>
+            <p className="label-caps text-warn">Know the limits</p>
+            <div className="mt-8 grid gap-10 lg:grid-cols-3 lg:gap-8">
+              {safetyBoundaries.map((item) => (
+                <div className="border-t border-ink/12 pt-5" key={item.title}>
+                  <h3 className="text-base font-semibold text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-ink/62">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
             </div>
-            <h2 className="mt-5 max-w-xl font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
-              Clear guidance is part of feeling cared for.
-            </h2>
           </MotionReveal>
-
-          <div className="grid gap-4 rounded-[28px] border border-line bg-porcelain p-6 shadow-[0_22px_70px_rgba(7,28,42,0.06)]">
-            {safetyBoundaries.slice(0, 1).map((item) => {
-              const Icon = item.icon;
-              return (
-                <MotionReveal key={item.title}>
-                  <article className="grid gap-4 md:grid-cols-[240px_1fr]">
-                    <div className="flex items-center gap-3 text-warn">
-                      <Icon aria-hidden="true" size={21} />
-                      <p className="label-caps">{item.title}</p>
-                    </div>
-                    <p className="leading-7 text-ink/72">{item.body}</p>
-                  </article>
-                </MotionReveal>
-              );
-            })}
-          </div>
         </Container>
       </Section>
 
@@ -164,7 +168,11 @@ export default function ServicesPage() {
               choose urgent or emergency care right away.
             </p>
           </div>
-          <ButtonLink href="/contact" variant="mist">
+          <ButtonLink
+            className="transition-transform duration-300 hover:-translate-y-0.5"
+            href="/contact"
+            variant="mist"
+          >
             Contact the Practice
             <ArrowRight aria-hidden="true" size={19} />
           </ButtonLink>
