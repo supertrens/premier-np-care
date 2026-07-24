@@ -55,7 +55,7 @@ export function ArchPortrait({
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 z-10 rounded-b-[1.75rem] rounded-t-[999px] ring-1 ring-inset ring-gold/50"
       />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-b-[1.75rem] rounded-t-[999px] bg-[linear-gradient(180deg,#f4f1ec_0%,#edeae3_45%,#e9e5de_100%)] shadow-[0_40px_100px_rgba(26,53,87,0.18)]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-b-[1.75rem] rounded-t-[999px] bg-deep-navy shadow-[0_40px_100px_rgba(26,53,87,0.18)]">
         <motion.div
           className="absolute inset-0"
           animate={shouldReduceMotion ? undefined : { scale: [1, 1.015, 1] }}
@@ -63,17 +63,13 @@ export function ArchPortrait({
         >
           <Image
             alt={alt}
-            className="object-contain object-bottom transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+            className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
             fill
             priority={priority}
             sizes={sizes}
             src={src}
           />
         </motion.div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-[12%] h-[14%] bg-[linear-gradient(180deg,#f0ede7,rgba(240,237,231,0))]"
-        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(26,53,87,0.18))] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
