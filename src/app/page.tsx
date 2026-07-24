@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
   CalendarCheck,
@@ -11,15 +10,11 @@ import {
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
-import {
-  HeroEntrance,
-  HeroItem,
-  MotionReveal,
-} from "@/components/motion-reveal";
+import { HomeHero } from "@/components/home/home-hero";
+import { MotionReveal } from "@/components/motion-reveal";
 import { Section } from "@/components/section";
 import { bookingUrl } from "@/lib/config";
 import {
-  insuranceAccepted,
   patientJourney,
   practiceAtAGlance,
   safetyBoundaries,
@@ -35,104 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line bg-porcelain">
-        <div className="ocean-field absolute inset-0" aria-hidden="true" />
-        <Container className="relative grid min-h-[700px] gap-12 py-14 md:py-20 lg:grid-cols-[0.88fr_0.96fr] lg:items-center">
-          <HeroEntrance className="max-w-3xl">
-            <HeroItem>
-              <p className="label-caps text-cobalt">
-                Nurse Practitioner-led telehealth
-              </p>
-            </HeroItem>
-            <HeroItem>
-              <h1 className="mt-6 max-w-3xl font-display text-5xl font-medium leading-[1.04] text-ink sm:text-6xl md:text-7xl">
-                Care you can understand, from a clinician{" "}
-                <em className="font-normal italic text-cobalt">you know.</em>
-              </h1>
-            </HeroItem>
-            <HeroItem>
-              <p className="mt-7 max-w-xl text-xl leading-8 text-ink/70 md:text-[1.3rem] md:leading-9">
-                Book a visit, meet your provider, and know exactly what happens
-                next. Calm, direct, and clearly explained.
-              </p>
-            </HeroItem>
-            <HeroItem>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href={bookingUrl} variant="cobalt">
-                  <CalendarCheck aria-hidden="true" size={20} />
-                  Book an Appointment
-                </ButtonLink>
-                <ButtonLink href="/about" variant="secondary">
-                  Meet the Provider
-                  <ArrowRight aria-hidden="true" size={19} />
-                </ButtonLink>
-              </div>
-            </HeroItem>
-            <HeroItem>
-              <div className="mt-10 border-t border-ink/10 pt-6">
-                <p className="text-sm font-semibold text-ink/72">
-                  {insuranceAccepted.summary}
-                </p>
-                <p className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-ink/58">
-                  {insuranceAccepted.examples.map((plan, index) => (
-                    <span className="inline-flex items-center gap-2" key={plan}>
-                      {index > 0 ? (
-                        <span aria-hidden="true" className="text-ink/24">
-                          ·
-                        </span>
-                      ) : null}
-                      <span
-                        className={
-                          insuranceAccepted.featured.includes(plan)
-                            ? "font-semibold text-harbor"
-                            : undefined
-                        }
-                      >
-                        {plan}
-                      </span>
-                    </span>
-                  ))}
-                </p>
-              </div>
-            </HeroItem>
-          </HeroEntrance>
-
-          <HeroItem>
-            <div className="group/portrait relative mx-auto aspect-[4/5] w-full max-w-[560px] overflow-hidden rounded-[2rem] shadow-[0_30px_90px_rgba(7,28,42,0.16)] lg:ml-auto">
-              <Image
-                alt="Portrait of Virginie Chavannes, APN."
-                className="absolute inset-0 h-full w-full object-cover object-[center_18%] transition-transform duration-700 ease-out group-hover/portrait:scale-[1.035]"
-                fill
-                priority
-                sizes="(min-width: 1024px) 560px, 92vw"
-                src="/images/virginie-chavannes.jpg"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,42,0)_55%,rgba(7,28,42,0.55))]"
-              />
-              <Link
-                className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-4 rounded-[20px] border border-white/25 bg-white/14 px-5 py-4 backdrop-blur-md transition-colors hover:bg-white/24"
-                href="/about"
-              >
-                <div>
-                  <p className="font-display text-2xl font-medium leading-tight text-paper">
-                    Virginie Chavannes, APN
-                  </p>
-                  <p className="mt-1 text-sm text-paper/80">
-                    Nurse Practitioner · Telehealth visits
-                  </p>
-                </div>
-                <ArrowRight
-                  aria-hidden="true"
-                  className="shrink-0 text-paper/80 transition-transform duration-300 group-hover/portrait:translate-x-1"
-                  size={20}
-                />
-              </Link>
-            </div>
-          </HeroItem>
-        </Container>
-      </section>
+      <HomeHero />
 
       <Section className="relative overflow-hidden bg-deep-navy py-20 text-paper">
         <div className="care-current-lines absolute inset-0 opacity-10" />

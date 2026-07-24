@@ -1,0 +1,79 @@
+"use client";
+
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+
+export function HeroPortrait() {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.figure
+      className="group mx-auto w-full max-w-[480px] lg:ml-auto lg:max-w-none"
+      initial={shouldReduceMotion ? false : { opacity: 0, y: 28, scale: 0.97 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div className="relative">
+        <motion.div
+          aria-hidden="true"
+          className="absolute -inset-3 rounded-b-[2.25rem] rounded-t-[999px] bg-[radial-gradient(circle_at_30%_20%,rgba(88,199,214,0.35),transparent_55%),radial-gradient(circle_at_80%_80%,rgba(201,168,76,0.18),transparent_50%)]"
+          animate={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  opacity: [0.55, 0.9, 0.55],
+                  scale: [0.98, 1.02, 0.98],
+                }
+          }
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -translate-y-4 translate-x-4 rounded-b-[1.75rem] rounded-t-[999px] bg-deep-navy"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-10 rounded-b-[1.75rem] rounded-t-[999px] ring-1 ring-inset ring-gold/50"
+        />
+        <div className="relative aspect-[4/5] overflow-hidden rounded-b-[1.75rem] rounded-t-[999px] bg-[linear-gradient(180deg,#f4f1ec_0%,#edeae3_45%,#e9e5de_100%)] shadow-[0_40px_100px_rgba(26,53,87,0.18)]">
+          <motion.div
+            className="absolute inset-0"
+            animate={shouldReduceMotion ? undefined : { scale: [1, 1.015, 1] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Image
+              alt="Portrait of Virginie Chavannes, APN."
+              className="object-contain object-bottom transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+              fill
+              priority
+              sizes="(min-width: 1024px) 42vw, 90vw"
+              src="/images/virginie-chavannes.jpg"
+            />
+          </motion.div>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-[12%] h-[14%] bg-[linear-gradient(180deg,#f0ede7,rgba(240,237,231,0))]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(26,53,87,0.18))] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          />
+        </div>
+      </div>
+
+      <figcaption className="mt-6 px-1">
+        <span
+          aria-hidden="true"
+          className="block h-px w-10 bg-gold/70"
+        />
+        <p className="mt-4 font-display text-2xl font-medium text-ink">
+          Virginie Chavannes, APN
+        </p>
+        <p className="mt-1 text-sm text-ink/55">
+          Nurse Practitioner · Telehealth · New Jersey
+        </p>
+      </figcaption>
+    </motion.figure>
+  );
+}

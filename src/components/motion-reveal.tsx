@@ -76,10 +76,11 @@ export function HeroItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { y: 16 },
+        hidden: { y: 18, opacity: 0 },
         show: {
           y: 0,
-          transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+          opacity: 1,
+          transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
         },
       }}
     >
