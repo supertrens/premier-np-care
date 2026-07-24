@@ -20,7 +20,7 @@ The site uses polished first-revision copy so the design can be reviewed without
 The provider headshot is stored locally and rendered with `next/image`:
 
 ```text
-public/images/virginie-chavannes.jpg
+public/images/virginie-chavannes.jpeg
 ```
 
 Service imagery still uses temporary Unsplash visuals configured in `src/lib/content.ts`. Replace those with approved practice imagery before launch if desired.

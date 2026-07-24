@@ -8,7 +8,7 @@ export function HeroPortrait() {
       href="/about"
       name="Virginie Chavannes, APN"
       sizes="(min-width: 1024px) 42vw, 90vw"
-      src="/images/virginie-chavannes.jpg"
+      src="/images/virginie-chavannes.jpeg"
     />
   );
 }
