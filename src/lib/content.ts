@@ -37,14 +37,14 @@ export const services = [
   {
     title: "Preventive care",
     eyebrow: "Prevention",
-    image: "/images/client/preventive-care-nutrition.jpeg",
+    image: "/images/client/immi.jpeg",
     imageAlt:
-      "Fresh vegetables arranged for preventive care and lifestyle counseling.",
-    imagePosition: "center 58%",
-    homeImage: "/images/client/preventive-care-nutrition.jpeg",
+      "A vaccine being prepared for immunization and preventive care.",
+    imagePosition: "center 44%",
+    homeImage: "/images/client/immi.jpeg",
     homeImageAlt:
-      "Fresh vegetables arranged for preventive care and lifestyle counseling.",
-    homeImagePosition: "center 55%",
+      "A vaccine being prepared for immunization and preventive care.",
+    homeImagePosition: "center 44%",
     description:
       "Routine checkups, screenings, immunizations, and lifestyle guidance that help patients stay ahead of health concerns.",
     items: [
@@ -89,14 +89,14 @@ export const services = [
   {
     title: "Management of chronic diseases",
     eyebrow: "Ongoing care",
-    image: "/images/client/chronic-care-glucose.jpeg",
+    image: "/images/client/chronic-care-blood-pressure.jpeg",
     imageAlt:
-      "A glucose meter and healthy meal for chronic disease management.",
-    imagePosition: "center 48%",
-    homeImage: "/images/client/chronic-care-glucose.jpeg",
+      "A blood pressure check during chronic disease management follow-up.",
+    imagePosition: "center 42%",
+    homeImage: "/images/client/chronic-care-blood-pressure.jpeg",
     homeImageAlt:
-      "A glucose meter and healthy meal for chronic disease management.",
-    homeImagePosition: "center 48%",
+      "A blood pressure check during chronic disease management follow-up.",
+    homeImagePosition: "center 42%",
     description:
       "Ongoing support for long-term conditions, with education, monitoring, and clear next steps.",
     items: [
