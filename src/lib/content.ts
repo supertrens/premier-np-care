@@ -37,12 +37,14 @@ export const services = [
   {
     title: "Preventive care",
     eyebrow: "Prevention",
-    image: "/images/client/19.jpeg",
+    image: "/images/client/preventive-care-nutrition.jpeg",
     imageAlt:
       "Fresh vegetables arranged for preventive care and lifestyle counseling.",
-    homeImage: "/images/client/19.jpeg",
+    imagePosition: "center 58%",
+    homeImage: "/images/client/preventive-care-nutrition.jpeg",
     homeImageAlt:
       "Fresh vegetables arranged for preventive care and lifestyle counseling.",
+    homeImagePosition: "center 55%",
     description:
       "Routine checkups, screenings, immunizations, and lifestyle guidance that help patients stay ahead of health concerns.",
     items: [
@@ -61,12 +63,14 @@ export const services = [
   {
     title: "Diagnosis and treatment of common illnesses",
     eyebrow: "Sick visits",
-    image: "/images/client/3.jpeg",
+    image: "/images/client/common-illness-exam.jpeg",
     imageAlt:
       "A clinician checking a patient's eyes during a routine health visit.",
-    homeImage: "/images/client/3.jpeg",
+    imagePosition: "center 36%",
+    homeImage: "/images/client/common-illness-exam.jpeg",
     homeImageAlt:
       "A clinician checking a patient's eyes during a routine health visit.",
+    homeImagePosition: "center 38%",
     description:
       "Timely evaluation and treatment guidance for everyday illnesses, minor injuries, and common acute concerns.",
     items: [
@@ -85,12 +89,14 @@ export const services = [
   {
     title: "Management of chronic diseases",
     eyebrow: "Ongoing care",
-    image: "/images/client/10.jpeg",
+    image: "/images/client/chronic-care-glucose.jpeg",
     imageAlt:
       "A glucose meter and healthy meal for chronic disease management.",
-    homeImage: "/images/client/10.jpeg",
+    imagePosition: "center 48%",
+    homeImage: "/images/client/chronic-care-glucose.jpeg",
     homeImageAlt:
       "A glucose meter and healthy meal for chronic disease management.",
+    homeImagePosition: "center 48%",
     description:
       "Ongoing support for long-term conditions, with education, monitoring, and clear next steps.",
     items: [
@@ -110,12 +116,14 @@ export const services = [
   {
     title: "Mental health services",
     eyebrow: "Support",
-    image: "/images/client/4.jpeg",
+    image: "/images/client/mental-health-conversation.jpeg",
     imageAlt:
       "A clinician speaking with a patient in a calm care conversation.",
-    homeImage: "/images/client/4.jpeg",
+    imagePosition: "center 38%",
+    homeImage: "/images/client/mental-health-conversation.jpeg",
     homeImageAlt:
       "A clinician speaking with a patient in a calm care conversation.",
+    homeImagePosition: "center 40%",
     description:
       "Screening, basic counseling, medication management for common conditions, and specialist referral when needed.",
     items: [

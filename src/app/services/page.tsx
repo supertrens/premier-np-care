@@ -84,6 +84,7 @@ export default function ServicesPage() {
                         fill
                         sizes="(min-width: 1024px) 38vw, 92vw"
                         src={service.image}
+                        style={{ objectPosition: service.imagePosition }}
                       />
                       <div
                         aria-hidden="true"

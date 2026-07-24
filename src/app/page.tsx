@@ -111,6 +111,7 @@ export default function Home() {
                         fill
                         sizes="(min-width: 640px) 46vw, 92vw"
                         src={service.homeImage}
+                        style={{ objectPosition: service.homeImagePosition }}
                       />
                       <div
                         aria-hidden="true"
