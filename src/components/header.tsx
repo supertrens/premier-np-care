@@ -1,4 +1,5 @@
 import { CalendarCheck } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
@@ -15,10 +16,17 @@ export function Header() {
           className="group flex items-center gap-3 focus-visible:rounded-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
           href="/"
         >
+          <Image
+            alt=""
+            className="h-9 w-9 shrink-0 rounded-[10px]"
+            height={36}
+            priority
+            src="/images/logo-icon.png"
+            width={36}
+          />
           <span className="font-display text-2xl font-semibold leading-none text-ink transition-colors group-hover:text-ink">
             Premier NP Care
           </span>
-          <span className="hidden h-7 w-px bg-gold sm:block" aria-hidden="true" />
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-6 md:flex">

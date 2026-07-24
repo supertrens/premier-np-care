@@ -26,10 +26,6 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
   title: {
     default: "Premier NP Care",
     template: "%s | Premier NP Care",
