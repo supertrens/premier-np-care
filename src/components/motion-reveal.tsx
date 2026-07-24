@@ -68,9 +68,11 @@ export function HeroEntrance({
 export function DrawRule({
   className,
   delay = 0,
+  orientation = "x",
 }: {
   className?: string;
   delay?: number;
+  orientation?: "x" | "y";
 }) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -78,15 +80,18 @@ export function DrawRule({
     return <span aria-hidden="true" className={className} />;
   }
 
+  const vertical = orientation === "y";
+
   return (
     <motion.span
       aria-hidden="true"
       className={className}
-      initial={{ scaleX: 0 }}
-      style={{ transformOrigin: "left center" }}
+      initial={{
+        clipPath: vertical ? "inset(0 0 100% 0)" : "inset(0 100% 0 0)",
+      }}
       transition={{ duration: 0.9, delay, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true, amount: 0.6 }}
-      whileInView={{ scaleX: 1 }}
+      viewport={{ once: true }}
+      whileInView={{ clipPath: "inset(0 0 0 0)" }}
     />
   );
 }

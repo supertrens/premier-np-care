@@ -22,6 +22,14 @@ export default function Home() {
 
       <Section className="relative overflow-hidden bg-deep-navy py-20 text-paper">
         <div className="care-current-lines absolute inset-0 opacity-10" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 -top-24 h-[380px] w-[380px] rounded-full bg-cyan/14 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-gold/8 blur-3xl"
+        />
         <Container className="relative grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <MotionReveal>
             <p className="label-caps text-aqua">Practice clarity</p>
@@ -58,8 +66,12 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className="overflow-hidden bg-paper py-24">
-        <Container>
+      <Section className="relative overflow-hidden bg-paper py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(70%_100%_at_50%_0%,rgba(201,238,243,0.4),transparent)]"
+        />
+        <Container className="relative">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
             <MotionReveal>
               <p className="label-caps text-cobalt">Services provided</p>
@@ -88,10 +100,10 @@ export default function Home() {
               return (
                 <MotionReveal className="h-full" delay={index * 0.05} key={service.title}>
                   <Link
-                    className="group flex h-full flex-col gap-4 rounded-[24px] border border-line bg-porcelain p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_24px_60px_rgba(26,53,87,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                    className="group flex h-full flex-col gap-4 rounded-[24px] border border-line bg-[linear-gradient(160deg,#ffffff_0%,#f7fcfd_55%,#f0f9fb_100%)] p-6 shadow-[0_14px_40px_rgba(26,53,87,0.07)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_24px_60px_rgba(26,53,87,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
                     href="/services"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-paper text-cobalt transition-colors duration-300 group-hover:border-deep-navy group-hover:bg-deep-navy group-hover:text-paper">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan/25 bg-paper text-cobalt shadow-[0_8px_20px_rgba(8,126,174,0.12)] transition-colors duration-300 group-hover:border-deep-navy group-hover:bg-deep-navy group-hover:text-paper">
                       <Icon aria-hidden="true" size={20} />
                     </span>
                     <div>
@@ -102,7 +114,7 @@ export default function Home() {
                         {service.description}
                       </p>
                     </div>
-                    <p className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-harbor opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                    <p className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-harbor transition-transform duration-300 group-hover:translate-x-1">
                       Explore
                       <ArrowRight aria-hidden="true" size={15} />
                     </p>
@@ -114,8 +126,13 @@ export default function Home() {
         </Container>
       </Section>
 
-      <Section className="bg-mist py-20">
-        <Container>
+      <Section className="relative overflow-hidden bg-mist py-20">
+        <div className="care-current-lines absolute inset-0 opacity-30" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-paper/80 blur-3xl"
+        />
+        <Container className="relative">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <MotionReveal>
               <p className="label-caps text-cobalt">Patient journey</p>
@@ -133,23 +150,29 @@ export default function Home() {
 
           <div className="relative mt-12">
             <DrawRule className="absolute left-5 right-[15%] top-5 hidden h-px bg-[linear-gradient(90deg,#1a3557,#12aec4,#c9a84c)] sm:block" />
-            <div className="grid gap-8 sm:grid-cols-3">
+            <DrawRule
+              className="absolute bottom-16 left-5 top-10 w-px bg-[linear-gradient(180deg,#1a3557,#12aec4,#c9a84c)] sm:hidden"
+              orientation="y"
+            />
+            <div className="grid gap-10 sm:grid-cols-3 sm:gap-8">
               {[
                 ["Book", "Choose a time through the secure scheduling platform."],
                 ["Meet", "Talk with Virginie directly — no waiting room, no rush."],
                 ["Know your plan", "Leave with next steps written in plain language."],
               ].map(([title, body], index) => (
                 <MotionReveal delay={0.15 + index * 0.18} key={title}>
-                  <div className="relative">
+                  <div className="relative grid grid-cols-[40px_1fr] gap-x-4 sm:block">
                     <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-cyan/30 bg-paper font-display text-lg font-semibold text-cobalt shadow-[0_10px_24px_rgba(26,53,87,0.1)]">
                       {index + 1}
                     </span>
-                    <h3 className="mt-4 text-lg font-semibold text-ink">
-                      {title}
-                    </h3>
-                    <p className="mt-1.5 max-w-xs leading-7 text-ink/66">
-                      {body}
-                    </p>
+                    <div className="sm:mt-4">
+                      <h3 className="text-lg font-semibold text-ink">
+                        {title}
+                      </h3>
+                      <p className="mt-1.5 max-w-xs leading-7 text-ink/66">
+                        {body}
+                      </p>
+                    </div>
                   </div>
                 </MotionReveal>
               ))}

@@ -27,8 +27,8 @@ export function HomeHero() {
         <Container className="relative grid items-center gap-12 py-16 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
           <HeroEntrance className="max-w-xl">
             <HeroItem>
-              <p className="font-display text-2xl font-medium tracking-[-0.01em] text-ink md:text-3xl">
-                Premier NP Care
+              <p className="label-caps text-harbor">
+                Nurse Practitioner-led telehealth · New Jersey
               </p>
               <span
                 aria-hidden="true"

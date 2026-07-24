@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Nunito_Sans } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { MobileBookBar } from "@/components/mobile-book-bar";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -77,6 +78,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <div aria-hidden="true" className="h-[76px] md:hidden" />
+        <MobileBookBar />
       </body>
     </html>
   );
