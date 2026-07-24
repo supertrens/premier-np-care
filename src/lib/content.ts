@@ -197,12 +197,6 @@ export const providerStandards = [
   },
 ];
 
-export const patientExpectations = [
-  "A direct visit with Virginie Chavannes, APN, a board-certified Adult-Gerontology Primary Care Nurse Practitioner.",
-  "Care that is medically sound, personally respectful, and focused on clear next steps.",
-  "Education and guidance that help patients actively manage their own health.",
-];
-
 export const providerBio = [
   "I am a board-certified Adult-Gerontology Primary Care Nurse Practitioner with experience in primary care, acute care, and chronic disease management. My career began in nursing, where I developed a strong foundation in assessment, patient education, and compassionate care across a wide range of settings. Over time, I realized I wanted to do more, especially by diagnosing and managing complex health needs, coordinating care, and advocating for patients throughout their health journeys.",
   "As a Nurse Practitioner, my approach is rooted in evidence-based medicine and a commitment to understanding each patient's goals, values, and concerns. I prioritize clear communication, active listening, and shared decision-making so patients feel informed and supported. Whether I am addressing acute symptoms, managing chronic conditions, or focusing on prevention, I aim to deliver care that is both medically sound and personally respectful.",
