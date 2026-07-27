@@ -33,7 +33,13 @@ Set the real scheduling URL in Vercel or `.env.local`:
 NEXT_PUBLIC_BOOKING_URL="https://your-booking-link.example"
 ```
 
-The booking component is `src/components/booking-embed-slot.tsx`. Replace that component’s inner block with the scheduling iframe or script when the exact platform is known.
+Current review link:
+
+```bash
+NEXT_PUBLIC_BOOKING_URL="https://cal.com/virginie-chavannes-premiernpcare/20-minutes-consultation"
+```
+
+The booking component is `src/components/booking-embed-slot.tsx`. It renders a native booking panel that opens the live Cal.com appointment calendar in a new tab.
 
 ## Contact Form And Resend
 

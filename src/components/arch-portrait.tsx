@@ -14,6 +14,7 @@ interface ArchPortraitProps {
   credential: string;
   href?: string;
   ctaLabel?: string;
+  overlay?: ReactNode;
   trailing?: ReactNode;
   priority?: boolean;
   sizes?: string;
@@ -27,6 +28,7 @@ export function ArchPortrait({
   credential,
   href,
   ctaLabel = "View Profile",
+  overlay,
   trailing,
   priority = true,
   sizes = "(min-width: 1024px) 42vw, 90vw",
@@ -74,6 +76,11 @@ export function ArchPortrait({
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgba(26,53,87,0.18))] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
+        {overlay ? (
+          <div className="absolute bottom-5 left-5 right-5 z-20 flex justify-start">
+            {overlay}
+          </div>
+        ) : null}
       </div>
     </div>
   );

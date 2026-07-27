@@ -67,8 +67,8 @@ export default function ContactPage() {
               <p className="label-caps">Prefer to call?</p>
             </div>
             <p className="mt-3 leading-7 text-ink/76">
-              Online scheduling is coming soon. For now, call or send a message
-              and the practice will help you find the right appointment path.
+              Use the calendar to request your consultation, or send a message
+              if you have a general question before booking.
             </p>
             <p className="mt-3 font-semibold leading-7 text-ink">
               {practiceDetails.schedule}
@@ -96,8 +96,9 @@ export default function ContactPage() {
                 The easiest way to begin is right here.
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
-                Online scheduling is almost ready. Until then, the practice can
-                help you book by phone or message during regular office hours.
+                Choose a consultation time directly through the practice
+                calendar. The scheduling link opens in a dedicated Cal.com
+                window so the booking process stays clear and easy to complete.
               </p>
             </div>
           </MotionReveal>

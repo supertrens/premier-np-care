@@ -1,33 +1,72 @@
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, Clock, ExternalLink, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/button";
+import { bookingUrl } from "@/lib/config";
+
+const bookingDetails = [
+  {
+    icon: Clock,
+    title: "20 minutes",
+    body: "Focused consultation",
+  },
+  {
+    icon: CalendarDays,
+    title: "Online booking",
+    body: "Choose an available time",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure path",
+    body: "Details stay in the scheduling flow",
+  },
+];
 
 export function BookingEmbedSlot() {
   return (
     <section
-      className="rounded-[12px] border border-deep-navy bg-white px-6 py-12 text-center shadow-[0_24px_70px_rgba(26,53,87,0.08)] md:px-10"
-      id="booking-placeholder"
+      className="relative overflow-hidden rounded-[22px] border border-deep-navy bg-white p-6 shadow-[0_24px_70px_rgba(26,53,87,0.08)] md:p-8"
+      id="booking-calendar"
     >
-      {/*
-        // BOOKING_EMBED_SLOT: replace this card with the EHR
-        // scheduling widget embed code when ready
-      */}
-      <CalendarDays
+      <div
         aria-hidden="true"
-        className="mx-auto text-deep-navy"
-        size={38}
-        strokeWidth={1.8}
+        className="absolute right-0 top-0 h-32 w-32 rounded-bl-full bg-mist"
       />
-      <h2 className="mt-5 font-display text-[28px] font-semibold leading-tight text-deep-navy">
-        Online Scheduling Coming Soon
-      </h2>
-      <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-[#555555]">
-        We are setting up our online booking system. In the meantime, reach out
-        directly and we will help you get scheduled during regular office
-        hours.
-      </p>
-      <ButtonLink className="mt-8" href="#contact-form" variant="cobalt">
-        Send Us a Message
-      </ButtonLink>
+      <div className="relative">
+        <div className="flex items-center gap-3 text-cobalt">
+          <CalendarDays aria-hidden="true" size={25} />
+          <p className="label-caps">Online scheduling</p>
+        </div>
+
+        <h2 className="mt-5 max-w-xl font-display text-4xl font-semibold leading-tight text-deep-navy md:text-5xl">
+          Book your 20-minute consultation.
+        </h2>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-ink/68">
+          Choose a time through the Premier NP Care calendar. You will continue
+          in Cal.com to confirm the appointment details securely.
+        </p>
+
+        <div className="mt-7 grid gap-3 sm:grid-cols-3">
+          {bookingDetails.map(({ body, icon: Icon, title }) => (
+            <div
+              className="rounded-[14px] border border-line bg-porcelain p-4"
+              key={title}
+            >
+              <Icon aria-hidden="true" className="text-cobalt" size={20} />
+              <p className="mt-3 text-sm font-semibold text-ink">{title}</p>
+              <p className="mt-1 text-sm leading-6 text-ink/58">{body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <ButtonLink href={bookingUrl} variant="cobalt">
+            Open Appointment Calendar
+            <ExternalLink aria-hidden="true" size={17} />
+          </ButtonLink>
+          <p className="text-sm leading-6 text-ink/56">
+            Opens in a new tab so the calendar has room to breathe.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }

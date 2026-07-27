@@ -82,14 +82,14 @@ export default function AboutPage() {
             alt="Portrait of Virginie Chavannes, APN."
             credential="Nurse Practitioner · Telehealth · New Jersey"
             name="Virginie Chavannes, APN"
-            sizes="(min-width: 1024px) 32vw, 90vw"
-            src="/images/virginie-chavannes.jpeg"
-            trailing={
-              <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-line bg-paper px-3 py-2 text-sm font-semibold text-harbor">
-                <ShieldCheck aria-hidden="true" size={15} />
+            overlay={
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-paper/92 px-4 py-2 text-sm font-semibold text-harbor shadow-[0_14px_34px_rgba(26,53,87,0.18)] backdrop-blur">
+                <ShieldCheck aria-hidden="true" size={16} />
                 Board-Certified
               </span>
             }
+            sizes="(min-width: 1024px) 32vw, 90vw"
+            src="/images/virginie-chavannes.jpeg"
           />
         </Container>
       </section>
