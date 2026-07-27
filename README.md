@@ -36,10 +36,10 @@ NEXT_PUBLIC_BOOKING_URL="https://your-booking-link.example"
 Current review link:
 
 ```bash
-NEXT_PUBLIC_BOOKING_URL="https://cal.com/virginie-chavannes-premiernpcare/20-minutes-consultation"
+NEXT_PUBLIC_BOOKING_URL="https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_115955"
 ```
 
-The booking component is `src/components/booking-embed-slot.tsx`. It renders a native booking panel that opens the live Cal.com appointment calendar in a new tab.
+The booking component is `src/components/booking-embed-slot.tsx`. It renders a native booking panel and opens the live Tebra appointment calendar in a modal, with a backup new-tab link.
 
 ## Contact Form And Resend
 

@@ -1,6 +1,6 @@
 export const bookingUrl =
   process.env.NEXT_PUBLIC_BOOKING_URL?.trim() ||
-  "https://cal.com/virginie-chavannes-premiernpcare/20-minutes-consultation";
+  "https://d2oe0ra32qx05a.cloudfront.net/?practiceKey=k_1_115955";
 
 export const phoneNumber = process.env.NEXT_PUBLIC_PHONE_NUMBER?.trim() || "";
 

@@ -97,8 +97,8 @@ export default function ContactPage() {
               </h2>
               <p className="mt-5 max-w-lg leading-8 text-ink/70">
                 Choose a consultation time directly through the practice
-                calendar. The scheduling link opens in a dedicated Cal.com
-                window so the booking process stays clear and easy to complete.
+                calendar. The scheduler opens in a focused Tebra window so the
+                booking process stays clear and easy to complete.
               </p>
             </div>
           </MotionReveal>
