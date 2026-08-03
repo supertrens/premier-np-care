@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CalendarCheck } from "lucide-react";
+import { ArrowRight, CalendarCheck, CheckCircle2, FileText } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
 import { HomeHero } from "@/components/home/home-hero";
@@ -232,6 +232,41 @@ export default function Home() {
               );
             })}
           </div>
+
+          <MotionReveal delay={0.5}>
+            <div className="mt-14 grid gap-6 rounded-[24px] border border-line bg-paper/86 p-6 shadow-[0_18px_60px_rgba(26,53,87,0.07)] backdrop-blur md:grid-cols-[0.58fr_1.42fr] md:items-center md:p-7">
+              <div>
+                <div className="flex items-center gap-3 text-cobalt">
+                  <FileText aria-hidden="true" size={22} />
+                  <p className="label-caps">What to have ready</p>
+                </div>
+                <p className="mt-3 max-w-md leading-7 text-ink/68">
+                  Join the video visit 5-10 minutes early and keep a few basics
+                  nearby so the appointment starts smoothly.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "Photo ID",
+                  "Insurance card",
+                  "Current medication list",
+                  "Recent health information",
+                ].map((item) => (
+                  <div
+                    className="flex items-center gap-3 rounded-[14px] border border-line bg-porcelain px-4 py-3"
+                    key={item}
+                  >
+                    <CheckCircle2
+                      aria-hidden="true"
+                      className="shrink-0 text-cobalt"
+                      size={18}
+                    />
+                    <p className="text-sm font-semibold text-ink/78">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </MotionReveal>
         </Container>
       </Section>
 
