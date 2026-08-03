@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Nunito_Sans } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { MobileBookBar } from "@/components/mobile-book-bar";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -17,9 +18,6 @@ const cormorantGaramond = Cormorant_Garamond({
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://premier-np-care.vercel.app";
 
 const siteDescription =
   "Premier NP Care is a Nurse Practitioner-led telehealth-affiliated medical practice offering personal, accessible care.";

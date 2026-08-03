@@ -23,7 +23,7 @@ The provider headshot is stored locally and rendered with `next/image`:
 public/images/virginie-chavannes.jpeg
 ```
 
-Service imagery still uses temporary Unsplash visuals configured in `src/lib/content.ts`. Replace those with approved practice imagery before launch if desired.
+Service imagery is configured in `src/lib/content.ts` and stored in `public/images/client/`.
 
 ## Booking Link Or Embed
 
@@ -69,12 +69,36 @@ npm run lint
 npm run build
 ```
 
+## Search And Indexing
+
+The production domain is:
+
+```bash
+NEXT_PUBLIC_SITE_URL="https://www.premiernpcare.com"
+```
+
+The site generates:
+
+- `https://www.premiernpcare.com/robots.txt`
+- `https://www.premiernpcare.com/sitemap.xml`
+
+After deployment, connect the domain in Google Search Console:
+
+1. Open Google Search Console.
+2. Add `https://www.premiernpcare.com/` as a URL-prefix property, or verify the root domain with DNS.
+3. Submit `https://www.premiernpcare.com/sitemap.xml`.
+4. Use URL Inspection for `https://www.premiernpcare.com/`.
+5. Request indexing for the homepage.
+
+Google indexing is not instant; allow several days to a few weeks for consistent search visibility.
+
 ## Pre-Launch Review Checklist
 
 - Confirm the exact credential line and licensing language for Virginie Chavannes, APN.
-- Replace temporary Unsplash visuals with approved practice imagery.
+- Review approved service imagery in `public/images/client/`.
 - Set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`.
 - Add Resend environment variables.
 - Review service scope and safety language with the provider.
+- Confirm `https://www.premiernpcare.com/robots.txt` and `https://www.premiernpcare.com/sitemap.xml` return `200`.
+- Submit the sitemap in Google Search Console.
 - Submit a test contact form in production preview before launch.
-# premier-np-care
