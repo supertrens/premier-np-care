@@ -3,6 +3,7 @@ import {
   CalendarCheck,
   CheckCircle2,
   ClipboardCheck,
+  FileText,
   ShieldCheck,
 } from "lucide-react";
 import { ButtonLink } from "@/components/button";
@@ -32,6 +33,13 @@ const reassuranceRows = [
     label: "After the visit",
     body: "You leave with plain-language next steps and follow-up guidance.",
   },
+];
+
+const appointmentPrepItems = [
+  "Photo ID",
+  "Insurance card",
+  "Current medication list",
+  "Any recent health information",
 ];
 
 export default function HowItWorksPage() {
@@ -122,6 +130,51 @@ export default function HowItWorksPage() {
               </ol>
             </div>
           </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-porcelain py-20">
+        <Container>
+          <MotionReveal>
+            <div className="grid gap-8 rounded-[28px] border border-line bg-paper p-7 shadow-[0_22px_70px_rgba(7,28,42,0.08)] lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+              <div>
+                <div className="flex items-center gap-3 text-cobalt">
+                  <FileText aria-hidden="true" size={24} />
+                  <p className="label-caps">What to have ready</p>
+                </div>
+                <h2 className="mt-5 max-w-md font-display text-4xl font-medium leading-[1.06] text-ink md:text-5xl">
+                  A little prep helps the visit feel easier.
+                </h2>
+              </div>
+              <div>
+                <p className="text-lg leading-8 text-ink/74">
+                  This telemedicine visit is scheduled to discuss current
+                  health concerns, review symptoms, assess medications, and
+                  address questions or follow-up care needs. Please join the
+                  video appointment 5-10 minutes early using the provided link.
+                </p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {appointmentPrepItems.map((item) => (
+                    <div
+                      className="flex items-center gap-3 rounded-[14px] border border-line bg-porcelain px-4 py-3"
+                      key={item}
+                    >
+                      <CheckCircle2
+                        aria-hidden="true"
+                        className="shrink-0 text-cobalt"
+                        size={18}
+                      />
+                      <p className="font-semibold text-ink/78">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-6 border-t border-line pt-5 text-sm leading-6 text-ink/62">
+                  Service fees vary depending on the length and complexity of
+                  the visit.
+                </p>
+              </div>
+            </div>
+          </MotionReveal>
         </Container>
       </Section>
 

@@ -173,7 +173,7 @@ export const patientJourney = [
   {
     title: "Prepare",
     description:
-      "Receive simple visit instructions so you know how to prepare.",
+      "Join 5-10 minutes early and have your ID, insurance card, medication list, and recent health information ready.",
     icon: FileText,
   },
   {
