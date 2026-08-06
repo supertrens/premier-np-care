@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Explore preventive care, common illness visits, chronic disease management, and mental health services at Premier NP Care.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Provider",
   description:
     "Meet Virginie Chavannes, APN, and learn how Premier NP Care approaches provider-led telehealth visits.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

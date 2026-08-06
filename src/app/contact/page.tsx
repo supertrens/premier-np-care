@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Book an appointment with Premier NP Care or send a general, non-urgent question to the practice.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 const contactRows = [

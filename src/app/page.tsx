@@ -11,9 +11,20 @@ import { bookingUrl } from "@/lib/config";
 import { practiceAtAGlance, services } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Nurse Practitioner-Led Medical Practice",
+  title: {
+    absolute: "Premier NP Care | Virginie Chavannes, APN",
+  },
   description:
-    "Premier NP Care is a Nurse Practitioner-led medical practice offering clear, telehealth-affiliated care.",
+    "Book provider-led telehealth visits with Virginie Chavannes, APN. Premier NP Care offers preventive care, common illness visits, chronic disease support, and mental health services for patients age 14 and up in New Jersey.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Premier NP Care | Virginie Chavannes, APN",
+    description:
+      "Provider-led telehealth visits for preventive care, common illnesses, chronic disease support, and mental health services in New Jersey.",
+    url: "/",
+  },
 };
 
 export default function Home() {

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "How It Works",
   description:
     "Understand the Premier NP Care patient journey from booking to telehealth visit, care plan, and follow-up.",
+  alternates: {
+    canonical: "/how-it-works",
+  },
 };
 
 const reassuranceRows = [
