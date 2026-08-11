@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckCircle2, Send, X } from "lucide-react";
+import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import { Button } from "@/components/button";
 
@@ -167,11 +168,23 @@ export function ContactForm() {
             >
               <X aria-hidden="true" size={19} />
             </button>
-            <div
-              aria-hidden="true"
-              className="mx-auto grid size-20 place-items-center rounded-full border border-gold/60 bg-deep-navy text-paper shadow-[0_18px_50px_rgba(26,53,87,0.24)]"
-            >
-              <CheckCircle2 size={36} />
+            <div className="mx-auto flex w-fit flex-col items-center">
+              <div className="relative grid size-24 place-items-center rounded-[24px] border border-gold/60 bg-paper shadow-[0_18px_50px_rgba(26,53,87,0.16)]">
+                <Image
+                  alt="Premier NP Care"
+                  className="h-16 w-16"
+                  height={64}
+                  priority
+                  src="/images/logo-icon.png"
+                  width={64}
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-2 -right-2 grid size-9 place-items-center rounded-full border border-gold bg-deep-navy text-paper shadow-[0_10px_24px_rgba(26,53,87,0.22)]"
+                >
+                  <CheckCircle2 size={20} />
+                </span>
+              </div>
             </div>
             <p className="mt-6 label-caps text-cobalt">Premier NP Care</p>
             <h2

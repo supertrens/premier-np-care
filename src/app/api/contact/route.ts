@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { z } from "zod";
+import { siteUrl } from "@/lib/site";
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name is required.").max(120),
@@ -38,11 +39,21 @@ function formatMessageHtml(message: string) {
 }
 
 function emailShell(content: string) {
+  const logoUrl = `${siteUrl}/images/logo-icon.png`;
+
   return `
     <div style="margin:0;background:#f7fcfd;padding:32px 16px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;color:#1A3557;">
       <div style="margin:0 auto;max-width:640px;overflow:hidden;border:1px solid #cfeaf0;border-radius:24px;background:#ffffff;box-shadow:0 24px 70px rgba(26,53,87,0.10);">
         <div style="background:#1A3557;padding:28px 32px;color:#ffffff;">
-          <div style="font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.1;font-weight:600;letter-spacing:-0.01em;">Premier NP Care</div>
+          <div style="display:table;width:100%;">
+            <div style="display:table-cell;width:56px;vertical-align:middle;">
+              <img src="${logoUrl}" width="48" height="48" alt="Premier NP Care" style="display:block;border:1px solid rgba(201,168,76,0.7);border-radius:14px;background:#ffffff;" />
+            </div>
+            <div style="display:table-cell;vertical-align:middle;padding-left:14px;">
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:30px;line-height:1.1;font-weight:600;letter-spacing:-0.01em;">Premier NP Care</div>
+              <div style="margin-top:6px;color:#dfeaf1;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;">Provider-led care</div>
+            </div>
+          </div>
           <div style="margin-top:12px;height:2px;width:86px;background:#C9A84C;"></div>
         </div>
         ${content}
