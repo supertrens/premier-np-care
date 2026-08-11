@@ -48,8 +48,15 @@ The contact form posts to `POST /api/contact` and sends email through Resend onl
 ```bash
 RESEND_API_KEY="re_placeholder"
 CONTACT_TO_EMAIL="practice@example.com"
-CONTACT_FROM_EMAIL="Premier NP Care <onboarding@resend.dev>"
+CONTACT_FROM_EMAIL="Premier NP Care <hello@your-verified-domain.com>"
 ```
+
+When configured, every contact submission sends two emails:
+
+- A practice notification to `CONTACT_TO_EMAIL`, with the patient email set as the reply-to address.
+- A confirmation email to the patient email address entered in the form.
+
+Use a verified Resend sender/domain for `CONTACT_FROM_EMAIL` before production. The temporary `onboarding@resend.dev` address is useful for early testing, but a verified practice domain is needed for reliable patient confirmations.
 
 In development, missing Resend env vars return a placeholder success response so the form can be tested without sending email. In production, missing env vars return a configuration error.
 

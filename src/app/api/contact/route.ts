@@ -33,6 +33,10 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
+function formatMessageHtml(message: string) {
+  return escapeHtml(message).replaceAll("\n", "<br />");
+}
+
 export async function POST(request: Request) {
   let body: unknown;
 
@@ -84,7 +88,7 @@ export async function POST(request: Request) {
 
   const payload = parsed.data;
   const phone = payload.phone || "Not provided";
-  const text = [
+  const practiceEmailText = [
     "Premier NP Care website inquiry",
     "",
     `Name: ${payload.name}`,
@@ -94,24 +98,69 @@ export async function POST(request: Request) {
     payload.message,
   ].join("\n");
 
-  await resend.emails.send({
-    from,
-    to,
-    replyTo: payload.email,
-    subject: `Premier NP Care inquiry from ${payload.name}`,
-    text,
-    html: `
-      <h1>Premier NP Care website inquiry</h1>
-      <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
-      <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
-      <p><strong>Message:</strong></p>
-      <p>${escapeHtml(payload.message).replaceAll("\n", "<br />")}</p>
-    `,
-  });
+  const confirmationText = [
+    `Hi ${payload.name},`,
+    "",
+    "Thank you for contacting Premier NP Care. We received your message and will review it as soon as possible.",
+    "",
+    "For urgent symptoms or emergencies, please call 911 or use urgent care. Please do not send sensitive medical information through this general contact form.",
+    "",
+    "Message received:",
+    payload.message,
+    "",
+    "Premier NP Care",
+  ].join("\n");
+
+  try {
+    await Promise.all([
+      resend.emails.send({
+        from,
+        to,
+        replyTo: payload.email,
+        subject: `Premier NP Care inquiry from ${payload.name}`,
+        text: practiceEmailText,
+        html: `
+          <h1>Premier NP Care website inquiry</h1>
+          <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
+          <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+          <p><strong>Message:</strong></p>
+          <p>${formatMessageHtml(payload.message)}</p>
+        `,
+      }),
+      resend.emails.send({
+        from,
+        to: payload.email,
+        replyTo: to,
+        subject: "We received your message | Premier NP Care",
+        text: confirmationText,
+        html: `
+          <h1>We received your message</h1>
+          <p>Hi ${escapeHtml(payload.name)},</p>
+          <p>Thank you for contacting Premier NP Care. We received your message and will review it as soon as possible.</p>
+          <p>For urgent symptoms or emergencies, please call 911 or use urgent care. Please do not send sensitive medical information through this general contact form.</p>
+          <hr />
+          <p><strong>Message received:</strong></p>
+          <p>${formatMessageHtml(payload.message)}</p>
+          <p>Premier NP Care</p>
+        `,
+      }),
+    ]);
+  } catch (error) {
+    console.error("Failed to send Premier NP Care contact emails", error);
+    return Response.json(
+      {
+        ok: false,
+        message:
+          "We could not send your message right now. Please try again shortly.",
+      },
+      { status: 502 },
+    );
+  }
 
   return Response.json({
     ok: true,
-    message: "Thank you. Your message has been sent to the practice.",
+    message:
+      "Thank you. Your message has been sent, and a confirmation email is on the way.",
   });
 }
